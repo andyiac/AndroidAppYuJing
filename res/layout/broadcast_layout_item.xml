@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:id="@+id/relativeLayout1"
+	android:background="#0000"
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	android:paddingTop="5dip"
+	android:paddingBottom="5dip"
+>
+    <ImageView 
+    	android:layout_marginTop="2.5dip"
+    	android:layout_marginLeft="10dip"
+	    android:layout_height="wrap_content"
+		android:id="@+id/broadcast_thumb" 
+		android:layout_width="wrap_content"
+		android:src="@drawable/ic_contact_list_picture"
+		android:layout_alignParentTop="true" 
+		android:layout_alignParentLeft="true"
+	/>
+    <TextView 
+    	android:layout_height="wrap_content" 
+    	android:id="@+id/broadcast_name"
+    	android:paddingLeft="10dip"
+    	android:textColor="#000"
+    	android:textStyle="bold"
+		android:text="@string/broadcast_discussion" 
+		android:layout_width="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_alignTop="@+id/broadcast_thumb" 
+		android:layout_toRightOf="@+id/broadcast_thumb"
+	/>
+    <TextView 
+    	android:layout_height="wrap_content" 
+    	android:id="@+id/broadcast_date"
+		android:text="2011/3/18" 
+		android:textSize="16dp"
+		android:layout_width="wrap_content"
+		android:layout_alignTop="@+id/broadcast_name"
+		android:layout_alignParentRight="true" 
+		android:layout_marginRight="15dip"
+	/>
+    <TextView 
+    	android:layout_height="wrap_content" 
+    	android:id="@+id/broadcast_content"
+		android:text="回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复" 
+		android:paddingLeft="10dip"
+		android:paddingTop="3dip"
+		android:autoLink="all"
+		android:layout_below="@+id/broadcast_name"
+		android:textColor="#99000000"
+		android:layout_width="wrap_content"
+		android:layout_alignLeft="@+id/broadcast_name"
+		android:layout_alignRight="@+id/broadcast_date"
+	/>
+
+</RelativeLayout>
+
+
+

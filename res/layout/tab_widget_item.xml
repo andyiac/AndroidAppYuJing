@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+   	android:id="@+id/relativeLayout1" 
+   	android:layout_width="fill_parent" 
+   	android:layout_height="wrap_content"
+> 
+	<RelativeLayout 
+	    	android:layout_marginTop="4dip"
+	    	android:layout_marginBottom="4dip"
+	    	android:layout_marginLeft="10dip"
+	    	android:layout_marginRight="10dip"
+	    	android:gravity="center"
+	    	android:id="@+id/relativeLayout1" 
+	    	android:layout_width="fill_parent" 
+	    	android:layout_height="fill_parent"
+	    	android:background="@drawable/tab_btn"
+	    >
+	    	<ImageView 
+		    	android:id="@+id/count"
+		    	android:scaleType="fitStart"
+		    	android:layout_toRightOf="@+id/tab_image"
+		    	android:background="@drawable/sms_received"
+		    	android:layout_alignTop="@+id/tab_image"
+	    		android:layout_height="wrap_content"
+	    		android:layout_width="wrap_content"
+	    		android:visibility="gone"
+	    	/>
+	        <ImageView 
+	        	android:layout_height="wrap_content"
+				android:src="@drawable/icon" 
+				android:layout_width="wrap_content"
+				android:id="@+id/tab_image" 
+				android:visibility="gone"
+				android:layout_centerHorizontal="true"
+			/>
+	        <TextView 
+		        android:text="TextView" 
+		        android:layout_width="wrap_content"
+				android:layout_height="wrap_content" 
+				android:id="@+id/tab_text"
+				android:textColor="@drawable/tab_font_selector"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:layout_below="@+id/tab_image" 
+				android:layout_centerHorizontal="true"
+				android:layout_marginTop="0dip"
+			/>
+	</RelativeLayout>
+</LinearLayout>

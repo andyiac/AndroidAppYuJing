@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/relativeLayout1" 
+	android:background="@drawable/message_list_view_bg"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent">
+	<RelativeLayout 
+		android:layout_height="47dip"
+		android:background="@drawable/top_bg" 
+		android:layout_width="fill_parent"
+		android:id="@+id/relativeLayout2" 
+		android:layout_alignParentTop="true"
+		android:layout_alignParentLeft="true" 
+		android:layout_alignParentRight="true"
+	>
+		<TextView 
+			android:id="@+id/textView1" 
+			android:text="@string/about"
+			style="@style/TitleTextView" 
+		/>
+	</RelativeLayout>
+	<RelativeLayout 
+		android:layout_height="fill_parent"
+		android:id="@+id/relativeLayout3" 
+		android:layout_width="fill_parent"
+		android:layout_below="@+id/relativeLayout2"
+		android:layout_alignParentLeft="true"
+	>
+		<ImageView 
+			android:src="@drawable/ic_contact_list_picture"
+			android:layout_width="80dip" 
+			android:id="@+id/imageView1"
+			android:layout_marginLeft="10dip" 
+			android:layout_marginRight="10dip"
+			android:scaleType="fitXY" 
+			android:layout_height="80dip"
+			android:layout_alignParentTop="true" 
+			android:layout_centerHorizontal="true"
+			android:layout_marginTop="40dip"
+		/>
+		<TextView 
+			android:background="@drawable/top_button"
+			android:id="@+id/textView2" 
+			android:text="@string/app_name" 
+			android:layout_below="@+id/imageView1" 
+			android:layout_marginTop="20dip"
+			style="@style/AboutTextView"
+		/>
+		<TextView 
+			android:id="@+id/textView3" 
+			android:text="@string/version"
+			android:layout_marginTop="1dip" 
+			android:background="@drawable/mid_button"
+			android:layout_below="@+id/textView2" 
+			style="@style/AboutTextView"
+		/>
+		<TextView 
+			android:id="@+id/textView4" 
+			android:text="@string/update"
+			android:onClick="onUpdateClick"
+			android:layout_height="57dip"
+			android:layout_marginTop="1dip" 
+			android:background="@drawable/bottom_button"
+			style="@style/AboutTextView"
+			android:layout_below="@+id/textView3" 
+		/>
+		
+	</RelativeLayout>
+
+</RelativeLayout>
+
+

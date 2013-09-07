@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+	android:id="@+id/relativeLayout1"
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	android:background="@drawable/message_list_view_bg"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+>
+	<RelativeLayout 
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:id="@+id/parent"
+		android:layout_marginBottom="5dip"
+		android:layout_marginTop="10dip"
+	>
+		<EditText 
+			android:layout_height="wrap_content"
+			android:layout_width="fill_parent"
+			android:lines="6"
+			android:gravity="top"
+			android:id="@+id/edit_broadcast"
+			android:hint="@string/broadcast_content"
+			android:layout_margin="5dip"
+			android:paddingTop="10dip"
+			android:paddingLeft="10dip"
+		/>
+	</RelativeLayout>
+	<RelativeLayout 
+		android:id="@+id/relativeLayout2"
+		android:layout_width="fill_parent" 
+		android:layout_height="50dip"
+		android:layout_marginLeft="10dip"
+		android:layout_marginRight="10dip"
+		android:layout_alignRight="@+id/parent"
+		android:layout_alignLeft="@+id/parent"
+		android:layout_below="@+id/parent"
+	>
+		<Button
+			android:layout_width="100dip" 
+			android:layout_height="40dip"
+			android:background="@drawable/button"
+			android:text="@string/send"
+			android:textColor="#fff"
+			android:textSize="16sp"
+			android:id="@+id/send_content"
+			android:layout_alignParentRight="true"
+			android:layout_alignParentBottom="false"
+			android:layout_marginRight="0dip"
+			android:layout_marginBottom="0dip"
+			android:onClick="onSendClick"
+		/>
+		
+		<Button
+			android:layout_width="100dip" 
+			android:layout_height="40dip"
+			android:background="@drawable/button"
+			android:text="@string/close"
+			android:textColor="#fff"
+			android:textSize="16sp"
+			android:onClick="onCancelClick"
+			android:id="@+id/close_dialog"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentBottom="false"
+			android:layout_marginRight="0dip"
+			android:layout_marginBottom="0dip"
+		/>
+	
+	
+	</RelativeLayout>
+	
+</RelativeLayout>

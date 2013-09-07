@@ -1,8 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">SlidingMenu</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
+
+
+    <string name="hello">Hello World, ClientActivity!</string>
+    <string name="app_name">Book客户端</string>
+    <string name="broadcast_discussion">话题讨论</string>
+    <string name="broadcast_activity">话题</string>
+    <string name="friends_activity">好友</string>
+    <string name="letter_activity">私信</string>
+    <string name="friends_all_friends">所有好友</string>
+    <string name="friends_all_people">所有人</string>
+    <string name="letter_letter">私信</string>
+    <string name="chat_now">发私信</string>
+    <string name="send_broadcast">发表话题</string>
+    <string name="send">发表</string>
+    <string name="cancel">取消</string>
+    <string name="read_broadcast">查看话题</string>
+    <string name="discuss">话题评论</string>
+    <string name="broadcast_content">哄一句</string>
+    <string name="largest_text">100</string>
+    <string name="close">关闭</string>
+    <string name="delete">删除</string>
+    <string name="reply">回复</string>
+    <string name="comfirm">确定</string>
+    <string name="is_quit">确定要退出？</string>
+    <string name="alter">注意</string>
+    <string name="waiting">请稍后...</string>
+    <string name="login">登录</string>
+    <string name="signin">注册</string>
+    <string name="login_signin">登录与注册</string>
+    <string name="name">手机号</string>
+    <string name="password">密码</string>
+    <string name="no_empyt_name">名字不能为空</string>
+    <string name="no_empty_password">密码不能为空</string>
+    <string name="menu_profile">个人资料</string>
+    <string name="menu_signin">注册</string>
+    <string name="menu_letter">发私信</string>
+    <string name="menu_quit">退出</string>
+    <string name="menu_logout">注销</string>
+    <string name="is_logout">确定要注销吗？</string>
+    <string name="refresh">刷新</string>
+    <string name="sex">性别：</string>
+    <string name="sex_signin">性别</string>
+    <string name="phone">手机号：</string>
+    <string name="address">省份：</string>
+    <string name="is_friend">好友：检测中...</string>
+    <string name="signin_profile">注册个人资料</string>
+    <string name="sign_name">姓名</string>
+    <string name="sign_phone">手机号</string>
+    <string name="sign_sex">选择性别</string>
+    <string name="sign_address">选择地址</string>
+    <string-array name="pick_sex">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+    <string-array name="pick_address">
+        <item>北京</item>
+        <item>上海</item>
+        <item>天津</item>
+        <item>深圳</item>
+        <item>广州</item>
+        <item>重庆</item>
+    </string-array>
+    <string name="boy">男</string>
+    <string name="girl">女</string>
+    <string name="send_letter">发送私信</string>
+    <string name="profile">资料</string>
+    <string name="click_add">点击添加为好友</string>
+    <string name="empty_com">暂无评论</string>
+    <string name="back">返回</string>
+    <string name="input_broad_name">输入话题名称</string>
+    <string name="input_broad_content">输入话题内容</string>
+    <string name="input_letter_content">输入私信内容</string>
+    <string name="input_letter_receicer">输入私信接收者</string>
+    <string name="about">关于与帮助</string>
+    <string name="update_fail">更新失败</string>
+    <string name="get_letter_fail">获取私信失败</string>
+    <string name="delete_letter_fail">删除私信失败</string>
+    <string name="delete_letter_succ">删除私信完成</string>
+    <string name="get_letter_succ">获取私信完成</string>
+    <string name="send_letter_succ">发送私信完成</string>
+    <string name="send_letter_fail">发送私信失败</string>
+    <string name="add_topic_fail">发表话题失败</string>
+    <string name="add_topic_succ">发表话题完成</string>
+    <string name="login_fail">登陆失败</string>
+    <string name="empty_content">内容不能为空</string>
+    <string name="read_topic_fail">读取话题失败</string>
+    <string name="read_topic_succ">读取话题完成</string>
+    <string name="network_no_connect">网络连接失败</string>
+    <string name="letter_contact_empty">联系人不能空</string>
+    <string name="letter_content_empty">私信内容不能为空</string>
+    <string name="loading">加载中...</string>
+    <string name="empty_topic_content">话题内容不能为空</string>
+    <string name="version">版本 V1.0</string>
+    <string name="update">检查更新</string>
+
 
 </resources>

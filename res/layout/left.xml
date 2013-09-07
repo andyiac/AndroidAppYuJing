@@ -31,7 +31,7 @@
                 android:layout_marginBottom="2dp"
                 android:layout_marginTop="4dp"
                 android:layout_toRightOf="@+id/head_view"
-                android:text="NAME"
+                android:text="张强"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/name_textview"
                 android:layout_below="@+id/name_textview"
-                android:text="月月鸟"
+                android:text="summer"
                 android:textColor="@color/text_color"
                 android:textSize="12sp" />
         </RelativeLayout>
@@ -58,7 +58,7 @@
             android:layout_height="50dp"
             android:gravity="center_vertical"
             android:paddingLeft="20dp"
-            android:text="我的任务"
+            android:text="预警系统"
             android:textColor="@color/text_color"
             android:textSize="15sp" />
 
@@ -74,7 +74,7 @@
             android:layout_height="50dp"
             android:gravity="center_vertical"
             android:paddingLeft="20dp"
-            android:text="已解决任务"
+            android:text="消息"
             android:textColor="@color/text_color"
             android:textSize="15sp" />
 
@@ -90,7 +90,7 @@
             android:layout_height="50dp"
             android:gravity="center_vertical"
             android:paddingLeft="20dp"
-            android:text="我的收藏"
+            android:text="设置"
             android:textColor="@color/text_color"
             android:textSize="15sp" />
 

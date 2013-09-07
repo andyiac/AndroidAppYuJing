@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:id="@+id/relativeLayout1"
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	android:paddingTop="5dip"
+	android:paddingBottom="5dip"
+>
+    <ImageView 
+    	android:layout_marginTop="2.5dip"
+    	android:layout_marginBottom="2.5dip"
+    	android:layout_marginLeft="10dip"
+	    android:layout_height="wrap_content"
+		android:id="@+id/friends_thumb" 
+		android:layout_width="wrap_content"
+		android:src="@drawable/ic_contact_list_picture"
+		android:layout_alignParentTop="true" 
+		android:layout_alignParentLeft="true"
+	/>
+    <TextView 
+    	android:layout_height="wrap_content" 
+    	android:id="@+id/friends_name"
+		android:text="@string/broadcast_discussion" 
+		android:layout_width="wrap_content"
+		android:textColor="#000" 
+		android:textStyle="bold"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:paddingLeft="10dip" 
+		android:layout_centerVertical="true"
+		android:layout_toRightOf="@+id/friends_thumb"
+	/>
+	<TextView 
+		android:layout_height="wrap_content" 
+		android:id="@+id/friends_status"
+		android:text="online" 
+		android:textColor="#99000000"
+		android:layout_width="wrap_content"
+		android:layout_centerVertical="true" 
+		android:layout_alignParentRight="true"
+		android:layout_marginRight="30dip"
+	/>
+</RelativeLayout>
+
+
+

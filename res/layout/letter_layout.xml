@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/letter_parent"
+	android:background="#fff"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent"
+>
+    <RelativeLayout 
+    	android:layout_height="47dip"
+    	android:background="@drawable/top_bg"
+		android:layout_width="fill_parent" 
+		android:id="@+id/parent2"
+		android:layout_alignParentTop="true" 
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentRight="true"
+	
+	>
+        <TextView 
+        	android:id="@+id/textView1" 
+        	android:text="@string/letter_letter"
+			style="@style/TitleTextView"
+		/>
+		<ImageView 
+			android:src="@drawable/icon_refresh"
+			android:scaleType="center"
+			android:id="@+id/refresh" 
+			android:layout_height="wrap_content"
+			android:layout_width="60dip" 
+			android:clickable="true"
+			android:onClick="onRefreshClick"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentRight="true" 
+			android:layout_alignParentTop="true"
+		/>
+		<ImageView 
+			android:layout_toLeftOf="@+id/refresh"
+			android:layout_width="60dip"
+			android:clickable="true"
+			android:onClick="onAddLetterClick"
+			android:scaleType="center"
+			android:layout_height="wrap_content"
+			android:src="@drawable/icon_add"
+			android:layout_alignParentBottom="true" 
+			android:layout_alignParentTop="true"/>
+	</RelativeLayout>
+    <ListView 
+    	android:layout_height="wrap_content"
+		android:layout_width="match_parent" 
+		android:id="@+id/letter_list"
+		android:cacheColorHint="@android:color/transparent"
+		android:layout_below="@+id/parent2"
+		android:layout_alignParentLeft="true" 
+		android:layout_alignParentBottom="true"
+		android:divider="#44808080"
+		android:dividerHeight="0.5dip"
+	/>
+</RelativeLayout>

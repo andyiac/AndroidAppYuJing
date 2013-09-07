@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/relativeLayout1"
+	android:background="#fff"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent"
+>
+	 <RelativeLayout 
+    	android:layout_height="50dip"
+    	android:background="@drawable/top_bg"
+		android:layout_width="fill_parent" 
+		android:id="@+id/relativeLayout2"
+		android:layout_alignParentTop="true" 
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentRight="true"
+	>
+        <TextView 
+        	android:id="@+id/all_friends" 
+			android:text="@string/friends_all_friends" 
+			style="@style/TitleTextView"
+		/>
+	</RelativeLayout>
+    <ListView 
+    	android:layout_height="wrap_content"
+		android:layout_width="match_parent" 
+		android:id="@+id/friends_list"
+		android:cacheColorHint="@android:color/transparent"
+		android:layout_below="@+id/relativeLayout2"
+		android:layout_alignParentLeft="true" 
+		android:layout_alignParentBottom="true"
+		android:divider="#44808080"
+		android:dividerHeight="0.5dip"
+	/>
+	
+	
+</RelativeLayout>
