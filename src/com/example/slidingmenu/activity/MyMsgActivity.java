@@ -21,6 +21,7 @@ import android.support.v4.app.FragmentTransaction;
 
 import com.example.slidingmenu.R;
 import com.example.slidingmenu.fragment.LeftFragment;
+import com.example.slidingmenu.fragment.MyMsgMainFragment;
 import com.example.slidingmenu.fragment.RightFragment;
 import com.example.slidingmenu.fragment.ViewPageFragment;
 import com.example.slidingmenu.fragment.ViewPageFragment.MyPageChangeListener;
@@ -30,7 +31,7 @@ public class MyMsgActivity extends FragmentActivity {
 	SlidingMenu mSlidingMenu;
 	LeftFragment leftFragment;
 	RightFragment rightFragment;
-	ViewPageFragment viewPageFragment;
+	MyMsgMainFragment myMsgMainFragment;
 
 	@Override
 	protected void onCreate(Bundle arg0) {
@@ -58,25 +59,25 @@ public class MyMsgActivity extends FragmentActivity {
 		rightFragment = new RightFragment();
 		t.replace(R.id.right_frame, rightFragment);
 
-		viewPageFragment = new ViewPageFragment();
-		t.replace(R.id.center_frame, viewPageFragment);
+		myMsgMainFragment = new MyMsgMainFragment();
+		t.replace(R.id.center_frame, myMsgMainFragment);
 		t.commit();
 	}
 
 	private void initListener() {
-		viewPageFragment.setMyPageChangeListener(new MyPageChangeListener() {
-			
-			@Override
-			public void onPageSelected(int position) {
-				if(viewPageFragment.isFirst()){
-					mSlidingMenu.setCanSliding(true,false);
-				}else if(viewPageFragment.isEnd()){
-					mSlidingMenu.setCanSliding(false,true);
-				}else{
-					mSlidingMenu.setCanSliding(false,false);
-				}
-			}
-		});
+		myMsgMainFragment.setMyPageChangeListener(new MyMsgMainFragment.MyPageChangeListener() {
+
+            @Override
+            public void onPageSelected(int position) {
+                if (myMsgMainFragment.isFirst()) {
+                    mSlidingMenu.setCanSliding(true, false);
+                } else if (myMsgMainFragment.isEnd()) {
+                    mSlidingMenu.setCanSliding(false, true);
+                } else {
+                    mSlidingMenu.setCanSliding(false, false);
+                }
+            }
+        });
 	}
 
 	public void showLeft() {

@@ -20,10 +20,9 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 
 import com.example.slidingmenu.R;
+import com.example.slidingmenu.fragment.AttendanceActivityFragment;
 import com.example.slidingmenu.fragment.LeftFragment;
 import com.example.slidingmenu.fragment.RightFragment;
-import com.example.slidingmenu.fragment.ViewPageFragment;
-import com.example.slidingmenu.fragment.ViewPageFragment.MyPageChangeListener;
 import com.example.slidingmenu.view.SlidingMenu;
 
 /**
@@ -33,7 +32,7 @@ public class AttendanceActivity extends FragmentActivity {
 	SlidingMenu mSlidingMenu;
 	LeftFragment leftFragment;
 	RightFragment rightFragment;
-	ViewPageFragment viewPageFragment;
+    AttendanceActivityFragment attendMainFragment;
 
 	@Override
 	protected void onCreate(Bundle arg0) {
@@ -61,25 +60,25 @@ public class AttendanceActivity extends FragmentActivity {
 		rightFragment = new RightFragment();
 		t.replace(R.id.right_frame, rightFragment);
 
-		viewPageFragment = new ViewPageFragment();
-		t.replace(R.id.center_frame, viewPageFragment);
+		attendMainFragment = new AttendanceActivityFragment();
+		t.replace(R.id.center_frame, attendMainFragment);
 		t.commit();
 	}
 
 	private void initListener() {
-		viewPageFragment.setMyPageChangeListener(new MyPageChangeListener() {
-			
-			@Override
-			public void onPageSelected(int position) {
-				if(viewPageFragment.isFirst()){
-					mSlidingMenu.setCanSliding(true,false);
-				}else if(viewPageFragment.isEnd()){
-					mSlidingMenu.setCanSliding(false,true);
-				}else{
-					mSlidingMenu.setCanSliding(false,false);
-				}
-			}
-		});
+		attendMainFragment.setMyPageChangeListener(new AttendanceActivityFragment.MyPageChangeListener() {
+
+            @Override
+            public void onPageSelected(int position) {
+                if (attendMainFragment.isFirst()) {
+                    mSlidingMenu.setCanSliding(true, false);
+                } else if (attendMainFragment.isEnd()) {
+                    mSlidingMenu.setCanSliding(false, true);
+                } else {
+                    mSlidingMenu.setCanSliding(false, false);
+                }
+            }
+        });
 	}
 
 	public void showLeft() {

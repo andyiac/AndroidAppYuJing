@@ -20,6 +20,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 
 import com.example.slidingmenu.R;
+import com.example.slidingmenu.fragment.ConfigMainFragment;
 import com.example.slidingmenu.fragment.LeftFragment;
 import com.example.slidingmenu.fragment.RightFragment;
 import com.example.slidingmenu.fragment.ViewPageFragment;
@@ -30,7 +31,7 @@ public class ConfigActivity extends FragmentActivity {
 	SlidingMenu mSlidingMenu;
 	LeftFragment leftFragment;
 	RightFragment rightFragment;
-	ViewPageFragment viewPageFragment;
+	ConfigMainFragment configMainFragment;
 
 	@Override
 	protected void onCreate(Bundle arg0) {
@@ -58,25 +59,25 @@ public class ConfigActivity extends FragmentActivity {
 		rightFragment = new RightFragment();
 		t.replace(R.id.right_frame, rightFragment);
 
-		viewPageFragment = new ViewPageFragment();
-		t.replace(R.id.center_frame, viewPageFragment);
+		configMainFragment = new ConfigMainFragment();
+		t.replace(R.id.center_frame, configMainFragment);
 		t.commit();
 	}
 
 	private void initListener() {
-		viewPageFragment.setMyPageChangeListener(new MyPageChangeListener() {
-			
-			@Override
-			public void onPageSelected(int position) {
-				if(viewPageFragment.isFirst()){
-					mSlidingMenu.setCanSliding(true,false);
-				}else if(viewPageFragment.isEnd()){
-					mSlidingMenu.setCanSliding(false,true);
-				}else{
-					mSlidingMenu.setCanSliding(false,false);
-				}
-			}
-		});
+		configMainFragment.setMyPageChangeListener(new ConfigMainFragment.MyPageChangeListener() {
+
+            @Override
+            public void onPageSelected(int position) {
+                if (configMainFragment.isFirst()) {
+                    mSlidingMenu.setCanSliding(true, false);
+                } else if (configMainFragment.isEnd()) {
+                    mSlidingMenu.setCanSliding(false, true);
+                } else {
+                    mSlidingMenu.setCanSliding(false, false);
+                }
+            }
+        });
 	}
 
 	public void showLeft() {

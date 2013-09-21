@@ -24,6 +24,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.slidingmenu.R;
+import com.example.slidingmenu.activity.AttendanceActivity;
+import com.example.slidingmenu.activity.ConfigActivity;
+import com.example.slidingmenu.activity.ContactActivity;
+import com.example.slidingmenu.activity.EmergencyActivity;
+import com.example.slidingmenu.activity.MyMsgActivity;
+import com.example.slidingmenu.activity.PersonalCenterActivity;
 import com.example.slidingmenu.activity.SlidingActivity;
 
 public class LeftFragment extends Fragment {
@@ -69,37 +75,37 @@ public class LeftFragment extends Fragment {
             Intent intent = new Intent();
             switch (view.getId()) {
                 case R.id.tv_left_tu_fa:
-                    intent.setClass(getActivity(), SlidingActivity.class);
+                    intent.setClass(getActivity(), EmergencyActivity.class);
                     startActivity(intent);
                     getActivity().finish();
 
                     break;
                 case R.id.tv_left_kao_qin:
-                    intent.setClass(getActivity(), SlidingActivity.class);
+                    intent.setClass(getActivity(), AttendanceActivity.class);
                     startActivity(intent);
                     getActivity().finish();
 
                     break;
                 case R.id.tv_left_xiao_xi:
-                    intent.setClass(getActivity(), SlidingActivity.class);
+                    intent.setClass(getActivity(), MyMsgActivity.class);
                     startActivity(intent);
                     getActivity().finish();
 
                     break;
                 case R.id.tv_left_contact:
-                    intent.setClass(getActivity(), SlidingActivity.class);
+                    intent.setClass(getActivity(), ContactActivity.class);
                     startActivity(intent);
                     getActivity().finish();
 
                     break;
                 case R.id.tv_left_person_center:
-                    intent.setClass(getActivity(), SlidingActivity.class);
+                    intent.setClass(getActivity(), PersonalCenterActivity.class);
                     startActivity(intent);
                     getActivity().finish();
 
                     break;
                 case R.id.tv_left_config:
-                    intent.setClass(getActivity(), SlidingActivity.class);
+                    intent.setClass(getActivity(), ConfigActivity.class);
                     startActivity(intent);
                     getActivity().finish();
 
