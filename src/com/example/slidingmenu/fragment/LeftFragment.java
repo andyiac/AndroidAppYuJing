@@ -29,12 +29,13 @@ import com.example.slidingmenu.activity.ConfigActivity;
 import com.example.slidingmenu.activity.ContactActivity;
 import com.example.slidingmenu.activity.EmergencyActivity;
 import com.example.slidingmenu.activity.MyMsgActivity;
+import com.example.slidingmenu.activity.NewsYuJingActivity;
 import com.example.slidingmenu.activity.PersonalCenterActivity;
 import com.example.slidingmenu.activity.SlidingActivity;
 
 public class LeftFragment extends Fragment {
 
-    TextView tuFa, kaoQin, mMessage, mContact, personal_center, mConfig;
+    TextView news,tuFa, kaoQin, mMessage, mContact, personal_center, mConfig;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -52,6 +53,8 @@ public class LeftFragment extends Fragment {
 
     private void initView(View view) {
 
+
+        news = (TextView) view.findViewById(R.id.tv_left_yu_jing);
         tuFa = (TextView) view.findViewById(R.id.tv_left_tu_fa);
         kaoQin = (TextView) view.findViewById(R.id.tv_left_kao_qin);
         mMessage = (TextView) view.findViewById(R.id.tv_left_xiao_xi);
@@ -59,6 +62,7 @@ public class LeftFragment extends Fragment {
         personal_center = (TextView) view.findViewById(R.id.tv_left_person_center);
         mConfig = (TextView) view.findViewById(R.id.tv_left_config);
 
+        news.setOnClickListener(listener);
         tuFa.setOnClickListener(listener);
         kaoQin.setOnClickListener(listener);
         mMessage.setOnClickListener(listener);
@@ -74,6 +78,14 @@ public class LeftFragment extends Fragment {
 
             Intent intent = new Intent();
             switch (view.getId()) {
+
+
+                case R.id.tv_left_yu_jing:
+                    intent.setClass(getActivity(), NewsYuJingActivity.class);
+                    startActivity(intent);
+                    getActivity().finish();
+
+                    break;
                 case R.id.tv_left_tu_fa:
                     intent.setClass(getActivity(), EmergencyActivity.class);
                     startActivity(intent);

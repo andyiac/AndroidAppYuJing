@@ -11,17 +11,33 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
+        android:label="@string/application_name"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.example.slidingmenu.activity.SlidingActivity"
-            android:label="@string/app_name" >
+            android:label="@string/application_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+                android:name="com.example.slidingmenu.activity.AttendanceActivity"
+                ></activity>
+        <activity
+            android:name="com.example.slidingmenu.activity.ConfigActivity"></activity>
+        <activity
+            android:name="com.example.slidingmenu.activity.ContactActivity"></activity>
+        <activity
+            android:name="com.example.slidingmenu.activity.EmergencyActivity"></activity>
+        <activity
+            android:name="com.example.slidingmenu.activity.MyMsgActivity"></activity>
+        <activity
+            android:name="com.example.slidingmenu.activity.PersonalCenterActivity"></activity>
+        <activity
+            android:name="com.example.slidingmenu.activity.NewsYuJingActivity"></activity>
     </application>
 
 </manifest>

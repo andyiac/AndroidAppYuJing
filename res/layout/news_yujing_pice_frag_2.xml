@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color" >
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+        <TextView
+                android:id="@+id/title"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingLeft="20dp"
+                android:text="信息科学与工程学院新闻"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+        <include
+                android:id="@+id/line"
+                android:layout_width="fill_parent"
+                android:layout_height="2px"
+                layout="@layout/line"
+                android:layout_below="@+id/title" >
+        </include>
+
+        <ListView
+                android:id="@+id/lv_news_yujing_xgxy_frag2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/line" >
+        </ListView>
+
+    </RelativeLayout>
+
+</RelativeLayout>
