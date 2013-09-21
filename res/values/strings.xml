@@ -6,7 +6,7 @@
 
 
     <string name="hello">Hello World, ClientActivity!</string>
-    <string name="app_name">Book客户端</string>
+    <string name="app_name">北院预警</string>
     <string name="broadcast_discussion">话题讨论</string>
     <string name="broadcast_activity">话题</string>
     <string name="friends_activity">好友</string>

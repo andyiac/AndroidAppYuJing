@@ -69,12 +69,12 @@
         </include>
 
         <TextView
-            android:id="@+id/my_answer_textview"
+            android:id="@+id/tv_left_tu_fa"
             android:layout_width="fill_parent"
             android:layout_height="50dp"
             android:gravity="center_vertical"
             android:paddingLeft="20dp"
-            android:text="消息"
+            android:text="突发事件"
             android:textColor="@color/text_color"
             android:textSize="15sp" />
 
@@ -85,60 +85,77 @@
         </include>
 
         <TextView
-            android:id="@+id/my_collection_textview"
+            android:id="@+id/tv_left_kao_qin"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="考勤预警"
+            android:textColor="@color/text_color"
+            android:textSize="15sp" />
+
+        <include
+            android:layout_width="fill_parent"
+            android:layout_height="2px"
+            layout="@layout/line" >
+        </include>
+
+        <TextView
+            android:id="@+id/tv_left_xiao_xi"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="我的消息"
+            android:textColor="@color/text_color"
+            android:textSize="15sp" />
+
+        <include
+            android:layout_width="fill_parent"
+            android:layout_height="2px"
+            layout="@layout/line" >
+        </include>
+
+        <TextView
+            android:id="@+id/tv_left_contact"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="联系方式"
+            android:textColor="@color/text_color"
+            android:textSize="15sp" />
+
+        <include
+                android:layout_width="fill_parent"
+                android:layout_height="2px"
+                layout="@layout/line" >
+        </include>
+
+        <TextView
+                android:id="@+id/tv_left_person_center"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:text="个人中心"
+                android:textColor="@color/text_color"
+                android:textSize="15sp" />
+
+
+        <include
+            android:layout_width="fill_parent"
+            android:layout_height="2px"
+            layout="@layout/line" >
+        </include>
+
+        <TextView
+            android:id="@+id/tv_left_config"
             android:layout_width="fill_parent"
             android:layout_height="50dp"
             android:gravity="center_vertical"
             android:paddingLeft="20dp"
             android:text="设置"
-            android:textColor="@color/text_color"
-            android:textSize="15sp" />
-
-        <include
-            android:layout_width="fill_parent"
-            android:layout_height="2px"
-            layout="@layout/line" >
-        </include>
-
-        <TextView
-            android:id="@+id/my_focus_textview"
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:gravity="center_vertical"
-            android:paddingLeft="20dp"
-            android:text="我的关注"
-            android:textColor="@color/text_color"
-            android:textSize="15sp" />
-
-        <include
-            android:layout_width="fill_parent"
-            android:layout_height="2px"
-            layout="@layout/line" >
-        </include>
-
-        <TextView
-            android:id="@+id/my_wallet_textview"
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:gravity="center_vertical"
-            android:paddingLeft="20dp"
-            android:text="我的钱包"
-            android:textColor="@color/text_color"
-            android:textSize="15sp" />
-
-        <include
-            android:layout_width="fill_parent"
-            android:layout_height="2px"
-            layout="@layout/line" >
-        </include>
-
-        <TextView
-            android:id="@+id/my_draft_box_textview"
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:gravity="center_vertical"
-            android:paddingLeft="20dp"
-            android:text="草稿箱"
             android:textColor="@color/text_color"
             android:textSize="15sp" />
     </LinearLayout>
