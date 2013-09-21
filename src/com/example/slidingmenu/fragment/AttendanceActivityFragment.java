@@ -25,6 +25,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.slidingmenu.R;
 import com.example.slidingmenu.activity.AttendanceActivity;
@@ -39,6 +40,8 @@ public class AttendanceActivityFragment extends Fragment {
 	private MyAdapter mAdapter;
 	private ViewPager mPager;
 	private ArrayList<Fragment> pagerItemList = new ArrayList<Fragment>();
+
+    private TextView tvTilte;
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -75,10 +78,17 @@ public class AttendanceActivityFragment extends Fragment {
 
 			}
 		});
-
+        initTitle(mView);
 		return mView;
 	}
 
+    private void initTitle(View view){
+
+        tvTilte = (TextView)view.findViewById(R.id.tv_yujing_center);
+        tvTilte.setText("考勤");
+
+
+    }
 	public void onActivityCreated(Bundle savedInstanceState) {
 
 		super.onActivityCreated(savedInstanceState);

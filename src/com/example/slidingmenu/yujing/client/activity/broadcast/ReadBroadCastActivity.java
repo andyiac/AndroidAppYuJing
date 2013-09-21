@@ -182,7 +182,7 @@ public class ReadBroadCastActivity extends Activity{
 			}
 			try {
 				ResponseParam response = new ResponseParam(res);
-				System.out.println("返回参数："+response.toString());
+//				System.out.println("return params："+response.toString());
 				if (response.getResult() == ResponseParam.RESULT_SUCCESS) {
 					list.add((HashMap)params[1]);
 				}
@@ -227,7 +227,7 @@ public class ReadBroadCastActivity extends Activity{
 		}
 		try {
 			GetTopicComResponseParam response = new GetTopicComResponseParam(res);
-			System.out.println("返回参数："+response.toString());
+//			System.out.println("返回参数："+response.toString());
 			if (response.getResult() != ResponseParam.RESULT_SUCCESS) {
 				return -1;
 			}

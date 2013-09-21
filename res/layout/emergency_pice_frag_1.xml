@@ -1,17 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/bg_color" >
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/bg_color" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="emergency_pice_frag"
-        android:textSize="40sp"
-        android:gravity="center" />
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+        <TextView
+                android:id="@+id/tv_emergency_title"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="可行方案一"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+        <include
+                android:id="@+id/line"
+                android:layout_width="fill_parent"
+                android:layout_height="2px"
+                layout="@layout/line"
+                android:layout_below="@+id/tv_emergency_title" >
+        </include>
+
+        <ListView
+                android:id="@+id/lv_emergency"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/line" >
+        </ListView>
+
+    </RelativeLayout>
 
 </RelativeLayout>

@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/libs/Android_Map_V2.0.4.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libs/MapApiLocation.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libs/MapApiSearch.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libs/armeabi" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-hdpi/bus.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-hdpi/car.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-hdpi/custom_info_bubble.9.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-hdpi/end.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-hdpi/location_marker.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-hdpi/man.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-hdpi/next.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-hdpi/next_disable.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-hdpi/prev.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-hdpi/prev_disable.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-hdpi/start.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/layout/map_main_activity.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/menu/main.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/EmergencyPiceFragment2.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/NewsYuJingPiceFragment1.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/NewsYuJingPiceFragment2.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/example/slidingmenu/map/util/AMapUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/example/slidingmenu/map/util/ChString.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/example/slidingmenu/map/util/Constants.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/example/slidingmenu/map/util/ToastUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/example/slidingmenu/map/wmap/MapMainActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/example/slidingmenu/map/wmap/RouteOverlay.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
 </project>
 

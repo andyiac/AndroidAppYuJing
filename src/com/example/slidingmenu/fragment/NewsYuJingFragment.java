@@ -30,6 +30,7 @@ import com.example.slidingmenu.R;
 import com.example.slidingmenu.activity.NewsYuJingActivity;
 import com.example.slidingmenu.activity.SlidingActivity;
 import com.example.slidingmenu.fragment.pice.fragment.NewsYuJingPiceFragment1;
+import com.example.slidingmenu.fragment.pice.fragment.NewsYuJingPiceFragment2;
 
 import java.util.ArrayList;
 
@@ -48,7 +49,7 @@ public class NewsYuJingFragment extends Fragment {
 		showRight = (Button) mView.findViewById(R.id.showRight);
 		mPager = (ViewPager) mView.findViewById(R.id.pager);
 		NewsYuJingPiceFragment1 page1 = new NewsYuJingPiceFragment1();
-		PageFragment2 page2 = new PageFragment2();
+		NewsYuJingPiceFragment2 page2 = new NewsYuJingPiceFragment2();
 		pagerItemList.add(page1);
 		pagerItemList.add(page2);
 		mAdapter = new MyAdapter(getFragmentManager());

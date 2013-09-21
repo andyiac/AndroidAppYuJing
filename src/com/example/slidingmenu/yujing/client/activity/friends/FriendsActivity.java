@@ -40,7 +40,7 @@ public class FriendsActivity extends BaseActivity implements MsgRefresh {
 	private AllFriendsAdapter fAdapter;
 	private GetAllFriendTask mGetAllFriendTask;
 	private DeleteFriendTask mDeleteFriendTask;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

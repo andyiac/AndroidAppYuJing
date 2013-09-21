@@ -49,10 +49,17 @@ public class NewsYuJingPiceFragment1 extends Fragment {
     }
     private List<String> getData(){
         List<String> data = new ArrayList<String>();
-        data.add("测试数据1");
-        data.add("测试数据2");
-        data.add("测试数据3");
-        data.add("测试数据4");
+        data.add("我校13级新生军训圆满结束...");
+        data.add("法政学院与关心下一代委员...");
+        data.add("我校对师生开展消防安全知...");
+        data.add("张家口市社科联领导莅临我...");
+        data.add("我校召开党外人士中秋座谈...");
+        data.add("我校2013级新生开学典礼暨...");
+        data.add("我校2013级新生开学典礼暨...");
+        data.add("我校2013级新生开学典礼暨...");
+        data.add("我校2013级新生开学典礼暨...");
+        data.add("我校2013级新生开学典礼暨...");
+        data.add("我校2013级新生开学典礼暨...");
         return data;
     }
 

@@ -80,7 +80,7 @@ public class Topic implements DatabaseHelper.TableCreateInterface {
 
 		SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-		db.delete(  Topic.tableName, null, null  );
+		db.delete(Topic.tableName, null, null);
 		db.close();
 	}
 	

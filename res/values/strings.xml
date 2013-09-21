@@ -100,4 +100,19 @@
     <string name="update">检查更新</string>
 
 
+
+
+    <string name="menu1">截屏</string>
+    <string name="menu2">Marker</string>
+    <string name="menu3">PolyLine</string>
+    <string name="menu4">Polygon</string>
+    <string name="menu5">Circle</string>
+    <string name="menu6">卫星地图</string>
+    <string name="menu7">普通地图</string>
+    <string name="menu8">实时路况</string>
+    <string name="menu9">删除标记</string>
+    <string name="menu10">位置跳转</string>
+    <string name="menu11">POI搜索</string>
+    <string name="menu12">路线查询</string>
+
 </resources>

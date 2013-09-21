@@ -58,7 +58,7 @@
             android:layout_height="50dp"
             android:gravity="center_vertical"
             android:paddingLeft="20dp"
-            android:text="预警系统"
+            android:text="北院新闻"
             android:textColor="@color/text_color"
             android:textSize="15sp" />
 

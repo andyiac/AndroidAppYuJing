@@ -14,6 +14,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="android-support-v4" level="project" />
+    <orderEntry type="library" name="Android_Map_V2.0.4" level="project" />
+    <orderEntry type="library" name="MapApiLocation" level="project" />
+    <orderEntry type="library" name="MapApiSearch" level="project" />
   </component>
 </module>
 

@@ -187,7 +187,7 @@ public class BroadCastActivity extends BaseActivity implements MsgRefresh {
 			}
 			try {
 				GetAllTopicResponseParam response = new GetAllTopicResponseParam(res);
-				System.out.println("返回参数：" + response.toString());
+//				System.out.println("返回参数：" + response.toString());
 				if (response.getResult() != GetAllTopicResponseParam.RESULT_SUCCESS) {
 					return -1;
 				}
@@ -243,7 +243,7 @@ public class BroadCastActivity extends BaseActivity implements MsgRefresh {
 			
 		if(broadCastAdapter.getCount() <= 0) {	
 			loadBar.setVisibility(View.INVISIBLE);
-			loadText.setText("当前没有话题。");
+			loadText.setText("当前没有话题");
 		} else {
 			loadParent.setVisibility(View.GONE);
 		}

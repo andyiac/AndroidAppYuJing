@@ -25,11 +25,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.slidingmenu.R;
 import com.example.slidingmenu.activity.EmergencyActivity;
-import com.example.slidingmenu.activity.SlidingActivity;
 import com.example.slidingmenu.fragment.pice.fragment.EmergencyPiceFragment1;
+//import com.example.slidingmenu.fragment.pice.fragment.EmergencyPiceFragment2;
 
 import java.util.ArrayList;
 
@@ -40,17 +41,19 @@ public class EmergencyMainFragment extends Fragment {
 	private MyAdapter mAdapter;
 	private ViewPager mPager;
 	private ArrayList<Fragment> pagerItemList = new ArrayList<Fragment>();
+    private TextView tvTilte;
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View mView = inflater.inflate(R.layout.emergency_view_pager, null);
+		View mView = inflater.inflate(R.layout.view_pager, null);
 		showLeft = (Button) mView.findViewById(R.id.showLeft);
 		showRight = (Button) mView.findViewById(R.id.showRight);
 		mPager = (ViewPager) mView.findViewById(R.id.pager);
         EmergencyPiceFragment1 page1 = new EmergencyPiceFragment1();
-		PageFragment2 page2 = new PageFragment2();
+//        EmergencyPiceFragment2 page2 = new EmergencyPiceFragment2();
+//		PageFragment2 page2 = new PageFragment2();
 		pagerItemList.add(page1);
-		pagerItemList.add(page2);
+//		pagerItemList.add(page2);
 		mAdapter = new MyAdapter(getFragmentManager());
 		mPager.setAdapter(mAdapter);
 		mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -77,9 +80,17 @@ public class EmergencyMainFragment extends Fragment {
 			}
 		});
 
+	    initTitle(mView);
 		return mView;
-	}
+    }
 
+    private void initTitle(View view){
+
+        tvTilte = (TextView)view.findViewById(R.id.tv_yujing_center);
+        tvTilte.setText("突发事件");
+
+
+    }
 	public void onActivityCreated(Bundle savedInstanceState) {
 
 		super.onActivityCreated(savedInstanceState);

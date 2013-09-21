@@ -1,0 +1,34 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   
+    tools:context=".MainActivity" >
+
+    <fragment
+        android:id="@+id/wmap"
+        android:name="com.amap.api.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <LinearLayout
+            android:id="@+id/LinearLayoutLayout_index_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:gravity="bottom|center_horizontal"
+            android:visibility="gone" >
+
+            <ImageButton
+                android:id="@+id/pre_index"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:background="@drawable/prev" />
+
+            <ImageButton
+                android:id="@+id/next_index"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:background="@drawable/next" />
+        </LinearLayout>
+
+</RelativeLayout>

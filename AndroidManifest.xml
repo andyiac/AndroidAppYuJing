@@ -8,19 +8,34 @@
         android:minSdkVersion="7"
         android:targetSdkVersion="8" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+
+
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/application_name"
         android:theme="@style/AppTheme" >
+
+        <meta-data android:name="com.amap.api.v2.apikey" android:value="cf15209f6f0841e706ba54499f108c89"/>
+
         <activity
             android:name="com.example.slidingmenu.activity.SlidingActivity"
             android:label="@string/application_name" >
-            <intent-filter>
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
 
         <activity
@@ -37,7 +52,17 @@
         <activity
             android:name="com.example.slidingmenu.activity.PersonalCenterActivity"></activity>
         <activity
-            android:name="com.example.slidingmenu.activity.NewsYuJingActivity"></activity>
+            android:name="com.example.slidingmenu.activity.NewsYuJingActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            </activity>
+        <activity android:name=".map.RapidPositioning"/>
+        <activity
+            android:name="com.example.slidingmenu.map.wmap.MapMainActivity"></activity>
     </application>
 
 </manifest>
