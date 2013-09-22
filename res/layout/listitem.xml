@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/list_item_parent_layout"
+        >
+    <!--  <TextView android:id="@+id/text_first_char_hint"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:background="@null"
+                android:textColor="@*android:color/dim_foreground_light"
+                android:paddingLeft="@dimen/list_item_first_char_padding"
+                android:visibility="gone">
+      </TextView>-->
+
+    <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+        <LinearLayout
+                android:id="@+id/linear"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1">
+            <TextView android:id="@+id/text_website_name"
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:textColor="@android:color/black"
+                      android:textSize="20sp"
+                      android:singleLine="true"
+                      android:ellipsize="marquee"
+                    ></TextView>
+
+            <TextView android:id="@+id/text_website_phone"
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:textColor="@android:color/black"
+                      android:textSize="15sp"
+                      android:singleLine="true"
+                      android:ellipsize="marquee"
+                    ></TextView>
+        </LinearLayout>
+        <View android:id="@+id/divider"
+              android:background="@*android:color/dim_foreground_dark"
+              android:focusable="false"
+              android:clickable="false"
+              android:longClickable="false"
+              android:layout_marginTop="@dimen/list_item_divider_margin"
+              android:layout_marginBottom="@dimen/list_item_divider_margin"
+              android:layout_width="1dp"
+              android:layout_height="fill_parent"
+              android:gravity="center_vertical"
+                ></View>
+    </LinearLayout>
+</LinearLayout>
+
