@@ -16,6 +16,7 @@
 package com.example.slidingmenu.fragment.pice.fragment;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -37,26 +38,27 @@ import java.util.List;
 public class EmergencyPiceFragment1 extends Fragment {
 
     ListView listView;
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.emergency_pice_frag_1, null);
+
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.emergency_pice_frag_1, null);
 
         init(view);
-		return view;
-	}
+        return view;
+    }
 
-	public void onActivityCreated(Bundle savedInstanceState) {
-		super.onActivityCreated(savedInstanceState);
-	}
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    }
 
-    private void init(View view){
+    private void init(View view) {
 
-        listView = (ListView)view.findViewById(R.id.lv_emergency);
-        listView.setAdapter(new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_expandable_list_item_1,getData()));
+        listView = (ListView) view.findViewById(R.id.lv_emergency);
+        listView.setAdapter(new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_expandable_list_item_1, getData()));
         listView.setOnItemClickListener(onItemClickListener);
     }
 
-    private List<String> getData(){
+    private List<String> getData() {
         List<String> data = new ArrayList<String>();
         data.add("快速定位");
         data.add("紧急呼救");
@@ -72,25 +74,36 @@ public class EmergencyPiceFragment1 extends Fragment {
     private AdapterView.OnItemClickListener onItemClickListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-            switch (i){
+            Intent intent = new Intent();
+            switch (i) {
                 case 0:
-
-//                    Toast.makeText(EmergencyPiceFragment1.this.getActivity(),"快速定位",Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent();
+//                  Toast.makeText(EmergencyPiceFragment1.this.getActivity(),"快速定位",Toast.LENGTH_LONG).show();
                     intent.setClass(EmergencyPiceFragment1.this.getActivity(), MapMainActivity.class);
                     startActivity(intent);
-
-
                     break;
                 case 1:
+                    intent=new Intent("android.intent.action.CALL", Uri.parse("tel:" + 10001));
+                    startActivity(intent);
                     break;
                 case 2:
+                    intent=new Intent("android.intent.action.CALL", Uri.parse("tel:" + 10001));
+                    startActivity(intent);
                     break;
                 case 3:
+                    intent=new Intent("android.intent.action.CALL", Uri.parse("tel:" + 10001));
+                    startActivity(intent);
                     break;
                 case 4:
+                    intent=new Intent("android.intent.action.CALL", Uri.parse("tel:" + 10001));
+                    startActivity(intent);
                     break;
                 case 5:
+                    intent=new Intent("android.intent.action.CALL", Uri.parse("tel:" + 10001));
+                    startActivity(intent);
+                    break;
+                case 6:
+                    intent=new Intent("android.intent.action.CALL", Uri.parse("tel:" + 10001));
+                    startActivity(intent);
                     break;
             }
         }

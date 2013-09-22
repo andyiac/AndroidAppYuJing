@@ -81,7 +81,7 @@ public class PersonCenterPiceFragment1 extends Fragment {
         map4.put("item", "现居地");
         map5.put("item", "血型");
         map6.put("item", "职业");
-        map7.put("item", "职业");
+        map7.put("item", "公司");
 
         map_list1.add(map1);
         map_list1.add(map2);

@@ -51,9 +51,9 @@ public class EmergencyMainFragment extends Fragment {
 		mPager = (ViewPager) mView.findViewById(R.id.pager);
         EmergencyPiceFragment1 page1 = new EmergencyPiceFragment1();
 //        EmergencyPiceFragment2 page2 = new EmergencyPiceFragment2();
-//		PageFragment2 page2 = new PageFragment2();
+		PageFragment2 page2 = new PageFragment2();
 		pagerItemList.add(page1);
-//		pagerItemList.add(page2);
+		pagerItemList.add(page2);
 		mAdapter = new MyAdapter(getFragmentManager());
 		mPager.setAdapter(mAdapter);
 		mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
