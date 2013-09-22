@@ -55,9 +55,8 @@ public class RightFragment extends Fragment implements ListView.OnScrollListener
     private LinearLayout layout;
 
     private WindowManager windowManager;
-    private String[] stringArr = {"阿武", "阿布", "贝贝", "成成", "王辉",
-            "张明", "张伟宁", "张川", "张宁", "张萍","阿武", "阿布", "贝贝", "成成", "王辉",
-            "张明", "张伟宁", "张川", "张宁", "张萍"};
+    private String[] stringArr = {"阿武", "阿布", "阿武", "阿布","贝贝", "贝贝","成成","成成", "王辉","王辉",
+            "张明", "张伟宁", "张川", "张宁", "张萍","张明", "张伟宁", "张川", "张宁", "张萍"};
 
     private String[] telephone = {"15369317720", "15369317750", "15869331457", "15230389135", "15369347750", "15369317720", "15369317750", "15869331457", "15230389135", "15369347750","15369317720", "15369317750", "15869331457", "15230389135", "15369347750", "15369317720", "15369317750", "15869331457", "15230389135", "15369347750"};
 
@@ -172,15 +171,9 @@ public class RightFragment extends Fragment implements ListView.OnScrollListener
                 .setOnTouchingLetterChangedListener(new LetterListViewListener());
 
         handler = new Handler();
-        // 初始化首字母悬浮提示框
-//        txtOverlay = (TextView) LayoutInflater.from(getActivity().getApplicationContext()).inflate(
-//                R.layout.popup_char, null);
-//        txtOverlay.setVisibility(View.INVISIBLE);
-//        View view2 = LayoutInflater.from(getActivity().getApplicationContext()).inflate(
-//                R.layout.addview, null);
-        layout = (LinearLayout) view.findViewById(R.id.linear);
 
-//        add = (TextView) view2.findViewById(R.id.add);
+
+
         WindowManager.LayoutParams lp = new WindowManager.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT,
                 WindowManager.LayoutParams.TYPE_APPLICATION,
