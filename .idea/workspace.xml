@@ -30,6 +30,9 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="com.example.slidingmenu" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="142a6c5e-60e6-4945-92e8-cfb03d7b8850" name="Default" comment="" />
     <ignored path="SlidingMenu-master.iws" />
@@ -120,19 +123,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ConfigMainFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/ConfigMainFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="21" selection-start="2085" selection-end="2085" vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="2375">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CornerListView.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/test/CornerListView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="0" selection-start="1848" selection-end="1848" vertical-scroll-proportion="0.0" vertical-offset="768" max-vertical-offset="1292">
+            <state line="60" column="0" selection-start="1848" selection-end="1848" vertical-scroll-proportion="0.0" vertical-offset="1121" max-vertical-offset="1406">
               <folding />
             </state>
           </provider>
@@ -141,7 +135,7 @@
       <file leaf-file-name="view_pager.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/view_pager.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="42" selection-start="746" selection-end="746" vertical-scroll-proportion="-2.0" vertical-offset="379" max-vertical-offset="1083">
+            <state line="23" column="42" selection-start="746" selection-end="746" vertical-scroll-proportion="0.0" vertical-offset="379" max-vertical-offset="1083">
               <folding />
             </state>
           </provider>
@@ -150,61 +144,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="simple_list_item_1.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/simple_list_item_1.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="27" selection-start="713" selection-end="713" vertical-scroll-proportion="-12.448276" vertical-offset="0" max-vertical-offset="779">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersonCenterPiceFragment1.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PersonCenterPiceFragment1.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/PersonCenterPiceFragment1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="28" selection-start="2989" selection-end="2989" vertical-scroll-proportion="0.71088433" vertical-offset="817" max-vertical-offset="1691">
-              <folding>
-                <element signature="e#2327#2343#0" expanded="true" />
-                <element signature="e#2397#2413#0" expanded="true" />
-                <element signature="e#2467#2483#0" expanded="true" />
-                <element signature="e#2537#2553#0" expanded="true" />
-                <element signature="e#2607#2623#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConfigPiceFragment1.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/ConfigPiceFragment1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="5" selection-start="3363" selection-end="3743" vertical-scroll-proportion="0.0" vertical-offset="1262" max-vertical-offset="1786">
-              <folding>
-                <element signature="e#2449#2465#0" expanded="true" />
-                <element signature="e#2519#2535#0" expanded="true" />
-                <element signature="e#2589#2605#0" expanded="true" />
-                <element signature="e#2659#2675#0" expanded="true" />
-                <element signature="e#2729#2745#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersonalCenterActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/activity/PersonalCenterActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="13" selection-start="1324" selection-end="1324" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1311">
+            <state line="92" column="0" selection-start="3197" selection-end="3197" vertical-scroll-proportion="0.0" vertical-offset="1729" max-vertical-offset="2242">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PersonalCenterMainFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/PersonalCenterMainFragment.java">
+      <file leaf-file-name="EmergencyMainFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/EmergencyMainFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="17" selection-start="2140" selection-end="2140" vertical-scroll-proportion="0.0" vertical-offset="109" max-vertical-offset="2375">
+            <state line="55" column="31" selection-start="2168" selection-end="2168" vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="3249">
               <folding />
             </state>
           </provider>
@@ -213,21 +165,54 @@
       <file leaf-file-name="EmergencyPiceFragment1.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/EmergencyPiceFragment1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="19" selection-start="2124" selection-end="2124" vertical-scroll-proportion="0.0" vertical-offset="445" max-vertical-offset="1387">
+            <state line="40" column="0" selection-start="1280" selection-end="1280" vertical-scroll-proportion="0.0" vertical-offset="741" max-vertical-offset="2261">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main_config.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/main_config.xml">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="4" selection-start="1214" selection-end="1214" vertical-scroll-proportion="0.31034482" vertical-offset="731" max-vertical-offset="1197">
+            <state line="67" column="11" selection-start="2942" selection-end="2942" vertical-scroll-proportion="0.8707483" vertical-offset="1017" max-vertical-offset="1387">
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="android-designer">
-            <state />
+        </entry>
+      </file>
+      <file leaf-file-name="EmergencyPiceFragment2.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/EmergencyPiceFragment2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="13" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.0" vertical-offset="589" max-vertical-offset="1520">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConfigPiceFragment1.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/ConfigPiceFragment1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="113" column="5" selection-start="3363" selection-end="3743" vertical-scroll-proportion="0.0" vertical-offset="2128" max-vertical-offset="2337">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonalCenterActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/activity/PersonalCenterActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="13" selection-start="1324" selection-end="1324" vertical-scroll-proportion="0.0" vertical-offset="608" max-vertical-offset="1843">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonalCenterMainFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/PersonalCenterMainFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="54" column="17" selection-start="2140" selection-end="2140" vertical-scroll-proportion="0.0" vertical-offset="1007" max-vertical-offset="3116">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -250,10 +235,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/example/slidingmenu/yujing/client/database/table/Topic.java" />
         <option value="$PROJECT_DIR$/.idea/encodings.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/fragment/EmergencyMainFragment.java" />
         <option value="$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/NewsYuJingPiceFragment1.java" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/EmergencyPiceFragment1.java" />
         <option value="$PROJECT_DIR$/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/res/layout/edit_service.xml" />
@@ -264,6 +246,9 @@
         <option value="$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/ConfigPiceFragment1.java" />
         <option value="$PROJECT_DIR$/src/com/example/slidingmenu/fragment/PersonalCenterMainFragment.java" />
         <option value="$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/PersonCenterPiceFragment1.java" />
+        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/fragment/EmergencyMainFragment.java" />
+        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/EmergencyPiceFragment1.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
       </list>
     </option>
   </component>
@@ -326,6 +311,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -485,7 +471,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -503,12 +488,12 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.SHOW" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -691,7 +676,6 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29103345" sideWeight="0.59435624" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.51760566" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
@@ -712,6 +696,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29103345" sideWeight="0.59435624" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922536" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -720,13 +705,13 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24924012" sideWeight="0.67291313" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270869" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270869" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -804,33 +789,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/layout/edit_service.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="437">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/test/RoundCornerActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="13" selection-start="565" selection-end="565" vertical-scroll-proportion="0.0" vertical-offset="168" max-vertical-offset="1368">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/EmergencyMainFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="0" selection-start="3134" selection-end="3134" vertical-scroll-proportion="0.0" vertical-offset="1567" max-vertical-offset="2983">
-          <folding>
-            <element signature="e#0#4215#0" expanded="false" />
-            <element signature="e#1550#1560#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
@@ -860,13 +818,6 @@
             <element signature="e#2287#2772#0" expanded="false" />
             <element signature="e#2761#2762#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/EmergencyPiceFragment1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="19" selection-start="2124" selection-end="2124" vertical-scroll-proportion="0.0" vertical-offset="445" max-vertical-offset="1387">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -913,7 +864,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/view_pager.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="42" selection-start="746" selection-end="746" vertical-scroll-proportion="-2.0" vertical-offset="379" max-vertical-offset="1083">
+        <state line="23" column="42" selection-start="746" selection-end="746" vertical-scroll-proportion="0.0" vertical-offset="379" max-vertical-offset="1083">
           <folding />
         </state>
       </provider>
@@ -931,26 +882,42 @@
     <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/ConfigPiceFragment1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="113" column="5" selection-start="3363" selection-end="3743" vertical-scroll-proportion="0.0" vertical-offset="1262" max-vertical-offset="1786">
-          <folding>
-            <element signature="e#2449#2465#0" expanded="true" />
-            <element signature="e#2519#2535#0" expanded="true" />
-            <element signature="e#2589#2605#0" expanded="true" />
-            <element signature="e#2659#2675#0" expanded="true" />
-            <element signature="e#2729#2745#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/PersonCenterPiceFragment1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="28" selection-start="2989" selection-end="2989" vertical-scroll-proportion="0.71088433" vertical-offset="817" max-vertical-offset="1691">
-          <folding>
-            <element signature="e#2327#2343#0" expanded="true" />
-            <element signature="e#2397#2413#0" expanded="true" />
-            <element signature="e#2467#2483#0" expanded="true" />
-            <element signature="e#2537#2553#0" expanded="true" />
-            <element signature="e#2607#2623#0" expanded="true" />
-          </folding>
+        <state line="92" column="0" selection-start="3197" selection-end="3197" vertical-scroll-proportion="0.0" vertical-offset="817" max-vertical-offset="1691">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/EmergencyPiceFragment2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="13" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="1026">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/EmergencyMainFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="31" selection-start="2168" selection-end="2168" vertical-scroll-proportion="0.0" vertical-offset="312" max-vertical-offset="2755">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/EmergencyPiceFragment1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="0" selection-start="1280" selection-end="1280" vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="1615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="11" selection-start="2942" selection-end="2942" vertical-scroll-proportion="0.8707483" vertical-offset="1017" max-vertical-offset="1387">
+          <folding />
         </state>
       </provider>
     </entry>
