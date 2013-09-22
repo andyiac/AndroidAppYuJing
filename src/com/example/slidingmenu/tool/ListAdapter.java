@@ -15,6 +15,8 @@ import java.util.Map;
 
 /**
  * Created by Administrator on 13-9-21.
+ *
+ *
  */
 public class ListAdapter extends BaseAdapter {
 
