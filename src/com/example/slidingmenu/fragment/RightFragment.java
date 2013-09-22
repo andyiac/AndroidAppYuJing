@@ -38,6 +38,8 @@ import net.sourceforge.pinyin4j.PinyinHelper;
 import net.sourceforge.pinyin4j.format.HanyuPinyinOutputFormat;
 import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
 
+import java.lang.reflect.Array;
+import java.text.Collator;
 import java.util.*;
 
 public class RightFragment extends Fragment implements
@@ -59,9 +61,10 @@ public class RightFragment extends Fragment implements
 	private LinearLayout layout;
 
 	private WindowManager windowManager;
-	private String[] stringArr = { "阿武", "阿布", "阿武", "阿布", "贝贝", "贝贝", "成成",
+	private String[] firstArray = { "阿武", "阿布", "阿武", "阿布", "贝贝", "贝贝", "成成",
 			"成成", "王辉", "王辉", "张明", "张伟宁", "张川", "张宁", "张萍", "张明", "张伟宁", "张川",
 			"张宁", "张萍" };
+	private String[] stringArr = null;
 
 	private String[] telephone = { "15369317720", "15369317750", "15869331457",
 			"15230389135", "15369347750", "15369317720", "15369317750",
@@ -76,6 +79,17 @@ public class RightFragment extends Fragment implements
 	private ArrayList arrayList3 = new ArrayList();
 	private Map<String, String> map = new HashMap<String, String>();
 	private Map<String, String> map2 = new HashMap<String, String>();
+
+	private String[] order(String[] array) {
+		Comparator<Object> com = Collator.getInstance(java.util.Locale.CHINA);
+		Arrays.sort(array, com);
+		for (String i : array) {
+			Log.i("order", i);
+
+		}
+		return array;
+
+	}
 
 	public String converterToPinYin(String chinese) {
 		String pinyinString = "";
@@ -111,7 +125,6 @@ public class RightFragment extends Fragment implements
 	public void onItemClick(AdapterView<?> adapterView, View view,
 			int position, long l) {
 		String personalName = map.get(stringArr[position]);
-		Toast.makeText(getActivity(), personalName, Toast.LENGTH_SHORT).show();
 
 	}
 
@@ -134,7 +147,6 @@ public class RightFragment extends Fragment implements
 			}
 
 			listMain.setSelectionFromTop(num, 0);
-			// .setSelection(num);
 
 		}
 
@@ -159,6 +171,9 @@ public class RightFragment extends Fragment implements
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 		// mContext = getActivity().getApplicationContext();
+
+		stringArr = order(firstArray);
+
 		for (int i = 0; i < stringArr.length; i++) {
 			String pinyin = converterToPinYin(stringArr[i]);
 			arrayList.add(pinyin);
@@ -171,7 +186,9 @@ public class RightFragment extends Fragment implements
 			map2.put(stringArr[i], telephone[i]);
 
 		}
+		Log.i("pinyin", map + "");
 
+		// 得到所有的拼音
 		stringArr = (String[]) arrayList.toArray(stringArr);
 
 		arrayList3.add("#");
@@ -198,11 +215,7 @@ public class RightFragment extends Fragment implements
 				WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
 						| WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
 				PixelFormat.TRANSLUCENT);
-		/*
-		 * windowManager =
-		 * (WindowManager)getActivity().getApplicationContext().getSystemService
-		 * (Context.WINDOW_SERVICE); windowManager.addView(txtOverlay, lp);
-		 */
+
 		// 初始化ListAdapter
 		listAdapter = new com.example.slidingmenu.tool.ListAdapter(
 				getActivity(), stringArr, telephone, this, map, map2);
