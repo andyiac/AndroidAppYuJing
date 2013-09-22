@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    
+    android:background="@drawable/pageone" >
+
+ 
+        <ImageView
+            android:id="@+id/myclass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           
+               android:layout_centerHorizontal="true"
+           
+        
+      android:layout_marginTop="@dimen/top_length"
+            android:src="@drawable/myclass" >
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/addStudent"
+                 android:layout_centerHorizontal="true"
+         
+         
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/myclass"
+           android:layout_marginTop="@dimen/top_lengthlast"
+            android:src="@drawable/addstduent" >
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/startName"
+                 android:layout_centerHorizontal="true"
+         
+              android:layout_marginTop="@dimen/top_length3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/addStudent"
+            android:src="@drawable/startname" >
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/exit"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/startName"
+             android:layout_marginTop="@dimen/top_length3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/exit" >
+        </ImageView>
+
+
+</RelativeLayout>

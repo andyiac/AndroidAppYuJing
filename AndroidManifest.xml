@@ -38,6 +38,18 @@
             android:name="com.example.slidingmenu.activity.PersonalCenterActivity"></activity>
         <activity
             android:name="com.example.slidingmenu.activity.NewsYuJingActivity"></activity>
+        
+          <activity
+            android:name="com.example.slidingmenu.activity.CheckClasses"></activity>
+           <activity
+            android:name="com.example.slidingmenu.activity.Addstudents"></activity>
+             <activity
+                 android:theme="@android:style/Theme.Dialog"
+              
+            android:name="com.example.slidingmenu.activity.DialogStudentActivity"></activity>
+        
+        
+         
     </application>
 
 </manifest>

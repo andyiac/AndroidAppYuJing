@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/bg_color" >
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+  
+                    
+
+
+        <TextView
+                android:id="@+id/title"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingLeft="20dp"
+                android:text="班级总汇"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+        <include
+                android:id="@+id/line"
+                android:layout_width="fill_parent"
+                android:layout_height="2px"
+                layout="@layout/line"
+                android:layout_below="@+id/title" >
+        </include>
+
+    
+        <ListView
+                 android:id="@+id/lv_attendence_yujing_bfxy_frag1"
+                 android:layout_width="match_parent"
+                 android:layout_height="300dp"
+                android:layout_below="@+id/line" >
+        </ListView>
+        
+    <EditText
+        
+        android:layout_height="50dp"
+        android:layout_width="260dp"
+        android:id="@+id/edt"
+        android:hint="添加班级"
+        android:textSize="20sp"
+        android:layout_marginRight="2dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        
+        >
+        
+   
+
+</EditText>
+
+    <Button
+        
+        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:id="@+id/button"
+        android:text="确定"
+         android:textSize="20sp"
+         android:layout_alignParentBottom="true"
+         android:layout_alignParentRight="true"
+        >
+        </Button>
+    </RelativeLayout>
+
+</RelativeLayout>
