@@ -30,6 +30,7 @@ import android.widget.TextView;
 import com.example.slidingmenu.R;
 import com.example.slidingmenu.activity.AttendanceActivity;
 import com.example.slidingmenu.activity.SlidingActivity;
+import com.example.slidingmenu.fragment.pice.fragment.AttendancePiceFragment1;
 
 import java.util.ArrayList;
 
@@ -49,10 +50,11 @@ public class AttendanceActivityFragment extends Fragment {
 		showLeft = (Button) mView.findViewById(R.id.showLeft);
 		showRight = (Button) mView.findViewById(R.id.showRight);
 		mPager = (ViewPager) mView.findViewById(R.id.pager);
-		PageFragment1 page1 = new PageFragment1();
-		PageFragment2 page2 = new PageFragment2();
-		pagerItemList.add(page1);
-		pagerItemList.add(page2);
+		//PageFragment1 page1 = new PageFragment1();
+		AttendancePiceFragment1 attendancePiceFragment1 = new AttendancePiceFragment1();
+		//PageFragment2 page2 = new PageFragment2();
+		pagerItemList.add(attendancePiceFragment1);
+		//pagerItemList.add(page2);
 		mAdapter = new MyAdapter(getFragmentManager());
 		mPager.setAdapter(mAdapter);
 		mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {

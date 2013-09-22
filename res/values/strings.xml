@@ -3,8 +3,6 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
-
-
     <string name="hello">Hello World, ClientActivity!</string>
     <string name="app_name">北院预警</string>
     <string name="application_name">河北北方学院预警系统</string>
@@ -54,6 +52,7 @@
     <string name="sign_phone">手机号</string>
     <string name="sign_sex">选择性别</string>
     <string name="sign_address">选择地址</string>
+
     <string-array name="pick_sex">
         <item>男</item>
         <item>女</item>
@@ -66,6 +65,7 @@
         <item>广州</item>
         <item>重庆</item>
     </string-array>
+
     <string name="boy">男</string>
     <string name="girl">女</string>
     <string name="send_letter">发送私信</string>
@@ -98,13 +98,7 @@
     <string name="empty_topic_content">话题内容不能为空</string>
     <string name="version">版本 V1.0</string>
     <string name="update">检查更新</string>
-
     <string name="setting">设置</string>
-
-
-
-
-
     <string name="menu1">截屏</string>
     <string name="menu2">Marker</string>
     <string name="menu3">PolyLine</string>
@@ -117,5 +111,21 @@
     <string name="menu10">位置跳转</string>
     <string name="menu11">POI搜索</string>
     <string name="menu12">路线查询</string>
+
+    <string name="item_student_hint1">请输入姓名:</string>
+    <string name="item_student_btn_edit">编辑</string>
+    <string name="item_student_hint3">请输入班级:</string>
+    <string name="item_student_hint2">请输入电话:</string>
+    <string name="item_student_btn_send">添加</string>
+    <string name="list1">
+        <a>您要添加的姓名</a>
+    </string>
+    <string name="list2">
+        <a>您要添加的电话</a>
+    </string>
+    <string name="list3">
+        <a>您要添加的班级</a>
+    </string>
+
 
 </resources>
