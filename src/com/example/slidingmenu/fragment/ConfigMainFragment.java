@@ -25,10 +25,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.slidingmenu.R;
 import com.example.slidingmenu.activity.ConfigActivity;
 import com.example.slidingmenu.activity.SlidingActivity;
+import com.example.slidingmenu.fragment.pice.fragment.ConfigPiceFragment1;
 
 import java.util.ArrayList;
 
@@ -45,11 +47,18 @@ public class ConfigMainFragment extends Fragment {
 		View mView = inflater.inflate(R.layout.view_pager, null);
 		showLeft = (Button) mView.findViewById(R.id.showLeft);
 		showRight = (Button) mView.findViewById(R.id.showRight);
+
+        //设置状态不可见
+        showRight.setVisibility(View.INVISIBLE);
+        //
+        TextView textView = (TextView) mView.findViewById(R.id.tv_yujing_center);
+        textView.setText("设置中心");
+
 		mPager = (ViewPager) mView.findViewById(R.id.pager);
-		PageFragment1 page1 = new PageFragment1();
-		PageFragment2 page2 = new PageFragment2();
+        ConfigPiceFragment1 page1 = new ConfigPiceFragment1();
+//		PageFragment2 page2 = new PageFragment2();
 		pagerItemList.add(page1);
-		pagerItemList.add(page2);
+//		pagerItemList.add(page2);
 		mAdapter = new MyAdapter(getFragmentManager());
 		mPager.setAdapter(mAdapter);
 		mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {

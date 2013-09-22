@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/libs/MapApiLocation.jar" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/libs/MapApiSearch.jar" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/libs/armeabi" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-hdpi/arrow.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/res/drawable-hdpi/bus.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/drawable-hdpi/car.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/drawable-hdpi/custom_info_bubble.9.png" charset="UTF-8" />
@@ -16,7 +17,17 @@
     <file url="file://$PROJECT_DIR$/res/drawable-hdpi/prev.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/drawable-hdpi/prev_disable.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/drawable-hdpi/start.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable/app_list_corner_round.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/res/drawable/app_list_corner_round_bottom.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/res/drawable/app_list_corner_round_top.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/res/drawable/app_list_corner_shape.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/res/drawable/shape_bg_listview.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/res/layout/edit_service.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/res/layout/inputview.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/res/layout/map_main_activity.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/layout/setting_main.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/res/layout/simple_list_item_1.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/res/layout/simple_list_item_2.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/res/menu/main.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/EmergencyPiceFragment2.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/NewsYuJingPiceFragment1.java" charset="UTF-8" />
@@ -27,6 +38,7 @@
     <file url="file://$PROJECT_DIR$/src/com/example/slidingmenu/map/util/ToastUtil.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/example/slidingmenu/map/wmap/MapMainActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/example/slidingmenu/map/wmap/RouteOverlay.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/example/slidingmenu/test/RoundCornerActivity.java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
