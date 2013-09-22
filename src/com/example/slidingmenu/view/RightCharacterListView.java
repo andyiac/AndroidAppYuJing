@@ -11,6 +11,8 @@ import android.view.View;
 
 /**
  * Created by Administrator on 13-9-21.
+ *
+ *
  */
 public class RightCharacterListView extends View {
 
