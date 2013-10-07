@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/add"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <ImageView
+            android:id="@+id/phone"
+            android:layout_height="30dp"
+            android:layout_width="30dp"
+            android:src="@drawable/call"
+            android:layout_weight="1"
+            ></ImageView>
+
+    <ImageView
+            android:id="@+id/message"
+            android:layout_height="30dp"
+            android:layout_width="30dp"
+            android:src="@drawable/msg"
+            android:layout_weight="1"
+            ></ImageView>
+</LinearLayout>
