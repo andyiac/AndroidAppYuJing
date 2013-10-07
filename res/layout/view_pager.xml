@@ -2,21 +2,23 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff" >
+    android:background="#ffffff" >
 
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/head_layout"
         android:padding="5dip"
-        android:background="#fff" >
+        android:background="@color/tab_focus" >
 
         <Button
             android:id="@+id/showLeft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/icon_left"
             android:layout_alignParentLeft="true"
-            android:text="ShowLeft" />
+                />
+
 
 
 
@@ -37,7 +39,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_gravity="right"
-            android:text="ShowRight" />
+            android:background="@drawable/icon_more"
+                />
         
     </RelativeLayout>
 
@@ -46,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/head_layout"
-        android:background="#B847FF" >
+        android:background="@color/tab_focus" >
     </android.support.v4.view.ViewPager>
 
 </RelativeLayout>

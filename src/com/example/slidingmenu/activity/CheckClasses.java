@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
@@ -26,7 +27,7 @@ import android.widget.TextView;
 public class CheckClasses extends Activity implements OnClickListener {
 	private ListView ls;
 	private EditText edtext;
-	private Button mybutton;
+	private Button mybutton,back;
 	private MyAdapter myAdapter;
 	List<String> data;
 
@@ -34,10 +35,18 @@ public class CheckClasses extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.check_myclasses);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.check_myclasses);
 
+        back = (Button) this.findViewById(R.id.btn_check_myclasses);
 		edtext = (EditText) this.findViewById(R.id.edt);
 		mybutton = (Button) this.findViewById(R.id.button);
+        back.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CheckClasses.this.finish();
+            }
+        });
 
 		data = new ArrayList<String>();
 		data.add("信工一班");

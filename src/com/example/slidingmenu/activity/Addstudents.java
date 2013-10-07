@@ -18,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,7 +26,7 @@ import android.widget.ListView;
 
 public class Addstudents extends Activity {
 	private ListView listView;
-	private Button mybutton;
+	private Button mybutton,back;
 	private StudentBaseAdapter listItemAdapter;
 
 	private List<Map<String, String>> list1 = new ArrayList<Map<String, String>>();
@@ -36,13 +37,21 @@ public class Addstudents extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_menu);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_menu);
 		list1 = initDada();
 
 		initListView();
 		addDada2ListView();
 
 		mybutton = (Button) this.findViewById(R.id.btn_add);
+        back = (Button) this.findViewById(R.id.btn_add_student);
+        back.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Addstudents.this.finish();
+            }
+        });
 
 		mybutton.setOnClickListener(new OnClickListener() {
 

@@ -17,6 +17,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -87,18 +89,20 @@ public class MapMainActivity extends FragmentActivity implements
 	double lat=0;
 	double lng=0;
 	/*
-	 * Â·¾¶µ¼º½±äÁ¿
+	 * Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	private List<Route> routeResult;
 	private RouteOverlay routeOverlay;
 	private Route route;
 	private LinearLayout routeNav;
 	private ImageButton routePre, routeNext;
-	private int mode = Route.BusDefault;//BusDefault Â·¾¶Îª¹«½»Ä£Ê½¡£DrivingDefault Â·¾¶Îª×Ô¼ÝÄ£Ê½¡£WalkDefault Â·¾¶Îª²½ÐÐÄ£Ê½¡£
+	private int mode = Route.BusDefault;//BusDefault Â·ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½DrivingDefault Â·ï¿½ï¿½Îªï¿½Ô¼ï¿½Ä£Ê½ï¿½ï¿½WalkDefault Â·ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½
+    private Button button;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.map_main_activity);
 		init();
 		
@@ -140,7 +144,16 @@ public class MapMainActivity extends FragmentActivity implements
 			}
 		});
 				
-	}
+	button = (Button) findViewById(R.id.btn_map_back);
+        button.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MapMainActivity.this.finish();
+            }
+        });
+
+
+    }
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -149,7 +162,7 @@ public class MapMainActivity extends FragmentActivity implements
 		return true;
 	}	
 	/*
-	 * µØÍ¼³õÊ¼»¯
+	 * ï¿½ï¿½Í¼ï¿½ï¿½Ê¼ï¿½ï¿½
 	 */
 	public void init(){
 		if (aMap == null) {
@@ -161,40 +174,40 @@ public class MapMainActivity extends FragmentActivity implements
 		}		
 	}
 	/*
-	 * µØÍ¼ÉèÖÃ
+	 * ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½
 	 */
 	public void setupMap(){
 		UiSettings uiSettings=aMap.getUiSettings();
 		uiSettings.setCompassEnabled(true);
 		//uiSettings.setMyLocationButtonEnabled(true);
 		uiSettings.setScaleControlsEnabled(true);
-		//uiSettings.setScrollGesturesEnabled(false);Ä¬ÈÏÎªtrue
+		//uiSettings.setScrollGesturesEnabled(false);Ä¬ï¿½ï¿½Îªtrue
 		//uiSettings.setLogoPosition(int arg0);
-		//uiSettings.setRotateGesturesEnabled(false);//Ä¬ÈÏÎªtrue
-		uiSettings.setTiltGesturesEnabled(true);//ÇãÐ±Ðý×ªÒÔ»ñÈ¡3DÐ§¹û
-		//Ö¸¶¨ÉÏº£¾­Î³¶È
+		//uiSettings.setRotateGesturesEnabled(false);//Ä¬ï¿½ï¿½Îªtrue
+		uiSettings.setTiltGesturesEnabled(true);//ï¿½ï¿½Ð±ï¿½ï¿½×ªï¿½Ô»ï¿½È¡3DÐ§ï¿½ï¿½
+		//Ö¸ï¿½ï¿½ï¿½Ïºï¿½ï¿½ï¿½Î³ï¿½ï¿½
 //		LatLng sh=new LatLng(31.240059,121.499614);
-        //¶¨Î»ºÓ±±±±·½Ñ§Ôº
+        //ï¿½ï¿½Î»ï¿½Ó±ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§Ôº
 		LatLng sh=new LatLng(40.772063,114.891850);
-		//CameraUpdateFactory.newLatLng(sh);//·µ»ØÒ»¸öÒÆ¶¯Ä¿µÄµØµÄÆÁÄ»ÖÐÐÄµãµÄ¾­Î³¶ÈµÄCameraUpdate ¶ÔÏó¡£
+		//CameraUpdateFactory.newLatLng(sh);//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Æ¶ï¿½Ä¿ï¿½ÄµØµï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½Äµï¿½Ä¾ï¿½Î³ï¿½Èµï¿½CameraUpdate ï¿½ï¿½ï¿½ï¿½
 		aMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sh, 12));
 		
-		aMap.setOnMarkerClickListener(this);// ÉèÖÃµã»÷markerÊÂ¼þ¼àÌýÆ÷
-		aMap.setOnInfoWindowClickListener(this);// ÉèÖÃµã»÷infoWindowÊÂ¼þ¼àÌýÆ÷
-		aMap.setInfoWindowAdapter(this);// ÉèÖÃ×Ô¶¨ÒåInfoWindowÑùÊ½
-		aMap.setOnMarkerDragListener(this);// ÉèÖÃmarker¿ÉÍÏ×§ÊÂ¼þ¼àÌýÆ÷	
-		//aMap.getScalePerPixel();//·µ»ØÃ¿ÏñËØ´ú±íµÄ¾àÀë
-		//³¤°´µØÍ¼
+		aMap.setOnMarkerClickListener(this);// ï¿½ï¿½ï¿½Ãµï¿½ï¿½markerï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		aMap.setOnInfoWindowClickListener(this);// ï¿½ï¿½ï¿½Ãµï¿½ï¿½infoWindowï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		aMap.setInfoWindowAdapter(this);// ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½InfoWindowï¿½ï¿½Ê½
+		aMap.setOnMarkerDragListener(this);// ï¿½ï¿½ï¿½ï¿½markerï¿½ï¿½ï¿½ï¿½×§ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	
+		//aMap.getScalePerPixel();//ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½Ø´ï¿½ï¿½Ä¾ï¿½ï¿½ï¿½
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼
 		aMap.setOnMapLongClickListener(new AMap.OnMapLongClickListener() {
 			
 			@Override
 			public void onMapLongClick(LatLng arg0) {
 				// TODO Auto-generated method stub
-				Toast.makeText(getApplicationContext(),"ÄúÕýÔÚ³¤°´µØÍ¼", Toast.LENGTH_SHORT).show();
+				Toast.makeText(getApplicationContext(),"ï¿½ï¿½ï¿½ï¿½ï¿½Ú³ï¿½ï¿½ï¿½ï¿½ï¿½Í¼", Toast.LENGTH_SHORT).show();
 			}
 		});
-		//-----×Ô¶¨Òå¶¨Î»Í¼±ê--------------------------------------
-		// ×Ô¶¨ÒåÏµÍ³¶¨Î»Ð¡À¶µã
+		//-----ï¿½Ô¶ï¿½ï¿½å¶¨Î»Í¼ï¿½ï¿½--------------------------------------
+		// ï¿½Ô¶ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½Î»Ð¡ï¿½ï¿½ï¿½ï¿½
 		MyLocationStyle myLocationStyle = new MyLocationStyle();
 		myLocationStyle.myLocationIcon(BitmapDescriptorFactory
 				.fromResource(R.drawable.location_marker));
@@ -204,7 +217,7 @@ public class MapMainActivity extends FragmentActivity implements
 		mAMapLocationManager = LocationManagerProxy
 				.getInstance(MapMainActivity.this);
 		aMap.setLocationSource(this);
-		aMap.setMyLocationEnabled(true);// ÉèÖÃÎªtrue±íÊ¾ÏµÍ³¶¨Î»°´Å¥ÏÔÊ¾²¢ÏìÓ¦µã»÷£¬false±íÊ¾Òþ²Ø£¬Ä¬ÈÏÊÇfalse		
+		aMap.setMyLocationEnabled(true);// ï¿½ï¿½ï¿½ï¿½Îªtrueï¿½ï¿½Ê¾ÏµÍ³ï¿½ï¿½Î»ï¿½ï¿½Å¥ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½falseï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ø£ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½false		
 	}
 
 	@Override
@@ -213,7 +226,7 @@ public class MapMainActivity extends FragmentActivity implements
 		deactivate();
 	}
 	/*
-	 * ²Ëµ¥ÏìÓ¦ÊÂ¼þ 
+	 * ï¿½Ëµï¿½ï¿½ï¿½Ó¦ï¿½Â¼ï¿½ 
 	 */
 	@Override
 	public boolean onMenuItemSelected(int featureId, MenuItem item) {
@@ -242,7 +255,7 @@ public class MapMainActivity extends FragmentActivity implements
 			                e.printStackTrace();  
 			            }  
 			            if (b)  
-			                Toast.makeText(MapMainActivity.this, "½ØÆÁ³É¹¦",
+			                Toast.makeText(MapMainActivity.this, "ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½",
 			                        Toast.LENGTH_SHORT).show();  
 			        } catch (FileNotFoundException e) {  
 			                    e.printStackTrace();  
@@ -251,22 +264,22 @@ public class MapMainActivity extends FragmentActivity implements
 			});
 			 break;
 		 case R.id.menu2:
-			 //Ìí¼ÓMarker  ¶«·½Ã÷Öé£º31.23983,121.499924
+			 //ï¿½ï¿½ï¿½Marker  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é£º31.23983,121.499924
 			 LatLng marker = new LatLng(31.23983,121.499924);
-			 mymarker=aMap.addMarker(new MarkerOptions().position(marker).title("¶«·½Ã÷ÖéµçÊÓËþ")
-					 .snippet("ÉÏº£×î¸ßµÄµçÊÓËþ")  
+			 mymarker=aMap.addMarker(new MarkerOptions().position(marker).title("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½")
+					 .snippet("ï¿½Ïºï¿½ï¿½ï¿½ßµÄµï¿½ï¿½ï¿½ï¿½ï¿½")  
 			         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
 			         .draggable(true)); 			
 			 break;	
 		 case R.id.menu3:
-			 //Ìí¼Ó¶à¶ÎÏß
+			 //ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½ï¿½
 			 aMap.addPolyline((new PolylineOptions()).add(new LatLng(31.238142,121.501512),
 	                 new LatLng(31.239114,121.506533),
 	                 new LatLng(31.230307,121.503786))
 	                 .width(5).color(Color.RED));  
 			 break;		
 		 case R.id.menu4:
-			 //Ìí¼Ó¶à±ßÐÎ
+			 //ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½ï¿½
 			 aMap.addPolygon(new PolygonOptions().addAll(createRectangle
 		                (new LatLng(31.233335,121.497284),0.01, 0.01)).fillColor(Color.YELLOW)
 		                .strokeColor(Color.GREEN).strokeWidth(3));
@@ -276,7 +289,7 @@ public class MapMainActivity extends FragmentActivity implements
                      .radius(1000).strokeColor(Color.BLUE).strokeWidth(3).fillColor(Color.TRANSPARENT).visible(true));  
 			 break;
 		 case R.id.menu6:
-			 //Toast.makeText(getApplicationContext(),"¸ßµÂµØÍ¼Ò£¸ÐÓ°Ïñ", Toast.LENGTH_SHORT).show();
+			 //Toast.makeText(getApplicationContext(),"ï¿½ßµÂµï¿½Í¼Ò£ï¿½ï¿½Ó°ï¿½ï¿½", Toast.LENGTH_SHORT).show();
 			 aMap.setMapType(AMap.MAP_TYPE_SATELLITE);
 			 aMap.setTrafficEnabled(false);
 			 break;	
@@ -289,24 +302,24 @@ public class MapMainActivity extends FragmentActivity implements
 			 break;
 		 case R.id.menu9:
 			 //mymarker.remove();
-			 aMap.clear();//Çå³ýËùÓÐ¸²¸ÇÎï
+			 aMap.clear();//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¸ï¿½ï¿½ï¿½ï¿½ï¿½
 			 break;
 		 case R.id.menu10:
-			 //Î»ÖÃÌø×ª£¬¿ÉÒÔ´Óµ±Ç°ÊÓÍ¼Ìøµ½¶¨Î»µÄÎ»ÖÃ
-			 //¶¯»­·Å´óÐ§¹ûµÄ´úÂë
+			 //Î»ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½Ô´Óµï¿½Ç°ï¿½ï¿½Í¼ï¿½ï¿½Î»ï¿½ï¿½Î»ï¿½ï¿½
+			 //ï¿½ï¿½ï¿½ï¿½ï¿½Å´ï¿½Ð§ï¿½ï¿½Ä´ï¿½ï¿½ï¿½
 			 /*CameraUpdate cu=CameraUpdateFactory.zoomIn();
 			 aMap.animateCamera(cu);
-			 //aMap.moveCamera(cu);//ÎÞ¶¯»­Ð§¹û*/
-			 //¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­
-			 CameraUpdate newLoc= CameraUpdateFactory.newLatLngZoom(new LatLng(31.209333, 121.62659), 12);//¿ÉÒÔ¸ÄÎªGPS»ñÈ¡µÄÎ»ÖÃ
+			 //aMap.moveCamera(cu);//ï¿½Þ¶ï¿½ï¿½ï¿½Ð§ï¿½ï¿½*/
+			 //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			 CameraUpdate newLoc= CameraUpdateFactory.newLatLngZoom(new LatLng(31.209333, 121.62659), 12);//ï¿½ï¿½ï¿½Ô¸ï¿½ÎªGPSï¿½ï¿½È¡ï¿½ï¿½Î»ï¿½ï¿½
 			 aMap.animateCamera(newLoc);
 			 break;
 		 case R.id.menu11:
-			//POIËÑË÷
+			//POIï¿½ï¿½ï¿½ï¿½
 			 doSearchQuery("KTV");
 			 break;
 		 case R.id.menu12:
-			 //²âÊÔ²éÑ¯¸öÈËÎ»ÖÃµ½¶«·½Ã÷Öé(31.240655,121.499727)µÄÂ·Ïß£¬¸ø¶¨Á½¸ö¾­Î³¶Èµã£ºLatLngPoint
+			 //ï¿½ï¿½ï¿½Ô²ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(31.240655,121.499727)ï¿½ï¿½Â·ï¿½ß£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î³ï¿½Èµã£ºLatLngPoint
 			 routeSearch(new LatLonPoint(lat,lng),new LatLonPoint(31.240655,121.499727));
 		}
 		return super.onMenuItemSelected(featureId, item);
@@ -349,7 +362,7 @@ public class MapMainActivity extends FragmentActivity implements
 			+ arg0.getPosition().latitude + ","
 			+ arg0.getPosition().longitude + ")";
 	    Toast.makeText(this,arg0.getTitle() + curDes , Toast.LENGTH_SHORT).show();
-		Toast.makeText(this,arg0.getTitle() +"ÍÏ¶¯Íê±Ï" , Toast.LENGTH_SHORT).show();
+		Toast.makeText(this,arg0.getTitle() +"ï¿½Ï¶ï¿½ï¿½ï¿½ï¿½" , Toast.LENGTH_SHORT).show();
 	}
 
 	@Override
@@ -359,7 +372,7 @@ public class MapMainActivity extends FragmentActivity implements
 			+ arg0.getPosition().latitude + ","
 			+ arg0.getPosition().longitude + ")";
 	    Toast.makeText(this,arg0.getTitle() + curDes , Toast.LENGTH_SHORT).show();
-		Toast.makeText(this,arg0.getTitle() + "¿ªÊ¼ÍÏ¶¯" , Toast.LENGTH_SHORT).show();
+		Toast.makeText(this,arg0.getTitle() + "ï¿½ï¿½Ê¼ï¿½Ï¶ï¿½" , Toast.LENGTH_SHORT).show();
 	}
 
 	@Override
@@ -371,14 +384,14 @@ public class MapMainActivity extends FragmentActivity implements
 	@Override
 	public boolean onMarkerClick(Marker marker) {
 		// TODO Auto-generated method stub
-		//±ØÐëÊ¹ÓÃequals
+		//ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½equals
 		if(marker.equals(mymarker)){
-			Toast.makeText(this,"ÔÚÕâÀïÖ´ÐÐµã»÷ÊÂ¼þ" , Toast.LENGTH_SHORT).show();
+			Toast.makeText(this,"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½Ðµï¿½ï¿½ï¿½Â¼ï¿½" , Toast.LENGTH_SHORT).show();
 		}
 		return false;
 	}
-    //¶¨Î»ËùÐèÊµÏÖµÄ·½·¨
-	//¡­¡­¡­¡­¡­·ÏÆúµÄ·½·¨¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­
+    //ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½Êµï¿½ÖµÄ·ï¿½ï¿½ï¿½
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	@Override
 	public void onLocationChanged(Location location) {
 		// TODO Auto-generated method stub
@@ -410,20 +423,20 @@ public class MapMainActivity extends FragmentActivity implements
 		}
 		lat=location.getLatitude();
 		lng=location.getLongitude();
-		//»ñÈ¡Î»ÖÃºóÔÙ¼ÓÒ»¸ömarker-myLoc,ÏÈÇå³ýÉÏ´ÎµÄ±ê¼Ç£¨ÕâÑù¿ÉÄÜ»áÒýÆðÂ·ÏßÍ¼±ê±ä³ÉÂíÈü¿Ë£©
+		//ï¿½ï¿½È¡Î»ï¿½Ãºï¿½ï¿½Ù¼ï¿½Ò»ï¿½ï¿½marker-myLoc,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ÎµÄ±ï¿½Ç£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½
 		/*if(myLocMarker!=null){
 			myLocMarker.remove();
 		}
 		myLocation = new LatLng(lat,lng);  
-		myLocMarker=aMap.addMarker(new MarkerOptions().position(myLocation).title("ÎÒµÄÎ»ÖÃ")
-				 .snippet("ÉÏº£×î¸ßµÄµçÊÓËþ")  
+		myLocMarker=aMap.addMarker(new MarkerOptions().position(myLocation).title("ï¿½Òµï¿½Î»ï¿½ï¿½")
+				 .snippet("ï¿½Ïºï¿½ï¿½ï¿½ßµÄµï¿½ï¿½ï¿½ï¿½ï¿½")  
 		         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
 		         .draggable(false)); */
 		         
 	}
-    //¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	/**
-	 * ¼¤»î¶¨Î»
+	 * ï¿½ï¿½ï¿½î¶¨Î»
 	 */
 	@Override
 	public void activate(OnLocationChangedListener listener) {
@@ -433,16 +446,16 @@ public class MapMainActivity extends FragmentActivity implements
 		}
 		/*
 		 * mAMapLocManager.setGpsEnable(false);//
-		 * 1.0.2°æ±¾ÐÂÔö·½·¨£¬ÉèÖÃtrue±íÊ¾»ìºÏ¶¨Î»ÖÐ°üº¬gps¶¨Î»£¬false±íÊ¾´¿ÍøÂç¶¨Î»£¬Ä¬ÈÏÊÇtrue
+		 * 1.0.2ï¿½æ±¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½trueï¿½ï¿½Ê¾ï¿½ï¿½Ï¶ï¿½Î»ï¿½Ð°ï¿½gpsï¿½ï¿½Î»ï¿½ï¿½falseï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ç¶¨Î»ï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½true
 		 */
-		// Location API¶¨Î»²ÉÓÃGPSºÍÍøÂç»ìºÏ¶¨Î»·½Ê½£¬Ê±¼ä×î¶ÌÊÇ5000ºÁÃë
+		// Location APIï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½GPSï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¶ï¿½Î»ï¿½ï¿½Ê½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½5000ï¿½ï¿½ï¿½ï¿½
 		mAMapLocationManager.requestLocationUpdates(
 				LocationProviderProxy.AMapNetwork, 5000, 10, this);
 
 	}
 
 	/**
-	 * Í£Ö¹¶¨Î»
+	 * Í£Ö¹ï¿½ï¿½Î»
 	 */
 	@Override
 	public void deactivate() {
@@ -455,7 +468,7 @@ public class MapMainActivity extends FragmentActivity implements
 	}		
 	//-----------------------------------------------------------------------
 	/**
-	 * Ò»´ÎÐÔ´òÓ¡¶à¸öMarker³öÀ´
+	 * Ò»ï¿½ï¿½ï¿½Ô´ï¿½Ó¡ï¿½ï¿½ï¿½Markerï¿½ï¿½ï¿½ï¿½
 	 */
 	private void addMarkers(List<PoiItem> poiItems) {
 		for (int i = 0; i < poiItems.size(); i++) {
@@ -489,14 +502,14 @@ public class MapMainActivity extends FragmentActivity implements
 			aMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, 5));
 			addMarkers(poiItems);
 		} else {
-			ToastUtil.show(getApplicationContext(), "Ã»ÓÐËÑË÷µ½Êý¾Ý£¡");
+			ToastUtil.show(getApplicationContext(), "Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½");
 		}
 	}
 
 	private Handler handler = new Handler() {
 		public void handleMessage(Message msg) {
 			if (msg.what == Constants.POISEARCH) {
-				dissmissProgressDialog();// Òþ²Ø¶Ô»°¿ò
+				dissmissProgressDialog();// ï¿½ï¿½ï¿½Ø¶Ô»ï¿½ï¿½ï¿½
 
 				if (result != null) {
 					new Thread(new Runnable() {
@@ -508,7 +521,7 @@ public class MapMainActivity extends FragmentActivity implements
 								runOnUiThread(new Runnable() {
 									@Override
 									public void run() {
-										showPoiItem(poiItems);// Ã¿Ò³ÏÔÊ¾10¸öpoiitem
+										showPoiItem(poiItems);// Ã¿Ò³ï¿½ï¿½Ê¾10ï¿½ï¿½poiitem
 									}
 								});
 
@@ -521,13 +534,13 @@ public class MapMainActivity extends FragmentActivity implements
 				}
 
 			} else if (msg.what == Constants.ERROR) {
-				dissmissProgressDialog();// Òþ²Ø¶Ô»°¿ò
-				ToastUtil.show(getApplicationContext(), "ËÑË÷Ê§°Ü,Çë¼ì²éÍøÂçÁ¬½Ó£¡");
+				dissmissProgressDialog();// ï¿½ï¿½ï¿½Ø¶Ô»ï¿½ï¿½ï¿½
+				ToastUtil.show(getApplicationContext(), "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½");
 			} else if(msg.what == Constants.ROUTE_SEARCH_RESULT){
 				progDialog.dismiss();
 				if (routeResult != null && routeResult.size() > 0) {
 					route = routeResult.get(0);
-					Log.v("Â·ÏßÌõÊý£º", String.valueOf(routeResult.size()));
+					Log.v("Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", String.valueOf(routeResult.size()));
 					if (route != null) {
 						routeOverlay = new RouteOverlay(MapMainActivity.this,
 								aMap, route);
@@ -538,7 +551,7 @@ public class MapMainActivity extends FragmentActivity implements
 						routeNext.setBackgroundResource(R.drawable.next);
 					}
 				}
-			}else if (msg.what == Constants.POISEARCH_NEXT) {//POIËÑË÷½á¹ûÖ®·­Ò³¹¦ÄÜ
+			}else if (msg.what == Constants.POISEARCH_NEXT) {//POIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½
 				curpage++;
 				new Thread(new Runnable() {
 
@@ -550,7 +563,7 @@ public class MapMainActivity extends FragmentActivity implements
 							runOnUiThread(new Runnable() {
 								@Override
 								public void run() {
-									showPoiItem(poiItems);// Ã¿Ò³ÏÔÊ¾10¸öpoiitem
+									showPoiItem(poiItems);// Ã¿Ò³ï¿½ï¿½Ê¾10ï¿½ï¿½poiitem
 								}
 							});
 						} catch (AMapException e) {
@@ -562,7 +575,7 @@ public class MapMainActivity extends FragmentActivity implements
 		}
 	};
 	/**
-	 * ÏÔÊ¾½ø¶È¿ò
+	 * ï¿½ï¿½Ê¾ï¿½ï¿½È¿ï¿½
 	 */
 	private void showProgressDialog() {
 		if (progDialog == null)
@@ -570,12 +583,12 @@ public class MapMainActivity extends FragmentActivity implements
 		progDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 		progDialog.setIndeterminate(false);
 		progDialog.setCancelable(true);
-		progDialog.setMessage("ÕýÔÚËÑË÷:\n");
+		progDialog.setMessage("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:\n");
 		progDialog.show();
 	}
 
 	/**
-	 * Òþ²Ø½ø¶È¿ò
+	 * ï¿½ï¿½ï¿½Ø½ï¿½È¿ï¿½
 	 */
 	private void dissmissProgressDialog() {
 		if (progDialog != null) {
@@ -587,15 +600,15 @@ public class MapMainActivity extends FragmentActivity implements
 		
 		curpage = 1;
 		cnt = 0;
-		showProgressDialog();// ÏÔÊ¾½ø¶È¿ò
+		showProgressDialog();// ï¿½ï¿½Ê¾ï¿½ï¿½È¿ï¿½
 		new Thread(new Runnable() {
 			public void run() {
 				try {
 					PoiSearch poiSearch = new PoiSearch(
 							MapMainActivity.this, new PoiSearch.Query(
-									searchName, PoiTypeDef.All, "021")); // ÉèÖÃËÑË÷×Ö·û´®£¬poiËÑË÷ÀàÐÍ£¬poiËÑË÷ÇøÓò£¨¿Õ×Ö·û´®´ú±íÈ«¹ú£©
-					poiSearch.setPageSize(10);// ÉèÖÃËÑË÷Ã¿´Î×î¶à·µ»Ø½á¹ûÊý
-					//ÒÔ×Ô¼ºµÄ¶¨Î»Î»ÖÃÎªÖÐÐÄÉèÖÃËÑË÷ ÇøÓò
+									searchName, PoiTypeDef.All, "021")); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½poiï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í£ï¿½poiï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ò£¨¿ï¿½ï¿½Ö·ï¿½ï¿½ï¿½È«ï¿½ï¿½
+					poiSearch.setPageSize(10);// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½à·µï¿½Ø½ï¿½ï¿½ï¿½ï¿½
+					//ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½Ä¶ï¿½Î»Î»ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 					if(lat!=0&&lng!=0){
 						poiSearch.setBound(new SearchBound(new LatLonPoint(lat,lng), 5000));
 					}				
@@ -616,7 +629,7 @@ public class MapMainActivity extends FragmentActivity implements
 	
 	public void routeSearch(LatLonPoint startPoint, LatLonPoint endPoint){
 		progDialog = ProgressDialog.show(MapMainActivity.this, null,
-				"ÕýÔÚ»ñÈ¡ÏßÂ·", true, true);
+				"ï¿½ï¿½ï¿½Ú»ï¿½È¡ï¿½ï¿½Â·", true, true);
 		final Route.FromAndTo fromAndTo = new Route.FromAndTo(startPoint,
 				endPoint);
 		Thread t = new Thread(new Runnable() {

@@ -17,6 +17,7 @@
     <orderEntry type="library" name="Android_Map_V2.0.4" level="project" />
     <orderEntry type="library" name="MapApiLocation" level="project" />
     <orderEntry type="library" name="MapApiSearch" level="project" />
+    <orderEntry type="library" name="pinyin4j-2.5.0 (4)" level="project" />
   </component>
 </module>
 

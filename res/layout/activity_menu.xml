@@ -6,18 +6,39 @@
 
     <!-- 居中显示背景 -->
 
-    <TextView
-        android:id="@+id/tv"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:gravity="center_horizontal"
-        android:text="@string/about" />
 
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/head_layout"
+            android:padding="5dip"
+            android:background="@color/tab_focus">
+    <Button
+            android:id="@+id/btn_add_student"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_left"
+            android:layout_alignParentLeft="true"
+            />
+
+
+    <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="12sp"
+            android:textSize="15sp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:text="添加学生"/>
+
+</RelativeLayout>
     <include
         android:id="@+id/line"
         android:layout_width="fill_parent"
         android:layout_height="2px"
-        android:layout_below="@+id/tv"
+        android:layout_below="@+id/head_layout"
         layout="@layout/line" >
     </include>
 

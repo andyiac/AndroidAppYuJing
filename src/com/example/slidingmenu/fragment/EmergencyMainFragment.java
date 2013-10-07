@@ -30,6 +30,7 @@ import android.widget.TextView;
 import com.example.slidingmenu.R;
 import com.example.slidingmenu.activity.EmergencyActivity;
 import com.example.slidingmenu.fragment.pice.fragment.EmergencyPiceFragment1;
+import com.example.slidingmenu.fragment.pice.fragment.SensorEmergencyPiceFragment;
 //import com.example.slidingmenu.fragment.pice.fragment.EmergencyPiceFragment2;
 
 import java.util.ArrayList;
@@ -52,8 +53,10 @@ public class EmergencyMainFragment extends Fragment {
         EmergencyPiceFragment1 page1 = new EmergencyPiceFragment1();
 //        EmergencyPiceFragment2 page2 = new EmergencyPiceFragment2();
 		PageFragment2 page2 = new PageFragment2();
+        SensorEmergencyPiceFragment vibrate = new SensorEmergencyPiceFragment();
+
 		pagerItemList.add(page1);
-		pagerItemList.add(page2);
+		pagerItemList.add(vibrate);
 		mAdapter = new MyAdapter(getFragmentManager());
 		mPager.setAdapter(mAdapter);
 		mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {

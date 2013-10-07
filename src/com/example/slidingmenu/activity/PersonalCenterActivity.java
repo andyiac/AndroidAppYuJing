@@ -18,6 +18,7 @@ package com.example.slidingmenu.activity;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.view.Window;
 
 import com.example.slidingmenu.R;
 import com.example.slidingmenu.fragment.LeftFragment;
@@ -36,7 +37,8 @@ public class PersonalCenterActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle arg0) {
 		super.onCreate(arg0);
-		setContentView(R.layout.main);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.main);
 		init();
 		initListener();
 

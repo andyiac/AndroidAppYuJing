@@ -2,13 +2,105 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/bg_color" >
+                android:background="@color/bg_color">
+
 
     <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent" >
-  
-                    
+            android:layout_height="wrap_content"
+            android:id="@+id/head_layout"
+            android:padding="5dip"
+            android:background="@color/tab_focus">
+
+        <Button
+                android:id="@+id/btn_check_myclasses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/icon_left"
+                android:layout_alignParentLeft="true"
+                />
+
+
+        <TextView
+                android:id="@+id/tv_yujing_center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="12sp"
+                android:textSize="15sp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:text="班级汇总"/>
+
+        <TextView
+                android:id="@+id/title"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingLeft="20dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="20sp"/>
+
+     <!--   <include
+                android:id="@+id/line"
+                android:layout_width="fill_parent"
+                android:layout_height="2px"
+                layout="@layout/line"
+                android:layout_below="@+id/title">
+        </include>-->
+
+
+
+
+
+    </RelativeLayout>
+
+    <ListView
+            android:id="@+id/lv_attendence_yujing_bfxy_frag1"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_below="@+id/head_layout">
+    </ListView>
+    <EditText
+
+            android:layout_height="50dp"
+            android:layout_width="260dp"
+            android:id="@+id/edt"
+            android:hint="添加班级"
+            android:textSize="20sp"
+            android:layout_marginRight="2dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+
+            >
+
+
+    </EditText>
+
+    <Button
+
+            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:id="@+id/button"
+            android:text="确定"
+            android:textSize="20sp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            >
+    </Button>
+  <!--  <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+
+        <Button
+                android:id="@+id/showLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/icon_left"
+                android:layout_alignParentLeft="true"
+                />
 
 
         <TextView
@@ -19,52 +111,51 @@
                 android:paddingLeft="20dp"
                 android:text="班级总汇"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="20sp"/>
 
         <include
                 android:id="@+id/line"
                 android:layout_width="fill_parent"
                 android:layout_height="2px"
                 layout="@layout/line"
-                android:layout_below="@+id/title" >
+                android:layout_below="@+id/title">
         </include>
 
-    
+
         <ListView
-                 android:id="@+id/lv_attendence_yujing_bfxy_frag1"
-                 android:layout_width="match_parent"
-                 android:layout_height="300dp"
-                android:layout_below="@+id/line" >
+                android:id="@+id/lv_attendence_yujing_bfxy_frag1"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_below="@+id/line">
         </ListView>
-        
-    <EditText
-        
-        android:layout_height="50dp"
-        android:layout_width="260dp"
-        android:id="@+id/edt"
-        android:hint="添加班级"
-        android:textSize="20sp"
-        android:layout_marginRight="2dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        
-        >
-        
-   
 
-</EditText>
+        <EditText
 
-    <Button
-        
-        android:layout_height="50dp"
-        android:layout_width="wrap_content"
-        android:id="@+id/button"
-        android:text="确定"
-         android:textSize="20sp"
-         android:layout_alignParentBottom="true"
-         android:layout_alignParentRight="true"
-        >
+                android:layout_height="50dp"
+                android:layout_width="260dp"
+                android:id="@+id/edt"
+                android:hint="添加班级"
+                android:textSize="20sp"
+                android:layout_marginRight="2dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+
+                >
+
+
+        </EditText>
+
+        <Button
+
+                android:layout_height="50dp"
+                android:layout_width="wrap_content"
+                android:id="@+id/button"
+                android:text="确定"
+                android:textSize="20sp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                >
         </Button>
-    </RelativeLayout>
+    </RelativeLayout>-->
 
 </RelativeLayout>

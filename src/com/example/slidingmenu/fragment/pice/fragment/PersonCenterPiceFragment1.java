@@ -72,24 +72,18 @@ public class PersonCenterPiceFragment1 extends Fragment {
         HashMap<String, String> map3 = new HashMap<String, String>();
         HashMap<String, String> map4 = new HashMap<String, String>();
         HashMap<String, String> map5 = new HashMap<String, String>();
-        HashMap<String, String> map6 = new HashMap<String, String>();
-        HashMap<String, String> map7 = new HashMap<String, String>();
 
         map1.put("item", "姓名");
         map2.put("item", "性别");
         map3.put("item", "年龄");
         map4.put("item", "现居地");
         map5.put("item", "血型");
-        map6.put("item", "职业");
-        map7.put("item", "公司");
 
         map_list1.add(map1);
         map_list1.add(map2);
         map_list1.add(map3);
         map_list1.add(map4);
         map_list1.add(map5);
-        map_list1.add(map6);
-        map_list1.add(map7);
 
         return map_list1;
     }

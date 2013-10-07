@@ -94,7 +94,7 @@
             android:textColor="@color/text_color"
             android:textSize="15sp" />
 
-        <include
+     <!--   <include
             android:layout_width="fill_parent"
             android:layout_height="2px"
             layout="@layout/line" >
@@ -124,7 +124,7 @@
             android:paddingLeft="20dp"
             android:text="联系方式"
             android:textColor="@color/text_color"
-            android:textSize="15sp" />
+            android:textSize="15sp" />-->
 
         <include
                 android:layout_width="fill_parent"

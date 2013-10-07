@@ -15,6 +15,7 @@
  */
 package com.example.slidingmenu.fragment.pice.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -26,6 +27,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import com.example.slidingmenu.R;
+import com.example.slidingmenu.sensor.SensorDemoActivity2T;
 import com.example.slidingmenu.test.CornerListView;
 
 import java.util.ArrayList;
@@ -106,6 +108,11 @@ public class ConfigPiceFragment1 extends Fragment {
         public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
                                 long arg3) {
             if (arg2 == 0) {
+
+                Intent intent = new Intent();
+                intent.setClass(ConfigPiceFragment1.this.getActivity(),SensorDemoActivity2T.class);
+                startActivity(intent);
+
                 System.out.println("0");
             }else{
                 System.out.println("1");

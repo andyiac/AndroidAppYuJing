@@ -31,6 +31,7 @@ import com.example.slidingmenu.R;
 import com.example.slidingmenu.activity.AttendanceActivity;
 import com.example.slidingmenu.activity.SlidingActivity;
 import com.example.slidingmenu.fragment.pice.fragment.AttendancePiceFragment1;
+import com.example.slidingmenu.fragment.pice.fragment.AttendancePiceFragment2;
 
 import java.util.ArrayList;
 
@@ -51,9 +52,9 @@ public class AttendanceActivityFragment extends Fragment {
 		showRight = (Button) mView.findViewById(R.id.showRight);
 		mPager = (ViewPager) mView.findViewById(R.id.pager);
 		//PageFragment1 page1 = new PageFragment1();
-		AttendancePiceFragment1 attendancePiceFragment1 = new AttendancePiceFragment1();
+		AttendancePiceFragment2 attendancePiceFragment2 = new AttendancePiceFragment2();
 		//PageFragment2 page2 = new PageFragment2();
-		pagerItemList.add(attendancePiceFragment1);
+		pagerItemList.add(attendancePiceFragment2);
 		//pagerItemList.add(page2);
 		mAdapter = new MyAdapter(getFragmentManager());
 		mPager.setAdapter(mAdapter);

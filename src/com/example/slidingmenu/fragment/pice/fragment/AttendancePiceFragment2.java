@@ -15,26 +15,38 @@
  */
 package com.example.slidingmenu.fragment.pice.fragment;
 
+//import java.awt.Image;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.example.slidingmenu.R;
+import com.example.slidingmenu.activity.Addstudents;
+import com.example.slidingmenu.activity.CheckClasses;
 
 import java.util.ArrayList;
 import java.util.List;
 
+public class AttendancePiceFragment2 extends Fragment {
 
-public class NewsYuJingPiceFragment1 extends Fragment {
+	ListView listView;
 
-    ListView listView ;
+
+
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.news_yujing_pice_frag_1, null);
+		View view = inflater.inflate(R.layout.attendance_yujing_pice_frag_2,
+				null);
+
         initView(view);
 		return view;
 	}
@@ -42,26 +54,45 @@ public class NewsYuJingPiceFragment1 extends Fragment {
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 	}
-    private void initView(View view){
-        listView = (ListView)view.findViewById(R.id.lv_news_yujing_bfxy_frag1);
-        listView.setAdapter(new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_expandable_list_item_1,getData()));
 
+    private void initView(View view){
+        listView = (ListView)view.findViewById(R.id.lv_attendance);
+        listView.setAdapter(new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_expandable_list_item_1,getData()));
+        listView.setOnItemClickListener(listener);
     }
     private List<String> getData(){
         List<String> data = new ArrayList<String>();
-        data.add("我校13级新生军训圆满...");
-        data.add("法政学院与关心下一代...");
-        data.add("我校对师生开展消防安...");
-        data.add("张家口市社科联领导莅...");
-        data.add("我校召开党外人士中秋...");
-        data.add("我校2013级新生开学典...");
-        data.add("我校2013级新生开学典...");
-        data.add("我校2013级新生开学典...");
-        data.add("我校2013级新生开学典...");
-        data.add("我校2013级新生开学典...");
-        data.add("我校2013级新生开学典...");
+        data.add("班级");
+        data.add("添加学生");
+        data.add("开始点名");
+        data.add("返回");
         return data;
     }
 
-}
+    private AdapterView.OnItemClickListener listener = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            Intent intent = new Intent();
+            switch (i){
+                case 0:
+                    // 查看班级
+			intent.setClass(getActivity(), CheckClasses.class);
 
+			startActivity(intent);
+                    break;
+                case 1:
+                    // 添加学生
+			intent.setClass(getActivity(), Addstudents.class);
+			startActivity(intent);
+                    break;
+                case 2:
+                    //开始点名
+                    break;
+                case 3:
+                    //
+                    break;
+            }
+
+        }
+    };
+}

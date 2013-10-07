@@ -8,20 +8,6 @@ import android.widget.ListView;
 
 import com.example.slidingmenu.R;
 
-/**
- * ???ListView???
- * @Description: ???ListView???
-
- * @FileName: CornerListView.java 
-
- * @Package com.corner.test 
-
- * @Author Hanyonglu
-
- * @Date 2012-3-5 ????11:45:39 
-
- * @Version V1.0
- */
 public class CornerListView extends ListView {
     public CornerListView(Context context) {
         super(context);

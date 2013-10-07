@@ -57,16 +57,16 @@ public class LeftFragment extends Fragment {
         news = (TextView) view.findViewById(R.id.tv_left_yu_jing);
         tuFa = (TextView) view.findViewById(R.id.tv_left_tu_fa);
         kaoQin = (TextView) view.findViewById(R.id.tv_left_kao_qin);
-        mMessage = (TextView) view.findViewById(R.id.tv_left_xiao_xi);
-        mContact = (TextView) view.findViewById(R.id.tv_left_contact);
+//        mMessage = (TextView) view.findViewById(R.id.tv_left_xiao_xi);
+//        mContact = (TextView) view.findViewById(R.id.tv_left_contact);
         personal_center = (TextView) view.findViewById(R.id.tv_left_person_center);
         mConfig = (TextView) view.findViewById(R.id.tv_left_config);
 
         news.setOnClickListener(listener);
         tuFa.setOnClickListener(listener);
         kaoQin.setOnClickListener(listener);
-        mMessage.setOnClickListener(listener);
-        mContact.setOnClickListener(listener);
+//        mMessage.setOnClickListener(listener);
+//        mContact.setOnClickListener(listener);
         personal_center.setOnClickListener(listener);
         mConfig.setOnClickListener(listener);
 
@@ -98,18 +98,18 @@ public class LeftFragment extends Fragment {
                     getActivity().finish();
 
                     break;
-                case R.id.tv_left_xiao_xi:
-                    intent.setClass(getActivity(), MyMsgActivity.class);
-                    startActivity(intent);
-                    getActivity().finish();
-
-                    break;
-                case R.id.tv_left_contact:
-                    intent.setClass(getActivity(), ContactActivity.class);
-                    startActivity(intent);
-                    getActivity().finish();
-
-                    break;
+//                case R.id.tv_left_xiao_xi:
+//                    intent.setClass(getActivity(), MyMsgActivity.class);
+//                    startActivity(intent);
+//                    getActivity().finish();
+//
+//                    break;
+//                case R.id.tv_left_contact:
+//                    intent.setClass(getActivity(), ContactActivity.class);
+//                    startActivity(intent);
+//                    getActivity().finish();
+//
+//                    break;
                 case R.id.tv_left_person_center:
                     intent.setClass(getActivity(), PersonalCenterActivity.class);
                     startActivity(intent);
