@@ -31,10 +31,13 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="com.example.slidingmenu" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="142a6c5e-60e6-4945-92e8-cfb03d7b8850" name="Default" comment="" />
+    <list default="true" id="142a6c5e-60e6-4945-92e8-cfb03d7b8850" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="SlidingMenu-master.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -60,7 +63,23 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/example/slidingmenu/yujing/client/service/NewMessage.java" line="2" class="NewMessage.java" package="">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -97,23 +116,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/com/example/slidingmenu/yujing/client/service/NewMessage.java" line="2" class="NewMessage.java" package="">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -123,11 +126,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PersonCenterPiceFragment1.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/PersonCenterPiceFragment1.java">
+      <file leaf-file-name="MyMsgMainFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/MyMsgMainFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="0" selection-start="3197" selection-end="3197" vertical-scroll-proportion="0.0" vertical-offset="1729" max-vertical-offset="2242">
-              <folding />
+            <state line="103" column="0" selection-start="2877" selection-end="2877" vertical-scroll-proportion="0.0" vertical-offset="1037" max-vertical-offset="2006">
+              <folding>
+                <element signature="e#0#3760#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#1409#1419#0" expanded="false" />
+                <element signature="e#2552#2679#0" expanded="false" />
+                <element signature="e#2674#2675#0" expanded="false" />
+                <element signature="e#2714#2842#0" expanded="false" />
+                <element signature="e#2837#2838#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -135,17 +146,32 @@
       <file leaf-file-name="EmergencyMainFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/EmergencyMainFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="31" selection-start="2168" selection-end="2168" vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="3249">
+            <state line="55" column="28" selection-start="2226" selection-end="2226" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2210">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmergencyPiceFragment1.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/EmergencyPiceFragment1.java">
+      <file leaf-file-name="page2.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/page2.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="0" selection-start="1280" selection-end="1280" vertical-scroll-proportion="0.0" vertical-offset="741" max-vertical-offset="2261">
+            <state line="7" column="33" selection-start="286" selection-end="286" vertical-scroll-proportion="-4.1034484" vertical-offset="0" max-vertical-offset="391">
               <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SensorEmergencyPiceFragment.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/SensorEmergencyPiceFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="62" column="70" selection-start="2173" selection-end="2173" vertical-scroll-proportion="0.84351146" vertical-offset="0" max-vertical-offset="2142">
+              <folding>
+                <element signature="e#3894#5056#0" expanded="true" />
+                <element signature="e#5048#5049#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -153,45 +179,7 @@
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="0" selection-start="3038" selection-end="3038" vertical-scroll-proportion="0.0" vertical-offset="1034" max-vertical-offset="1558">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="25" selection-start="4981" selection-end="4981" vertical-scroll-proportion="1.0825148" vertical-offset="1710" max-vertical-offset="2584">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Addstudents.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/activity/Addstudents.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="281" selection-end="281" vertical-scroll-proportion="0.0" vertical-offset="83" max-vertical-offset="3116">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AttendancePiceFragment1.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/AttendancePiceFragment1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="681" selection-end="681" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1501">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EmergencyPiceFragment2.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/EmergencyPiceFragment2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="13" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.0" vertical-offset="589" max-vertical-offset="1520">
+            <state line="20" column="21" selection-start="1095" selection-end="1095" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1547">
               <folding />
             </state>
           </provider>
@@ -200,18 +188,52 @@
       <file leaf-file-name="ConfigPiceFragment1.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/ConfigPiceFragment1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="5" selection-start="3363" selection-end="3743" vertical-scroll-proportion="0.0" vertical-offset="2128" max-vertical-offset="2337">
+            <state line="29" column="0" selection-start="1021" selection-end="1021" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="1972">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PersonalCenterMainFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/PersonalCenterMainFragment.java">
+      <file leaf-file-name="SensorDemoActivity2T.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/sensor/SensorDemoActivity2T.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="17" selection-start="2140" selection-end="2140" vertical-scroll-proportion="0.0" vertical-offset="1007" max-vertical-offset="3116">
+            <state line="102" column="6" selection-start="1060" selection-end="3082" vertical-scroll-proportion="0.0" vertical-offset="1261" max-vertical-offset="1853">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2683#3081#0" expanded="true" />
+                <element signature="e#3073#3074#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EmergencyActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/activity/EmergencyActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="17" selection-start="1209" selection-end="1209" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1190">
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PageFragment2.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/PageFragment2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="13" selection-start="851" selection-end="851" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+          <provider editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -221,6 +243,14 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="modificationStamps">
@@ -232,22 +262,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/NewsYuJingPiceFragment1.java" />
-        <option value="$PROJECT_DIR$/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/res/layout/edit_service.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/test/CornerListView.java" />
-        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/test/RoundCornerActivity.java" />
-        <option value="$PROJECT_DIR$/res/layout/main_config.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/fragment/ConfigMainFragment.java" />
-        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/ConfigPiceFragment1.java" />
-        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/fragment/PersonalCenterMainFragment.java" />
-        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/PersonCenterPiceFragment1.java" />
-        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/fragment/EmergencyMainFragment.java" />
-        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/EmergencyPiceFragment1.java" />
+        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/fragment/LeftFragment.java" />
+        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/activity/CheckClasses.java" />
+        <option value="$PROJECT_DIR$/res/layout/activity_menu.xml" />
         <option value="$PROJECT_DIR$/src/com/example/slidingmenu/activity/Addstudents.java" />
-        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/AttendancePiceFragment1.java" />
+        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/NewsYuJingPiceFragment2.java" />
+        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/NewsYuJingPiceFragment1.java" />
+        <option value="$PROJECT_DIR$/res/layout/map_main_activity.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/map/wmap/MapMainActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/test/RoundCornerActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/sensor/SensorDemoActivity.java" />
+        <option value="$PROJECT_DIR$/res/layout/page2.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/sensor/SensorDemoActivity2T.java" />
+        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/ConfigPiceFragment1.java" />
+        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/fragment/EmergencyMainFragment.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/SensorEmergencyPiceFragment.java" />
       </list>
     </option>
   </component>
@@ -310,21 +340,13 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="SlidingMenu-master" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; Android 4.2.2 Platform &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -361,11 +383,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
+              <option name="myItemId" value="slidingmenu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -379,29 +401,109 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slidingmenu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sensor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SlidingMenu-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinShiYujing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slidingmenu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fragment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SlidingMenu-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinShiYujing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slidingmenu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fragment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fragment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SlidingMenu-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinShiYujing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slidingmenu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="activity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.last.edited" value="Project" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="reference.projectsettings.compiler.javacompiler" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SendEmailActivity" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
@@ -418,9 +520,9 @@
       <recent name="com.example.slidingmenu.activity" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/libs" />
-      <recent name="$PROJECT_DIR$/res/drawable-hdpi" />
       <recent name="$PROJECT_DIR$/res/layout" />
+      <recent name="$PROJECT_DIR$/res/drawable-hdpi" />
+      <recent name="$PROJECT_DIR$/libs" />
       <recent name="$PROJECT_DIR$/src/com/example/slidingmenu/test" />
       <recent name="$PROJECT_DIR$/res/drawable" />
     </key>
@@ -591,28 +693,28 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21428572" sideWeight="0.7619048" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.51760566" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47971782" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.50793654" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3068783" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46737212" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977098" sideWeight="0.6719577" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977098" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31610942" sideWeight="0.59435624" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40564373" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32902735" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24088146" sideWeight="0.7178131" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28218696" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329806" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29103345" sideWeight="0.59435624" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922536" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32804233" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -704,9 +806,79 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/layout/simple_list_item_1.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/LeftFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="27" selection-start="713" selection-end="713" vertical-scroll-proportion="-12.448276" vertical-offset="0" max-vertical-offset="779">
+        <state line="35" column="13" selection-start="1381" selection-end="1381" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1768">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/activity/ConfigActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="15" selection-start="1338" selection-end="1338" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1190">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/ConfigMainFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="23" selection-start="2087" selection-end="2087" vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="2125">
+          <folding>
+            <element signature="e#0#4089#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1518#1528#0" expanded="false" />
+            <element signature="e#2879#3007#0" expanded="false" />
+            <element signature="e#3002#3003#0" expanded="false" />
+            <element signature="e#3042#3171#0" expanded="false" />
+            <element signature="e#3166#3167#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/sensor/SensorDemoActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="53" selection-start="0" selection-end="2549" vertical-scroll-proportion="0.0" vertical-offset="222" max-vertical-offset="1598">
+          <folding>
+            <element signature="e#0#2549#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/MyMsgMainFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="0" selection-start="2877" selection-end="2877" vertical-scroll-proportion="0.0" vertical-offset="1037" max-vertical-offset="2006">
+          <folding>
+            <element signature="e#0#3760#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1409#1419#0" expanded="false" />
+            <element signature="e#2552#2679#0" expanded="false" />
+            <element signature="e#2674#2675#0" expanded="false" />
+            <element signature="e#2714#2842#0" expanded="false" />
+            <element signature="e#2837#2838#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/PageFragment2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="13" selection-start="851" selection-end="851" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/page2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="33" selection-start="286" selection-end="286" vertical-scroll-proportion="-4.1034484" vertical-offset="0" max-vertical-offset="391">
           <folding />
         </state>
       </provider>
@@ -714,118 +886,66 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main_config.xml">
+    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/content/Context.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="4" selection-start="1214" selection-end="1214" vertical-scroll-proportion="0.31034482" vertical-offset="731" max-vertical-offset="1197">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/test/CornerListView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="0" selection-start="1848" selection-end="1848" vertical-scroll-proportion="0.0" vertical-offset="768" max-vertical-offset="1292">
+        <state line="40" column="41" selection-start="1890" selection-end="1890" vertical-scroll-proportion="0.33206108" vertical-offset="489" max-vertical-offset="4913">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/activity/PersonalCenterActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/sensor/SensorDemoActivity2T.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="13" selection-start="1324" selection-end="1324" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1311">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/view_pager.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="42" selection-start="746" selection-end="746" vertical-scroll-proportion="-2.0" vertical-offset="379" max-vertical-offset="1083">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/PersonalCenterMainFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="17" selection-start="2140" selection-end="2140" vertical-scroll-proportion="0.0" vertical-offset="109" max-vertical-offset="2375">
-          <folding />
+        <state line="102" column="6" selection-start="1060" selection-end="3082" vertical-scroll-proportion="0.0" vertical-offset="1261" max-vertical-offset="1853">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2683#3081#0" expanded="true" />
+            <element signature="e#3073#3074#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/ConfigPiceFragment1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="5" selection-start="3363" selection-end="3743" vertical-scroll-proportion="0.0" vertical-offset="1262" max-vertical-offset="1786">
+        <state line="29" column="0" selection-start="1021" selection-end="1021" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="1972">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/PersonCenterPiceFragment1.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/activity/EmergencyActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="0" selection-start="3197" selection-end="3197" vertical-scroll-proportion="0.0" vertical-offset="817" max-vertical-offset="1691">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/EmergencyPiceFragment2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="13" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="1026">
+        <state line="32" column="17" selection-start="1209" selection-end="1209" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1190">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/EmergencyMainFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="31" selection-start="2168" selection-end="2168" vertical-scroll-proportion="0.0" vertical-offset="312" max-vertical-offset="2755">
+        <state line="55" column="28" selection-start="2226" selection-end="2226" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2210">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/EmergencyPiceFragment1.java">
+    <entry file="file://$PROJECT_DIR$/gen/com/example/slidingmenu/Manifest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="1280" selection-end="1280" vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="1615">
+        <state line="5" column="19" selection-start="181" selection-end="181" vertical-scroll-proportion="0.15828678" vertical-offset="0" max-vertical-offset="537">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/activity/SlidingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1482">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/activity/Addstudents.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="281" selection-end="281" vertical-scroll-proportion="0.0" vertical-offset="83" max-vertical-offset="3116">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/AttendancePiceFragment1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="681" selection-end="681" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1501">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="0" selection-start="3038" selection-end="3038" vertical-scroll-proportion="0.0" vertical-offset="1034" max-vertical-offset="1558">
+        <state line="20" column="21" selection-start="1095" selection-end="1095" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1547">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/example/slidingmenu/fragment/pice/fragment/SensorEmergencyPiceFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="25" selection-start="4981" selection-end="4981" vertical-scroll-proportion="1.0825148" vertical-offset="1710" max-vertical-offset="2584">
-          <folding />
+        <state line="62" column="70" selection-start="2173" selection-end="2173" vertical-scroll-proportion="0.84351146" vertical-offset="0" max-vertical-offset="2142">
+          <folding>
+            <element signature="e#3894#5056#0" expanded="true" />
+            <element signature="e#5048#5049#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
