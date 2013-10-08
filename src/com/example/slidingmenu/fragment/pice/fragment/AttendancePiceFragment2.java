@@ -65,7 +65,7 @@ public class AttendancePiceFragment2 extends Fragment {
         data.add("班级");
         data.add("添加学生");
         data.add("开始点名");
-        data.add("返回");
+//        data.add("返回");
         return data;
     }
 

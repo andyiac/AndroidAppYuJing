@@ -26,8 +26,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.slidingmenu.R;
+import com.example.slidingmenu.tool.Util;
 import com.example.slidingmenu.view.NewsWebView;
 
 import org.jsoup.Jsoup;
@@ -53,7 +55,12 @@ public class NewsYuJingPiceFragment2 extends Fragment {
         View view = inflater.inflate(R.layout.news_yujing_pice_frag_1, null);
         TextView textView = (TextView) view.findViewById(R.id.title);
         textView.setText("信息科学与工程学院新闻");
+
+        if(Util.isNetworkAvailable(NewsYuJingPiceFragment2.this.getActivity())){
         load(view);
+        }else {
+            Toast.makeText(NewsYuJingPiceFragment2.this.getActivity(),"网络状态不可用！\n请先设置网络",Toast.LENGTH_LONG).show();
+        }
         return view;
     }
 
@@ -107,5 +114,6 @@ public class NewsYuJingPiceFragment2 extends Fragment {
     };
 
 
-}
 
+
+}

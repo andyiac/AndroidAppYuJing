@@ -27,8 +27,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import com.example.slidingmenu.R;
+import com.example.slidingmenu.tool.Util;
 import com.example.slidingmenu.view.NewsWebView;
 
 import org.jsoup.Jsoup;
@@ -56,7 +58,13 @@ public class NewsYuJingPiceFragment1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.news_yujing_pice_frag_1, null);
-        load(view);
+        if(Util.isNetworkAvailable(NewsYuJingPiceFragment1.this.getActivity())){
+            load(view);
+        }else {
+            Toast.makeText(NewsYuJingPiceFragment1.this.getActivity(), "网络状态不可用！\n请先设置网络", Toast.LENGTH_LONG).show();
+        }
+
+
         return view;
     }
 
