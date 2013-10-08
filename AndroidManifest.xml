@@ -81,6 +81,7 @@
         </activity>
         <!--<activity android:name="com.example.slidingmenu.sensor.SensorDemoActivity"/>-->
         <activity android:name=".sensor.SensorDemoActivity2T"/>
+        <activity android:name=".view.NewsWebView"/>
     </application>
 
 </manifest>
