@@ -16,6 +16,7 @@
 package com.example.slidingmenu.fragment.pice.fragment;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -56,10 +57,14 @@ public class NewsYuJingPiceFragment2 extends Fragment {
         TextView textView = (TextView) view.findViewById(R.id.title);
         textView.setText("信息科学与工程学院新闻");
 
-        if(Util.isNetworkAvailable(NewsYuJingPiceFragment2.this.getActivity())){
-        load(view);
-        }else {
-            Toast.makeText(NewsYuJingPiceFragment2.this.getActivity(),"网络状态不可用！\n请先设置网络",Toast.LENGTH_LONG).show();
+        if (Util.isNetworkAvailable(NewsYuJingPiceFragment2.this.getActivity())) {
+            try {
+                load(view);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            Toast.makeText(NewsYuJingPiceFragment2.this.getActivity(), "网络状态不可用！\n请先设置网络", Toast.LENGTH_LONG).show();
         }
         return view;
     }
@@ -79,7 +84,7 @@ public class NewsYuJingPiceFragment2 extends Fragment {
             e1.printStackTrace();
         }
         List<Map<String, String>> list = new ArrayList<Map<String, String>>();
-        Elements es = doc.select("html body div#wrapper div#boxout div#center  div#proDownload ul li a");
+        Elements es = doc.select("html body div#wrapper div#boxout div#center div#proDownload ul li a");
         //html body div#wrapper div#boxout div#center  div#proDownload ul li a
         //span.newslist a
         for (Element e : es) {
@@ -115,5 +120,20 @@ public class NewsYuJingPiceFragment2 extends Fragment {
 
 
 
+    private class LoadNews extends AsyncTask<View,Integer,Long>{
+
+        @Override
+        protected Long doInBackground(View... views) {
+            load(views[0]);
+
+            return null;
+        }
+
+        @Override
+        protected void onPreExecute() {
+
+
+        }
+    }
 
 }
