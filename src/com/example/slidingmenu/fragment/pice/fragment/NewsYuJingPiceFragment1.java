@@ -17,6 +17,7 @@ package com.example.slidingmenu.fragment.pice.fragment;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -53,55 +54,32 @@ import java.util.Map;
 
 public class NewsYuJingPiceFragment1 extends Fragment {
 
-    Document doc;
+//    Document doc;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.news_yujing_pice_frag_1, null);
-        if(Util.isNetworkAvailable(NewsYuJingPiceFragment1.this.getActivity())){
-            load(view);
-        }else {
-            Toast.makeText(NewsYuJingPiceFragment1.this.getActivity(), "网络状态不可用！\n请先设置网络", Toast.LENGTH_LONG).show();
-        }
+
 
 
         return view;
     }
 
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        if(Util.isNetworkAvailable(NewsYuJingPiceFragment1.this.getActivity())){
+//            load(view);
+            new LoadNewsTask().execute(this.getView());
+        }else {
+            Toast.makeText(NewsYuJingPiceFragment1.this.getActivity(), "网络状态不可用！\n请先设置网络", Toast.LENGTH_LONG).show();
+        }
+
     }
 
-    protected void load(View view) {
-
-        try {
-            doc = Jsoup.parse(new URL("http://www.hebeinu.edu.cn/xxxw.asp"), 5000);
-        } catch (MalformedURLException e1) {
-            e1.printStackTrace();
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
-        List<Map<String, String>> list = new ArrayList<Map<String, String>>();
-        Elements es = doc.select("span.newslist a");
-        //html body div#wrapper div#boxout div#center  div#proDownload ul li a
-        //span.newslist a
-        for (Element e : es) {
-            Map<String, String> map = new HashMap<String, String>();
-            String a = e.getElementsByTag("a").text();
-            map.put("title", e.getElementsByTag("a").text());
-            //不显示链接地址
-            map.put("href", "http://www.hebeinu.edu.cn/"
-                    + e.getElementsByTag("a").attr("href"));
-            list.add(map);
-        }
-
-        ListView listView = (ListView) view.findViewById(R.id.lv_news_yujing_bfxy_frag1);
-        listView.setAdapter(new SimpleAdapter(this.getActivity(), list, android.R.layout.simple_list_item_2,
-                new String[]{"title", "href"}, new int[]{
-                android.R.id.text1, android.R.id.text2
-        }));
-        listView.setOnItemClickListener(onItemClickListener);
-
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
     }
 
     private AdapterView.OnItemClickListener onItemClickListener = new AdapterView.OnItemClickListener() {
@@ -116,6 +94,58 @@ public class NewsYuJingPiceFragment1 extends Fragment {
         }
     };
 
+        private class LoadNewsTask extends AsyncTask<View,Integer,Document> {
+
+        @Override
+        protected Document doInBackground(View... views) {
+            return load();
+        }
+
+        @Override
+        protected void onPostExecute(Document document) {
+            super.onPostExecute(document);
+            initView(document);
+        }
+    }
+
+
+
+    protected Document load() {
+
+        Document doc=null;
+        try {
+          doc = Jsoup.parse(new URL("http://www.hebeinu.edu.cn/xxxw.asp"), 5000);
+        } catch (MalformedURLException e1) {
+            e1.printStackTrace();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+        return doc;
+    }
+
+    protected void initView(Document document){
+
+        List<Map<String, String>> list = new ArrayList<Map<String, String>>();
+        Elements es = document.select("span.newslist a");
+        //html body div#wrapper div#boxout div#center  div#proDownload ul li a
+        //span.newslist a
+        for (Element e : es) {
+            Map<String, String> map = new HashMap<String, String>();
+            String a = e.getElementsByTag("a").text();
+            map.put("title", e.getElementsByTag("a").text());
+            //不显示链接地址
+            map.put("href", "http://www.hebeinu.edu.cn/"
+                    + e.getElementsByTag("a").attr("href"));
+            list.add(map);
+        }
+
+        ListView listView = (ListView) this.getView().findViewById(R.id.lv_news_yujing_bfxy_frag1);
+        listView.setAdapter(new SimpleAdapter(this.getActivity(), list, android.R.layout.simple_list_item_2,
+                new String[]{"title", "href"}, new int[]{
+                android.R.id.text1, android.R.id.text2
+        }));
+        listView.setOnItemClickListener(onItemClickListener);
+    }
 
 }
 
