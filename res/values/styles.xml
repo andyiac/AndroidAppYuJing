@@ -5,9 +5,7 @@
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
-<!--
-    <style name="AppBaseTheme" parent="android:Theme.Light">
--->
+<!--     <style name="AppBaseTheme" parent="android:Theme.Light"> -->
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
             Theme customizations available in newer API levels can go in
@@ -21,8 +19,7 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
-
-    <!--对话框的风格  -->
+    <!-- 对话框的风格 -->
     <style name="iDialog" parent="android:Theme.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowIsTranslucent">true</item>
@@ -70,6 +67,10 @@
         <item name="android:layout_marginLeft">15dip</item>
         <item name="android:clickable">true</item>
     </style>
+
+    <style name="Transparent" parent="android:Theme.Light">
+        <!-- 将Activity的Theme设置成透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
 </resources>
-
-

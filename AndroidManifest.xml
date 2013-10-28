@@ -53,13 +53,13 @@
         <activity
             android:name="com.example.slidingmenu.activity.PersonalCenterActivity"></activity>
         <activity
-            android:name="com.example.slidingmenu.activity.NewsYuJingActivity">
+            android:name="com.example.slidingmenu.activity.NewsYuJingActivity"
+             android:theme="@style/Transparent"   >
            <!-- <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>-->
-
             </activity>
         <activity android:name=".map.RapidPositioning"/>
         <activity

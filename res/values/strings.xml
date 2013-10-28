@@ -111,7 +111,8 @@
     <string name="menu10">位置跳转</string>
     <string name="menu11">POI搜索</string>
     <string name="menu12">路线查询</string>
-
+    <string name="wait_link">正在进行网络连接</string>
+    
     <string name="item_student_hint1">请输入姓名:</string>
     <string name="item_student_btn_edit">编辑</string>
     <string name="item_student_hint3">请输入班级:</string>

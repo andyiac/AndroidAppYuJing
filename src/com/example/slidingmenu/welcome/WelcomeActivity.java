@@ -47,6 +47,6 @@ public class WelcomeActivity extends Activity {
                 WelcomeActivity.this.finish();
             }
         };
-        timer.schedule(task, 1000 * 2); // 2秒后自动跳转
+        timer.schedule(task, 1000 * 1); // 1秒后自动跳转
     }
 }
