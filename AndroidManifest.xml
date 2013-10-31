@@ -17,71 +17,81 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
-    <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
+    <uses-permission android:name="android.permission.CALL_PHONE" >
+    </uses-permission>
     <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/application_name"
         android:theme="@style/AppTheme" >
-
-        <meta-data android:name="com.amap.api.v2.apikey" android:value="cf15209f6f0841e706ba54499f108c89"/>
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="cf15209f6f0841e706ba54499f108c89" />
 
         <activity
             android:name="com.example.slidingmenu.activity.SlidingActivity"
             android:label="@string/application_name" >
-            <!--<intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
-        </activity>
-
-        <activity
-                android:name="com.example.slidingmenu.activity.AttendanceActivity"
-                ></activity>
-        <activity
-            android:name="com.example.slidingmenu.activity.ConfigActivity"></activity>
-        <activity
-            android:name="com.example.slidingmenu.activity.ContactActivity"></activity>
-        <activity
-            android:name="com.example.slidingmenu.activity.EmergencyActivity"></activity>
-        <activity
-            android:name="com.example.slidingmenu.activity.MyMsgActivity"></activity>
-        <activity
-            android:name="com.example.slidingmenu.activity.PersonalCenterActivity"></activity>
-        <activity
-            android:name="com.example.slidingmenu.activity.NewsYuJingActivity">
-           <!-- <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
-
-            </activity>
-        <activity android:name=".map.RapidPositioning"/>
-        <activity
-            android:name="com.example.slidingmenu.map.wmap.MapMainActivity"></activity>
-
-          <activity
-            android:name="com.example.slidingmenu.activity.CheckClasses"></activity>
-           <activity
-            android:name="com.example.slidingmenu.activity.Addstudents"></activity>
-             <activity
-                 android:theme="@android:style/Theme.Dialog"
-              
-            android:name="com.example.slidingmenu.activity.DialogStudentActivity"></activity>
-        <activity android:name=".welcome.WelcomeActivity">
+            <!--
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity android:name="com.example.slidingmenu.activity.AttendanceActivity" >
+        </activity>
+        <activity android:name="com.example.slidingmenu.activity.ConfigActivity" >
+        </activity>
+        <activity android:name="com.example.slidingmenu.activity.ContactActivity" >
+        </activity>
+        <activity android:name="com.example.slidingmenu.activity.EmergencyActivity" >
+        </activity>
+        <activity android:name="com.example.slidingmenu.activity.MyMsgActivity" >
+        </activity>
+        <activity android:name="com.example.slidingmenu.activity.PersonalCenterActivity" >
+        </activity>
+        <activity android:name="com.example.slidingmenu.activity.CallNameActivity" >
+        </activity>
+        <activity android:name="com.example.slidingmenu.activity.ManageActivity"></activity>
+        <activity android:name="com.example.slidingmenu.activity.NewsYuJingActivity" >
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+
+        </activity>
+        <activity android:name=".map.RapidPositioning" />
+        <activity android:name="com.example.slidingmenu.map.wmap.MapMainActivity" >
+        </activity>
+        <activity android:name="com.example.slidingmenu.activity.CheckClasses" >
+        </activity>
+        <activity android:name="com.example.slidingmenu.activity.Addstudents" >
+        </activity>
+        <activity
+            android:name="com.example.slidingmenu.activity.DialogStudentActivity"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity android:name=".welcome.WelcomeActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity android:name="com.example.slidingmenu.sensor.SensorDemoActivity"/>-->
-        <activity android:name=".sensor.SensorDemoActivity2T"/>
-        <activity android:name=".view.NewsWebView"/>
+        <!-- <activity android:name="com.example.slidingmenu.sensor.SensorDemoActivity"/> -->
+        <activity android:name=".sensor.SensorDemoActivity2T" />
+        <activity android:name=".view.NewsWebView" />
     </application>
 
 </manifest>

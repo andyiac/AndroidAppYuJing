@@ -30,17 +30,9 @@
                 android:textSize="15sp"
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center_horizontal"
-                android:text="班级汇总"/>
+                android:text="班级管理"/>
 
-        <TextView
-                android:id="@+id/title"
-                android:layout_width="fill_parent"
-                android:layout_height="50dp"
-                android:gravity="center_vertical|center_horizontal"
-                android:paddingLeft="20dp"
-                android:text=""
-                android:textColor="@color/black"
-                android:textSize="20sp"/>
+       
 
      <!--   <include
                 android:id="@+id/line"
@@ -59,36 +51,9 @@
     <ListView
             android:id="@+id/lv_attendence_yujing_bfxy_frag1"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/head_layout">
     </ListView>
-    <EditText
-
-            android:layout_height="50dp"
-            android:layout_width="260dp"
-            android:id="@+id/edt"
-            android:hint="添加班级"
-            android:textSize="20sp"
-            android:layout_marginRight="2dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-
-            >
-
-
-    </EditText>
-
-    <Button
-
-            android:layout_height="50dp"
-            android:layout_width="wrap_content"
-            android:id="@+id/button"
-            android:text="确定"
-            android:textSize="20sp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            >
-    </Button>
   <!--  <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">

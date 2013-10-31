@@ -5,15 +5,18 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import com.example.slidingmenu.R;
+import com.example.slidingmenu.entity.MyConstant;
+import com.example.slidingmenu.entity.MyData;
 //import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -23,42 +26,46 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class Addstudents extends Activity {
 	private ListView listView;
-	private Button mybutton,back;
+	private Button mybutton, back;
 	private StudentBaseAdapter listItemAdapter;
 
-	private List<Map<String, String>> list1 = new ArrayList<Map<String, String>>();
-	private List<Map<String, String>> list2 = new ArrayList<Map<String, String>>();
-	private List<Map<String, String>> list3 = new ArrayList<Map<String, String>>();
+	/*private List<Map<String, String>> list1 = new ArrayList<Map<String, String>>();*/
+
+	private int index; 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_menu);
-		list1 = initDada();
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.addstudent);
+		
 
 		initListView();
-		addDada2ListView();
+	/*	addDada2ListView();*/
 
 		mybutton = (Button) this.findViewById(R.id.btn_add);
-        back = (Button) this.findViewById(R.id.btn_add_student);
-        back.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Addstudents.this.finish();
-            }
-        });
+		back = (Button) this.findViewById(R.id.btn_add_student);
+		back.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Addstudents.this.finish();
+			}
+		});
 
 		mybutton.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
-
-				Intent intent = new Intent();
-				intent.setClass(Addstudents.this, DialogStudentActivity.class);
+				
+				Intent intent = new Intent (Addstudents.this, DialogStudentActivity.class);
+				Bundle bundle=new Bundle();
+				bundle.putInt(MyConstant.KEY_1, index);
+				Log.e("mytag", "Addstudents_position11===="+ index);
+				intent.putExtras(bundle);	
 				startActivity(intent);
 
 			}
@@ -66,103 +73,141 @@ public class Addstudents extends Activity {
 
 	}
 
-	private List<Map<String, String>> initDada() {
-
-		Map<String, String> map1 = new HashMap<String, String>();
-		map1.put("name", "lucy");
-		map1.put("phone", "15369332099");
-		map1.put("myclass", "信工一班");
-
-		Map<String, String> map2 = new HashMap<String, String>();
-		map2.put("name", "Amy");
-		map2.put("phone", "15369332099");
-		map2.put("myclass", "信工二班");
-
-		list1.add(map2);
-		list1.add(map1);
-		return list1;
-
-	}
-
-	private void addDada2ListView() {
-		SharedPreferences share = getSharedPreferences("studentdata", 0);
-		String data1 = share.getString("name", "无");
-		String data2 = share.getString("phone", "无");
-		String data3 = share.getString("myclass", "无");
-		System.out.println("data1=======" + data1 + "data2=======" + data2
-				+ "data3=======" + data3);
-		Map<String, String> maplast = new HashMap<String, String>();
-		maplast.put("name", data1);
-		maplast.put("phone", data2);
-		maplast.put("myclass", data3);
-
-		list1.add(maplast);
-		listItemAdapter.notifyDataSetChanged();
-
-	}
-
 	private void initListView() {
 
+		Bundle bundle = getIntent().getExtras();// 获得传输的数据班级
+		index = bundle.getInt(MyConstant.KEY_1);
+		Log.e("mytag", "Addstudents_position==="+ index);
+        
 		listView = (ListView) this.findViewById(R.id.list);
-		listItemAdapter = new StudentBaseAdapter(this, list1);
+		listItemAdapter = new StudentBaseAdapter(this, index);
 		listView.setAdapter(listItemAdapter);
 
 	}
-
+	
 	class StudentBaseAdapter extends BaseAdapter {
+		private LayoutInflater mInflater;
+		private Context context;
+		private int index;
 
-		Context context;
-		List<Map<String, String>> list;
-
-		public StudentBaseAdapter(Context context) {
-			super();
+		public StudentBaseAdapter(Context context, int index) {
 			this.context = context;
-		}
-
-		public StudentBaseAdapter(Context context,
-				List<Map<String, String>> list) {
-			super();
-			this.context = context;
-			this.list = list;
+			mInflater = LayoutInflater.from(this.context);
+			this.index = index;
 		}
 
 		@Override
 		public int getCount() {
-			// TODO Auto-generated method stub
-			System.out.println(list.size() + "=========大小");
-
-			return list.size();
+			return MyData.getInstance().getClassList().get(index)
+					.getStudentList().size();
 		}
 
 		@Override
-		public Object getItem(int arg0) {
-			// TODO Auto-generated method stub
-			return null;
+		public Object getItem(int position) {
+			return MyData.getInstance().getClassList().get(index)
+					.getStudentList().get(position);
 		}
 
 		@Override
 		public long getItemId(int position) {
-			// TODO Auto-generated method stub
 			return position;
 		}
 
 		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
-			// TODO Auto-generated method stub
-
-			LayoutInflater mInflater = LayoutInflater.from(this.context);
-			convertView = mInflater.inflate(R.layout.item_student, null);
-			EditText et1 = (EditText) convertView.findViewById(R.id.et1);
-			EditText et2 = (EditText) convertView.findViewById(R.id.et2);
-			EditText et3 = (EditText) convertView.findViewById(R.id.et3);
-
-			et1.setText(list.get(position).get("name"));
-
-			et2.setText(list.get(position).get("phone"));
-
-			et3.setText(list.get(position).get("myclass"));
-
+		public View getView(final int position, View convertView,
+				ViewGroup parent) {
+			ViewHolder holder;
+			if (convertView == null) {
+				convertView = mInflater.inflate(R.layout.item_student, null);
+				holder = new ViewHolder();
+				holder.name = (TextView) convertView.findViewById(R.id.stuname);
+				holder.num = (TextView) convertView.findViewById(R.id.stunum);
+				holder.score = (TextView) convertView.findViewById(R.id.stuscore);
+				convertView.setTag(holder);
+			} else {
+				holder = (ViewHolder) convertView.getTag();
+			}
+			Log.e("mytag","getStudentName()=====" + MyData.getInstance().getClassList().get(index).getStudentList().get(position).getName());
+			holder.name.setText(MyData.getInstance().getClassList().get(index)
+					.getStudentList().get(position).getName());
+			holder.num.setText(MyData.getInstance().getClassList().get(index)
+					.getStudentList().get(position).getNum());
+			holder.score.setText(MyData.getInstance().getClassList().get(index)
+					.getStudentList().get(position).getScore()
+					+ "");
+			/*holder.btn1.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					// 修改姓名
+					showTextEdit(position);
+				}
+			});
+			holder.btn2.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					// 修改分数
+					showScoreEdit(position);
+				}
+			});
+			holder.btn3.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					// 修改号码
+					showPhoneEdit(position);
+				}
+			});
+			holder.btn4.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					// 发送消息
+					sms(position);
+				}
+			});*/
 			return convertView;
+		}
+
+		/*private void showTextEdit(int position) {
+			Intent intent = new Intent(context, DialogStudentActivity.class);
+			Bundle bundle = new Bundle();
+			bundle.putInt(MyConstant.KEY_1, index);
+			bundle.putInt(MyConstant.KEY_2, position);
+			intent.putExtras(bundle);
+			context.startActivity(intent);
+		}*/
+
+		/*private void showScoreEdit(int position) {
+			Intent intent = new Intent(context, DialogNumActivity.class);
+			Bundle bundle = new Bundle();
+			bundle.putInt(MyConstant.KEY_1, index);
+			bundle.putInt(MyConstant.KEY_2, position);
+			bundle.putString(MyConstant.KEY_3, "score");
+			intent.putExtras(bundle);
+			context.startActivity(intent);
+		}
+
+		private void showPhoneEdit(int position) {
+			Intent intent = new Intent(context, DialogNumActivity.class);
+			Bundle bundle = new Bundle();
+			bundle.putInt(MyConstant.KEY_1, index);
+			bundle.putInt(MyConstant.KEY_2, position);
+			bundle.putString(MyConstant.KEY_3, "phone");
+			intent.putExtras(bundle);
+			context.startActivity(intent);
+		}
+
+		private void sms(int position) {
+			Uri uri = Uri.parse("smsto:"
+					+ MyDate.getInstance().getClassList().get(index)
+							.getStudentList().get(position).getNum());
+			Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
+			intent.putExtra("sms_body", "快点来上课吧！");
+			context.startActivity(intent);
+		}
+*/
+		private class ViewHolder {
+			TextView name;
+			TextView score;
+			TextView num;
 		}
 
 	}

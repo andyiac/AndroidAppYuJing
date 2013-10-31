@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/text2"
         android:ems="10"
-        android:hint="班级"
+        android:hint="成绩"
         android:inputType="text" />
 
     <Button
