@@ -31,6 +31,7 @@ public class ManageActivity extends Activity {
 		setContentView(R.layout.check_myclasses);
 
 		back = (Button) this.findViewById(R.id.btn_check_myclasses);
+		
 		back.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View view) {

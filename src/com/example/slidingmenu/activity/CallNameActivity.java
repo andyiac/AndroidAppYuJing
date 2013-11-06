@@ -4,17 +4,23 @@ package com.example.slidingmenu.activity;
 import java.util.ArrayList;
 import java.util.List;
 import com.example.slidingmenu.R;
+import com.example.slidingmenu.database.AttendanceHelper;
+import com.example.slidingmenu.database.table.Student;
 import com.example.slidingmenu.entity.DateManager;
 import com.example.slidingmenu.entity.MyConstant;
 import com.example.slidingmenu.entity.MyData;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -25,6 +31,7 @@ import android.view.View.OnClickListener;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,7 +41,12 @@ public class CallNameActivity extends Activity {
 	
 	private int index;
 	private ListView list;  
-	private SearchBaseAdapter listItemAdapter;
+	AttendanceHelper attendhelper;
+	Cursor cursor;
+	SimpleCursorAdapter mAdapter=null;
+	String[] from;
+	int[] to;
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -54,6 +66,7 @@ public class CallNameActivity extends Activity {
 		Bundle bundle=getIntent().getExtras();
 		index=bundle.getInt(MyConstant.KEY_1);
 		Log.e("mytag", "CallNameActivity_position====="+ index);
+		/*cursor = attendenHelper.getStudents(index);*/
 		initBluetooth();
 		initListView();
 		initBtn();
@@ -62,11 +75,20 @@ public class CallNameActivity extends Activity {
 	/**
 	 * 初始化列表
 	 */
+	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	private void initListView()
-	{
+	{   
+		attendhelper = new AttendanceHelper(this);
 		list = (ListView) findViewById(R.id.list_name);
-		listItemAdapter = new SearchBaseAdapter(this,index);
-		list.setAdapter(listItemAdapter);
+		
+		cursor = Student.getStudentName(attendhelper, index);
+		Log.e("mytag", "Student====="+cursor.getColumnName(1).toString());
+		
+		from = new String[] {"sname","attendance","grade"};
+		to = new int[]{R.id.name,R.id.text,R.id.score};
+		mAdapter = new SimpleCursorAdapter(this,R.layout.search_name,cursor,from,to,2);
+		
+		list.setAdapter(mAdapter);
 	}
 	
 	/**
@@ -81,11 +103,14 @@ public class CallNameActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
+				closeBluetooth();
 				CallNameActivity.this.finish();
+				
 			}
 		});
 		/*btn.setBackgroundResource(R.drawable.btn_style_blue);
 		btn.getBackground().setAlpha(200);*/
+		
 		//监听按钮
 		btn.setOnClickListener(new OnClickListener() 
 		{
@@ -147,30 +172,29 @@ public class CallNameActivity extends Activity {
  		return devicesList;
  	}
  	
- 	/**
- 	 * 获得结果
- 	 */
- 	private void getResult()
- 	{   Log.e("mytag", "getList().size()===" + getList().size());
- 		for(int i=0;i<MyData.getInstance().getClassList().get(index).getStudentList().size();i++)//循环当前班级的学生链表
- 		{
- 			MyData.getInstance().getClassList().get(index).getStudentList().get(i).setAttendance(false);//设置全部未出勤
- 			MyData.getInstance().getClassList().get(index).getStudentList().get(i).setScore
- 			(MyData.getInstance().getClassList().get(index).getStudentList().get(i).getScore()-1);
+ 	
+ 	
+ 	private void getResult() {
+ 		Log.e("mytag", "getList().size()===" + cursor.getCount());
+ 		 for(int i=0;i<cursor.getCount();i++)//循环当前班级的学生链表
+ 		{  
+  		   Cursor c = Student.getStudentGrade(attendhelper, index, i);
+ 			Student.updateStudentGrade(attendhelper, index, i, c.getInt(3)-1);
  			for(int j=0;j<getList().size();j++)//设置每个学生都未出勤，每个学生都减一分
  			{   Log.e("mytag", "devicesListgetList().get(j).getName()===" +getList().get(j).getName().toString());
- 				if(MyData.getInstance().getClassList().get(index).getStudentList().get(i).getName().equals(getList().get(j).getName().toString()))//判断第I个学生的名字是否和临时链表里第J个学生名字一样
+ 				if(cursor.getString(3).equals(getList().get(j).getName().toString()))//判断第I个学生的名字是否和临时链表里第J个学生名字一样
  				{
- 					MyData.getInstance().getClassList().get(index).getStudentList().get(i).setAttendance(true);//确定出勤
- 					MyData.getInstance().getClassList().get(index).getStudentList().get(i).setScore
- 		 			(MyData.getInstance().getClassList().get(index).getStudentList().get(i).getScore()+1);//成绩加1
+ 					Student.updateStudentAttend(attendhelper, index, i, "出勤");//确定出勤
+ 					Student.updateStudentGrade(attendhelper, index, i, c.getInt(3)+1);
  				}
  			}
  		}
- 		DateManager.getInstance().save(this);
- 		listItemAdapter.notifyDataSetChanged();		
+ 		
+ 		
  	}
-	
+ 	
+ 	
+ 	
  	/**
  	 * 初始化蓝牙设备
  	 */
@@ -196,7 +220,7 @@ public class CallNameActivity extends Activity {
 	 * 开始搜索
 	 */
 	private void startBluetooth()
- 	{
+ 	{   
  		setProgressBarIndeterminateVisibility(true); 
  		setTitle("正在搜索..."); 
 		/* 清空蓝牙设备列表*/
@@ -225,7 +249,7 @@ public class CallNameActivity extends Activity {
 
 
 
- class SearchBaseAdapter extends BaseAdapter 
+ /*class SearchBaseAdapter extends BaseAdapter 
 {
 	private LayoutInflater mInflater;
 	private Context context;
@@ -242,12 +266,14 @@ public class CallNameActivity extends Activity {
 	public int getCount() {
 		// TODO Auto-generated method stub
 		return MyData.getInstance().getClassList().get(index).getStudentList().size();
+		return cursor.getCount();
 	}
 
 	@Override
 	public Object getItem(int position) {
 		// TODO Auto-generated method stub
 		return MyData.getInstance().getClassList().get(index).getStudentList().get(position);
+		return cursor.getPosition();
 	}
 
 	@Override
@@ -276,6 +302,10 @@ public class CallNameActivity extends Activity {
         }
         
         holder.name.setText(MyData.getInstance().getClassList().get(index).getStudentList().get(position).getName());
+        holder.name.setText(cursor.getColumnName(2));
+        holder.attendance.setText("未出勤");
+        holder.score.setText(cursor.getColumnName(4));
+       
         if(MyData.getInstance().getClassList().get(index).getStudentList().get(position).getAttendance())
         {
         	 holder.attendance.setText("出勤");
@@ -312,6 +342,6 @@ public class CallNameActivity extends Activity {
 		 TextView score;
 		 Button btn;
 	}
-}
+}*/
 }
 
