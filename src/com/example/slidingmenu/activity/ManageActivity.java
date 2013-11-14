@@ -31,7 +31,7 @@ public class ManageActivity extends Activity {
 		setContentView(R.layout.check_myclasses);
 
 		back = (Button) this.findViewById(R.id.btn_check_myclasses);
-		
+
 		back.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -42,7 +42,7 @@ public class ManageActivity extends Activity {
 		// index is classname
 		Bundle bundle = getIntent().getExtras();
 		index = bundle.getInt(MyConstant.KEY_1);
-		Log.e("mytag", "ManageActivity_position" + index);
+		Log.e("mytag", "ManageActivity_class=====" + index);
 
 		initView(listView);
 
@@ -58,7 +58,7 @@ public class ManageActivity extends Activity {
 
 	private List<String> getData() {
 		List<String> data = new ArrayList<String>();
-		
+
 		data.add("添加学生");
 		data.add("开始点名");
 		return data;
@@ -75,7 +75,7 @@ public class ManageActivity extends Activity {
 						Addstudents.class);
 				Bundle bundlea = new Bundle();
 				bundlea.putInt(MyConstant.KEY_1, index);
-				Log.e("mytag", "Manageclass_position===" + index);
+				Log.e("mytag", "classNameManage=====" + index);
 				intenta.putExtras(bundlea);
 				startActivity(intenta);
 				break;
@@ -85,7 +85,7 @@ public class ManageActivity extends Activity {
 						CallNameActivity.class);
 				Bundle bundleb = new Bundle();
 				bundleb.putInt(MyConstant.KEY_1, index);
-				Log.e("mytag", "Managecall_position===" + index);
+				Log.e("mytag", "classNameManage=====" + index);
 				intentb.putExtras(bundleb);
 				startActivity(intentb);
 				break;

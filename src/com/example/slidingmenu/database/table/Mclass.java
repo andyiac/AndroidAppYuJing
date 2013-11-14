@@ -56,10 +56,26 @@ public class Mclass implements TableCreateInterface {
 			db.close();
 		}
 		
-		public static Cursor getClassName(AttendanceHelper attendhelper) {
+		public static void updateClass(AttendanceHelper attendhelper, String name,int id) {
+			SQLiteDatabase db = attendhelper.getWritableDatabase();
+			ContentValues contentValues = new ContentValues();
+			contentValues.put(Mclass.cname, name );
+			db.update(tableName, contentValues,"_id = ?", new String[]{id+""});
+		}
+		
+		public static Cursor getAllClassName(AttendanceHelper attendhelper) {
 			SQLiteDatabase db = attendhelper.getReadableDatabase();
 			return db.query(tableName, new String[] {_id,cname }, null, null,
 					null, null, null);
+		}
+		
+		public static String getClassName(AttendanceHelper attendhelper,int id) {
+			SQLiteDatabase db = attendhelper.getReadableDatabase();
+			Cursor cursor = db.query(tableName, new String[] {_id,cname }, "_id = ?", new String[]{id+""},
+					null, null, null);
+			cursor.moveToFirst();
+			String name =cursor.getString(cursor.getColumnIndex(Mclass.cname));
+			return name;
 		}
 
 }

@@ -18,6 +18,7 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -27,6 +28,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -41,17 +43,17 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
 public class Addstudents extends Activity {
+
 	private ListView listView;
 	private Button mybutton, back;
 	private int index;
 	AttendanceHelper attendhelper;
 	Cursor cursor;
-	SimpleCursorAdapter mAdapter=null;
+	SimpleCursorAdapter mAdapter = null;
 	String[] from;
 	int[] to;
-	
+	String no;
 
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -62,12 +64,12 @@ public class Addstudents extends Activity {
 		initListView();
 
 		mybutton = (Button) this.findViewById(R.id.btn_add);
-		
+
 		back = (Button) this.findViewById(R.id.btn_add_student);
 		back.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				
+
 				Addstudents.this.finish();
 			}
 		});
@@ -80,7 +82,8 @@ public class Addstudents extends Activity {
 						DialogStudentActivity.class);
 				Bundle bundle = new Bundle();
 				bundle.putInt(MyConstant.KEY_1, index);
-				Log.e("mytag", "Addstudents_position11====" + index);
+				bundle.putString("flag", "1");
+				Log.e("mytag", "Addstudents_class====" + index);
 				intent.putExtras(bundle);
 				startActivity(intent);
 
@@ -95,46 +98,103 @@ public class Addstudents extends Activity {
 		Bundle bundle = getIntent().getExtras();// 获得传输的数据班级
 		index = bundle.getInt(MyConstant.KEY_1);
 		Log.e("mytag", "Addstudents_position===" + index);
-		/*cursor = attendenHelper.getStudents(index);*/
+
 		attendhelper = new AttendanceHelper(this);
-        listView = (ListView) this.findViewById(R.id.list);
-        
-        Cursor cursor = Student.getStudentName(attendhelper, index);
-		Log.e("mytag", cursor.getColumnName(1).toString());
-		
-		from = new String[] {"sname","num","grade"};
-		to = new int[]{R.id.stuname,R.id.stunum,R.id.stuscore};
-		
-		mAdapter = new SimpleCursorAdapter(this,R.layout.item_student,cursor,from,to,2);
-	   
+		listView = (ListView) this.findViewById(R.id.list);
+
+	    cursor = Student.getAllStudentName(attendhelper, index);
+
+		from = new String[] { "sno", "sname", "grade" };
+		to = new int[] { R.id.stuname, R.id.stunum, R.id.stuscore };
+
+		mAdapter = new SimpleCursorAdapter(this, R.layout.item_student, cursor,
+				from, to, 2);
+
 		listView.setAdapter(mAdapter);
-		/*listView.setOnItemLongClickListener(new ItemLongClickListener());*/
+		
+		mAdapter.notifyDataSetChanged();
+		
+		listView.setOnItemLongClickListener(new ItemLongClickListener()); 
 
 	}
 
-	/*
-	 * longclick
-	 
-	class ItemLongClickListener implements OnItemLongClickListener {
+	
+	  
+	 class ItemLongClickListener implements OnItemLongClickListener {
 
 		@Override
-		public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
-				int position, long arg3) {
+		public boolean onItemLongClick(AdapterView<?> arg0, View view,
+				int position, long id) {
 			// TODO Auto-generated method stub
-			MyStudent mystudent = (MyStudent) listItemAdapter.getItem(position);
-			showclasstDialog(mystudent, position);
-			return false;
+			/*TextView tview = (TextView)view.findViewById( R.id.stuname); 
+			no = tview.getText().toString();*/
+			int idt = (int)id;
+			Log.v("mytag", "student+idt====" + idt);
+			showManageDialog(manage, idt);
+			return true;
+		}
+		
+		private String[] manage = new String[] { "修改", "请假","删除" };
+
+		private void showManageDialog(final String[] arg, final int id) {
+			new AlertDialog.Builder(Addstudents.this).setTitle("提示")
+					.setItems(arg, new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int which) {
+
+							switch (which) {
+							case 0:// 修改
+
+								Intent intent2 = new Intent(Addstudents.this,
+										DialogStudentActivity.class);
+								Bundle bundle = new Bundle();
+								bundle.putInt(MyConstant.KEY_1, index);
+								bundle.putInt("student",id);
+								Log.e("mytag", "student=====" + id);
+								bundle.putString("flag", "2");
+								intent2.putExtras(bundle);
+								startActivity(intent2);
+								break;
+							case 1://请假
+								int grade = Integer.parseInt(Student.getStudentGrade(attendhelper, index, id)) + 1;
+								Student.updateStudentAttend(attendhelper, index, id, "出勤");
+								Student.updateStudentGrade(attendhelper, index, id, grade + "");
+
+							case 2:// 删除
+								showDelete(id);
+								break;
+							}
+						}
+					}).show();
 		}
 
+		// 删除
+		private void showDelete(final int id) {
 
-		private void showclasstDialog(MyStudent mystudent, int position) {
-			// TODO Auto-generated method stub
-			switch (position) {
-			
-			}
-
+			new AlertDialog.Builder(Addstudents.this)
+					.setTitle("提示")
+					.setMessage("确定删除?")
+					.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int whichButton) {
+							
+							Student.deleteStudent(attendhelper, index, id);
+							cursor = Student.getAllStudentName(attendhelper, index);
+							mAdapter.changeCursor(cursor);
+							mAdapter.notifyDataSetChanged();
+						}
+					})
+					.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int whichButton) {
+						}
+					}).show();
 		}
-	}*/
+	  
+	 }
+	 public boolean onCreateOptionsMenu(Menu menu) {
+			super.onCreateOptionsMenu(menu);
+			menu.add(0, 1, 0, "导入");
+			menu.add(0, 2, 0, "导出 ");
+
+			return true;
+		}
 
 }
-

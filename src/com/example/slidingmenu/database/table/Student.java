@@ -11,7 +11,8 @@ public class Student implements TableCreateInterface{
 	
 	private static String tableName = "student";
 	private static String _id ="_id";
-	private static String cid = "cid";
+	private static String cid  = "cid"; 
+	private static String sno = "sno"; 
 	private static String sname = "sname";
 	private static String num = "num";
 	private static String grade = "grade";
@@ -26,6 +27,9 @@ public class Student implements TableCreateInterface{
 		return Student.student;
 	}
 
+	/**
+	 * 创建学生表
+	 */
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		// TODO Auto-generated method stub
@@ -34,15 +38,19 @@ public class Student implements TableCreateInterface{
 				+ Student.tableName
 				+ " (  "
 				+ Student._id +" integer primary key,"
-				+ Student.cid + " integer,"
+				+ Student.cid+ " integer,"
+				+ Student.sno + " TEXT,"
 				+ Student.sname + " TEXT,"
 				+ Student.num + " TEXT,"
-				+ Student.grade + " integer,"
+				+ Student.grade + " TEXT,"
 				+ Student.attendance + " TEXT)";
 		db.execSQL( sql );
 	}
-
-	@Override
+	
+	/**
+	 * 更新数据库
+	 */
+    @Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		// TODO Auto-generated method stub
 		if ( oldVersion < newVersion ) {
@@ -51,11 +59,22 @@ public class Student implements TableCreateInterface{
 			this.onCreate( db );
 		}
 	}
-	
-	public static void insertStudent(AttendanceHelper attendhelper, int id, String name, String num, int grade, String attendance) {
+	/**
+	 * 向表中插入数据
+	 * @param attendhelper 数据库辅助类
+	 * @param classname   班级
+	 * @param sno   学号
+	 * @param name  姓名
+	 * @param num   电话号码
+	 * @param grade  成绩
+	 * @param attendance  考勤标志
+	 */
+	public static void insertStudent(AttendanceHelper attendhelper, int cid, String sno, String name, String num, String grade, String attendance) {
 		SQLiteDatabase db = attendhelper.getWritableDatabase();
+		
 		ContentValues contentValues = new ContentValues();
-		contentValues.put(Student.cid, id);
+		contentValues.put(Student.cid, cid);
+		contentValues.put(Student.sno, sno);
 		contentValues.put(Student.sname, name);
 		contentValues.put(Student.num, num);
 		contentValues.put(Student.grade, grade);
@@ -65,29 +84,107 @@ public class Student implements TableCreateInterface{
 		db.insert(tableName, null, contentValues);
 		db.close();
 	}
-	
-	public static void deleteStudent(AttendanceHelper attendhelper ,int id) {
+	/**
+	 * 删除该学号数据   
+	 * @param attendhelper  数据库辅助类
+	 * @param classname  班级
+	 * @param sno 学号
+	 */
+	public static void deleteStudent(AttendanceHelper attendhelper ,int cid, int sid) {
 		SQLiteDatabase db = attendhelper.getWritableDatabase();
-		db.delete(tableName, Student._id + "=?",new String[] { id + "" }  );
+		db.delete(tableName, Student._id + "=?" +" and " + Student.cid + "=?",new String[] { sid + "" , cid + "" }  );
 		db.close();
 	}
 	
-	public static Cursor getStudentName(AttendanceHelper attendhelper,int id) {
-		SQLiteDatabase db = attendhelper.getReadableDatabase();
-		return db.query(tableName, null, "Student.cid = ?", new String[]{id + ""},
-				null, null, Student.sname + " COLLATE LOCALIZED ASC ");
-		
-	}
-	public static Cursor getStudentGrade(AttendanceHelper attendhelper,int id,int sid) {
-		SQLiteDatabase db = attendhelper.getReadableDatabase();
-		return db.query(tableName, new String[] {_id, cid, grade},"Student._id = ?" , new String[]{sid + ""},"Student.cid" ,cid = "id", null);
+	/**
+	 * 删除该班级的所有学生
+	 * @param attendhelper 数据库辅助类
+	 * @param classname  班级
+	 */
+	public static void deleteAllStudent(AttendanceHelper attendhelper , int id) {
+		SQLiteDatabase db = attendhelper.getWritableDatabase();
+		db.delete(tableName, Student._id + "=?",new String[] { id +"" }  );
+		db.close();
 	}
 	
-	public static void updateStudentGrade(AttendanceHelper attendhelper,int id,int sid,int grade) {
+	/**
+	 * 得到该班级的所有学生
+	 * @param attendhelper 数据库辅助类 
+	 * @param classname    传递过来的班级名字
+	 * @return   Cursor
+	 */
+	public static Cursor getAllStudentName(AttendanceHelper attendhelper,int id) {
+		SQLiteDatabase db = attendhelper.getReadableDatabase();
+		Cursor cursor = db.query(tableName, null, Student.cid + "=?", new String[]{ id + "" },
+				null, null,Student.sno + " COLLATE LOCALIZED ASC");
+		cursor.moveToFirst();
+		return cursor;
+   }
+	/**
+	 * 
+	 * @param attendhelper
+	 * @param classname
+	 * @param sno
+	 * @return
+	 */
+	public static Cursor getStudentName(AttendanceHelper attendhelper,int id,int sid) {
+		SQLiteDatabase db = attendhelper.getReadableDatabase();
+		Cursor cursor = db.query(tableName, null, Student.cid + "=?" + " and " + Student._id +"=?", new String[]{id + "", sid + "" },
+				null, null, null);
+		 cursor.moveToFirst();
+		 return cursor;
+		
+	}
+	/**
+	 * 获得学生姓名
+	 * @param attendhelper   数据库辅助类
+	 * @param classname   学生的班级
+	 * @param sid   学生表中的学生id
+	 * @return  String类型
+	 *//*
+	public static String getStudentName(AttendanceHelper attendhelper,int id,int sid) {
+		SQLiteDatabase db = attendhelper.getReadableDatabase();
+		Cursor cursor = db.query(tableName, new String[] {Student.sname}, Student.cid + "=?" + " and " + Student._id +"=?", new String[]{id+"" , sid + ""},
+				null, null, null);
+		cursor.moveToFirst();
+		String name =cursor.getString(cursor.getColumnIndex(Student.sname));
+		return name;
+		
+	}*/
+	
+	
+	public static String getStudentGrade(AttendanceHelper attendhelper,int id,int sid) {
+		SQLiteDatabase db = attendhelper.getReadableDatabase();
+		Cursor cursor = db.query(tableName, null,Student._id + "=?" + " and " + Student.cid + "=?", new String[]{sid + "", id + ""}, null ,null,Student._id + " COLLATE LOCALIZED ASC");
+		cursor.moveToFirst();
+		String grade = cursor.getString(cursor.getColumnIndex(Student.grade));
+		return grade;
+	}
+	/**
+	 * 得到该班级id最大学生
+	 * @param attendhelper 数据库辅助类 
+	 * @param classname    传递过来的班级名字
+	 * @return   Cursor
+	 */
+	public static int getMaxIdStudent(AttendanceHelper attendhelper,int id) {
+		String strSql = "select max(_id) AS maxId from student" + " where cid = " + id;
+		SQLiteDatabase db = attendhelper.getReadableDatabase();
+		Cursor cursor = db.rawQuery(strSql, null);
+		cursor.moveToNext();
+		int maxId = cursor .getInt(cursor.getColumnIndex("maxId")); 
+		/*Cursor cursor = db.query("tableName", null, Student.classname + "=?", new String[]{ classname }, null, null, Student._id + " DESC");
+		cursor.moveToNext(); 
+		int id = cursor.getInt(cursor.getColumnIndex("_id"));*/
+		// 这个id就是最大值
+		return maxId ;
+		
+   }
+	
+	public static void updateStudentGrade(AttendanceHelper attendhelper,int id,int sid,String grade) {
 		SQLiteDatabase db = attendhelper.getWritableDatabase();
 		ContentValues contentValues = new ContentValues();
 		contentValues.put(Student.grade, grade);
-		db.update(tableName, contentValues, Student._id + "=" + sid + "," +Student.cid + "=" + id,null);
+		db.update(tableName, contentValues, Student._id + "=?" + " and " +Student.cid + "=?" ,new String[]{sid + "",id + ""});
 	    db.close();
 	}
 	
@@ -95,8 +192,29 @@ public class Student implements TableCreateInterface{
 		SQLiteDatabase db = attendhelper.getWritableDatabase();
 		ContentValues contentValues = new ContentValues();
 		contentValues.put(Student.attendance, attendance);
-		db.update(tableName, contentValues, Student._id + "=" + sid + "," +Student.cid + "=" + id,null);
+		db.update(tableName, contentValues, Student._id + "=?" + " and " +Student.cid + "=?" ,new String[]{ sid +"",id + ""});
 	    db.close();
 	}
+	
+	public static void updateStudent(AttendanceHelper attendhelper, int id, int sid,String sno, String name, String num, String grade) {
+		SQLiteDatabase db = attendhelper.getWritableDatabase();
+		ContentValues contentValues = new ContentValues();
+		contentValues.put(Student.sno, sno);
+		contentValues.put(Student.sname, name);
+		contentValues.put(Student.num, num);
+		contentValues.put(Student.grade, grade);
+		db.update(tableName, contentValues, Student._id + "=?" + " and " +Student.cid + "=?",new String[]{
+				sid+"", id+""
+		});
+	    db.close();
+	}
+	
+	/*public static void updateStudent(AttendanceHelper attendhelper, int id, String newname) {
+		SQLiteDatabase db = attendhelper.getWritableDatabase();
+		ContentValues contentValues = new ContentValues();
+		contentValues.put(Student.classname, newname);
+		db.update(tableName, contentValues, Student.classname + "=?",new String[]{oldname});
+	    db.close();
+	}*/
 
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="280dp"
-    android:layout_height="300dp"
+    android:layout_height="180dp"
     android:background="@drawable/bg_dialog_class"
     android:gravity="center_horizontal"
     android:orientation="vertical" >
@@ -12,54 +12,25 @@
         android:layout_height="40dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="25dp"
         android:textColor="#333"
         android:textSize="20sp"
-        />
-    
-    <EditText 
-        android:id="@+id/sno"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="学号"
-        android:inputType="text" 
-        android:layout_below="@+id/dialog_change_name"/>
+        android:textIsSelectable="true" />
 
     <EditText
-        android:id="@+id/text1"
+        android:id="@+id/classname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/sno"
+        android:layout_below="@+id/dialog_change_name"
         android:ems="10"
-        android:hint="姓名"
         android:inputType="text" />
-     <EditText
-        android:id="@+id/text2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text1"
-        android:ems="10"
-        android:hint="电话"
-        android:inputType="text" 
-        android:numeric="integer"
-        />
-      <EditText
-        android:id="@+id/text3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text2"
-        android:ems="10"
-        android:hint="成绩"
-        android:inputType="text"
-        android:numeric="integer" />
 
     <Button
-        android:id="@+id/cancleBtn0"
+        android:id="@+id/exitBtn"
         android:layout_width="90dp"
         android:layout_height="35dp"
-        android:layout_alignBaseline="@+id/sureBtn0"
-        android:layout_alignBottom="@+id/sureBtn0"
+        android:layout_alignBaseline="@+id/sureBtn"
+        android:layout_alignBottom="@+id/sureBtn"
         android:layout_alignParentRight="true"
         android:layout_marginRight="30dp"
         android:background="@drawable/btn_style_blue"
@@ -69,12 +40,12 @@
         android:textSize="16sp" />
 
     <Button
-        android:id="@+id/sureBtn0"
+        android:id="@+id/sureBtn"
         android:layout_width="90dp"
         android:layout_height="35dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginLeft="30dp"
         android:background="@drawable/btn_style_blue"
         android:gravity="center"
