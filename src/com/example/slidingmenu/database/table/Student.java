@@ -79,8 +79,6 @@ public class Student implements TableCreateInterface{
 		contentValues.put(Student.num, num);
 		contentValues.put(Student.grade, grade);
 		contentValues.put(Student.attendance, attendance);
-		
-		
 		db.insert(tableName, null, contentValues);
 		db.close();
 	}
@@ -121,7 +119,7 @@ public class Student implements TableCreateInterface{
 		return cursor;
    }
 	/**
-	 * 
+	 * 获得学生相关信息
 	 * @param attendhelper
 	 * @param classname
 	 * @param sno
@@ -152,7 +150,13 @@ public class Student implements TableCreateInterface{
 		
 	}*/
 	
-	
+	/**
+	 * 获得学生成绩
+	 * @param attendhelper
+	 * @param id
+	 * @param sid
+	 * @return
+	 */
 	public static String getStudentGrade(AttendanceHelper attendhelper,int id,int sid) {
 		SQLiteDatabase db = attendhelper.getReadableDatabase();
 		Cursor cursor = db.query(tableName, null,Student._id + "=?" + " and " + Student.cid + "=?", new String[]{sid + "", id + ""}, null ,null,Student._id + " COLLATE LOCALIZED ASC");
@@ -180,6 +184,13 @@ public class Student implements TableCreateInterface{
 		
    }
 	
+	/**
+	 * 更新学生成绩
+	 * @param attendhelper
+	 * @param id
+	 * @param sid
+	 * @param grade
+	 */
 	public static void updateStudentGrade(AttendanceHelper attendhelper,int id,int sid,String grade) {
 		SQLiteDatabase db = attendhelper.getWritableDatabase();
 		ContentValues contentValues = new ContentValues();
@@ -188,6 +199,13 @@ public class Student implements TableCreateInterface{
 	    db.close();
 	}
 	
+	/***
+	 * 更新学生考勤标记
+	 * @param attendhelper
+	 * @param id
+	 * @param sid
+	 * @param attendance
+	 */
 	public static void updateStudentAttend(AttendanceHelper attendhelper,int id,int sid,String attendance) {
 		SQLiteDatabase db = attendhelper.getWritableDatabase();
 		ContentValues contentValues = new ContentValues();
@@ -196,6 +214,16 @@ public class Student implements TableCreateInterface{
 	    db.close();
 	}
 	
+	/**
+	 * 更新学生信息
+	 * @param attendhelper
+	 * @param id
+	 * @param sid
+	 * @param sno
+	 * @param name
+	 * @param num
+	 * @param grade
+	 */
 	public static void updateStudent(AttendanceHelper attendhelper, int id, int sid,String sno, String name, String num, String grade) {
 		SQLiteDatabase db = attendhelper.getWritableDatabase();
 		ContentValues contentValues = new ContentValues();
@@ -208,13 +236,4 @@ public class Student implements TableCreateInterface{
 		});
 	    db.close();
 	}
-	
-	/*public static void updateStudent(AttendanceHelper attendhelper, int id, String newname) {
-		SQLiteDatabase db = attendhelper.getWritableDatabase();
-		ContentValues contentValues = new ContentValues();
-		contentValues.put(Student.classname, newname);
-		db.update(tableName, contentValues, Student.classname + "=?",new String[]{oldname});
-	    db.close();
-	}*/
-
 }

@@ -21,6 +21,7 @@ public class Mclass implements TableCreateInterface {
 		
 		return Mclass.myClass;
 	}
+	
 	//建立数据表
 		@Override
 		public void onCreate(SQLiteDatabase db){
@@ -32,6 +33,7 @@ public class Mclass implements TableCreateInterface {
 					+ Mclass.cname + " TEXT)";
 			db.execSQL( sql );
 		}
+		
 		@Override
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 			// TODO Auto-generated method stub
@@ -41,7 +43,11 @@ public class Mclass implements TableCreateInterface {
 				this.onCreate( db );
 			}
 		}
-		
+		/**
+		 * 插入班级
+		 * @param attendhelper
+		 * @param name  班级
+		 */
 		public static void insertClass(AttendanceHelper attendhelper ,String name) {
 			SQLiteDatabase db = attendhelper.getWritableDatabase();
 			ContentValues contentValues = new ContentValues();
@@ -49,26 +55,47 @@ public class Mclass implements TableCreateInterface {
 			db.insert(tableName, null, contentValues);
 			db.close();
 		}
-		
+		/**
+		 * 删除班级
+		 * @param attendhelper
+		 * @param id
+		 */
 		public static void deleteClass(AttendanceHelper attendhelper ,int id) {
 			SQLiteDatabase db = attendhelper.getWritableDatabase();
 			db.delete(tableName, Mclass._id + "=?",new String[] { id + "" }  );
 			db.close();
 		}
 		
+		
+		/**
+		 * 更新班级
+		 * @param attendhelper
+		 * @param name
+		 * @param id
+		 */
 		public static void updateClass(AttendanceHelper attendhelper, String name,int id) {
 			SQLiteDatabase db = attendhelper.getWritableDatabase();
 			ContentValues contentValues = new ContentValues();
 			contentValues.put(Mclass.cname, name );
 			db.update(tableName, contentValues,"_id = ?", new String[]{id+""});
 		}
-		
+		/**
+		 * 获得全部班级
+		 * @param attendhelper
+		 * @return
+		 */
 		public static Cursor getAllClassName(AttendanceHelper attendhelper) {
 			SQLiteDatabase db = attendhelper.getReadableDatabase();
 			return db.query(tableName, new String[] {_id,cname }, null, null,
 					null, null, null);
 		}
 		
+		/**
+		 * 获得相应的班级
+		 * @param attendhelper
+		 * @param id
+		 * @return
+		 */
 		public static String getClassName(AttendanceHelper attendhelper,int id) {
 			SQLiteDatabase db = attendhelper.getReadableDatabase();
 			Cursor cursor = db.query(tableName, new String[] {_id,cname }, "_id = ?", new String[]{id+""},

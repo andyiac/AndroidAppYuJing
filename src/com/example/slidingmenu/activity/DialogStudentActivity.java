@@ -3,15 +3,9 @@ package com.example.slidingmenu.activity;
 import com.example.slidingmenu.R;
 import com.example.slidingmenu.database.AttendanceHelper;
 import com.example.slidingmenu.database.table.Student;
-import com.example.slidingmenu.entity.DateManager;
 import com.example.slidingmenu.entity.MyConstant;
-import com.example.slidingmenu.entity.MyData;
-
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
@@ -154,10 +148,13 @@ public class DialogStudentActivity extends Activity implements OnClickListener {
 						text4, "未出勤");
                   
 				  Intent intent = new Intent(DialogStudentActivity.this,
-				  Addstudents.class); Bundle bundle = new Bundle();
+				  Addstudents.class);
+				 /* Bundle bundle = new Bundle();
 				  bundle.putInt(MyConstant.KEY_1, index);
-				  intent.putExtras(bundle); startActivity(intent);
-				  DialogStudentActivity.this.finish();
+				  intent.putExtras(bundle);*/
+				  setResult(0, intent);
+				  Log.e("mytag","DialogStudent111---------Addstudent");  
+				  this.finish();
 			}
 
 		}
@@ -167,13 +164,13 @@ public class DialogStudentActivity extends Activity implements OnClickListener {
 			edt2.setText("");
 			edt3.setText("");
 			edt4.setText("");
-			Intent intent = new Intent(DialogStudentActivity.this,
+			/*Intent intent = new Intent(DialogStudentActivity.this,
 					Addstudents.class);
 			Bundle bundle = new Bundle();
 			bundle.putInt(MyConstant.KEY_1, index);
 			intent.putExtras(bundle);
-			startActivity(intent);
-		    DialogStudentActivity.this.finish(); 
+			startActivity(intent);*/
+		    this.finish(); 
 
 		}
 
@@ -187,13 +184,13 @@ public class DialogStudentActivity extends Activity implements OnClickListener {
 			Student.updateStudent(attendhelper, index, studentnum, sno, name, num,
 					grade);
 
-			Intent intent = new Intent(DialogStudentActivity.this,
+			/*Intent intent = new Intent(DialogStudentActivity.this,
 					Addstudents.class);
 			Bundle bundle = new Bundle();
 			bundle.putInt(MyConstant.KEY_1, index);
 			intent.putExtras(bundle);
-			startActivity(intent);
-			DialogStudentActivity.this.finish();
+			startActivity(intent);*/
+			this.finish();
 		}
 		case 3: {
 

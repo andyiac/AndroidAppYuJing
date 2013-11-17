@@ -93,6 +93,7 @@
         <activity android:name=".sensor.SensorDemoActivity2T" />
         <activity android:name=".view.NewsWebView" />
         <activity android:name="com.example.slidingmenu.activity.DialogClassActivity"></activity>
-    </application>
+        <activity android:name="com.example.slidingmenu.activity.ExportExcelActivity"></activity>  
+        </application>
 
 </manifest>

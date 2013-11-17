@@ -1,46 +1,34 @@
 package com.example.slidingmenu.activity;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
 import com.example.slidingmenu.R;
 import com.example.slidingmenu.database.AttendanceHelper;
-import com.example.slidingmenu.database.table.Mclass;
 import com.example.slidingmenu.database.table.Student;
 import com.example.slidingmenu.entity.MyConstant;
-import com.example.slidingmenu.entity.MyData;
-import com.example.slidingmenu.entity.MyStudent;
+
 //import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
-import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
-import android.widget.TextView;
+
+
 
 public class Addstudents extends Activity {
 
@@ -152,7 +140,7 @@ public class Addstudents extends Activity {
 								Log.e("mytag", "student=====" + id);
 								bundle.putString("flag", "2");
 								intent2.putExtras(bundle);
-								startActivity(intent2);
+								startActivityForResult(intent2,0);
 								break;
 							case 1://请假
 								int grade = Integer.parseInt(Student.getStudentGrade(attendhelper, index, id)) + 1;
@@ -166,6 +154,15 @@ public class Addstudents extends Activity {
 						}
 					}).show();
 		}
+		protected void onActivityResult(int requestCode, int resultCode, Intent data){
+			// TODO Auto-generated method stub
+			/*Bundle bundle = data.getExtras();
+			String message = bundle.getString("message");*/
+			cursor = Student.getAllStudentName(attendhelper, index);
+			mAdapter.changeCursor(cursor);
+			mAdapter.notifyDataSetChanged();
+		}
+		
 
 		// 删除
 		private void showDelete(final int id) {
@@ -195,6 +192,24 @@ public class Addstudents extends Activity {
 			menu.add(0, 2, 0, "导出 ");
 
 			return true;
+		}
+	 public boolean onOptionsItemSelected(MenuItem item) {
+		 
+			switch (item.getItemId()) {
+			case 1:
+				
+				return true;
+			case 2:
+				Intent intent2 = new Intent(Addstudents.this,
+						ExportExcelActivity.class);
+				Bundle bundle = new Bundle();
+				bundle.putInt(MyConstant.KEY_1, index);
+				Log.e("mytag", "classname=====" + index);
+				intent2.putExtras(bundle);
+				startActivity(intent2);
+                return true;
+          }
+			return false;
 		}
 
 }
