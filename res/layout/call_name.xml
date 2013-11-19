@@ -5,8 +5,8 @@
     android:layout_gravity="center_horizontal" >
 
     <!-- 居中显示背景 -->
-
-
+       
+   
     <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
             android:layout_gravity="center_horizontal"
             android:text="开始点名"/>
 
-</RelativeLayout>
+  </RelativeLayout>
     <include
         android:id="@+id/line"
         android:layout_width="fill_parent"
@@ -51,7 +51,23 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="开始搜索" />
-    <!-- 列表 -->
+    
+    <ProgressBar 
+			android:layout_height="wrap_content" 
+			style="?android:attr/progressBarStyleLarge" 
+			android:layout_width="wrap_content" 
+			android:id="@+id/progressbar" 
+			android:layout_centerInParent="true"
+		/>
+    <TextView
+        android:id="@+id/search" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progressbar"
+        android:layout_centerInParent="true"
+       />
+    
+    <!-- 列表 -->    
 
     <ListView
         android:id="@+id/list_name"

@@ -20,9 +20,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class CallNameActivity extends Activity {
@@ -34,12 +37,14 @@ public class CallNameActivity extends Activity {
 	SimpleCursorAdapter mAdapter = null;
 	String[] from;
 	int[] to;
+	ProgressBar progressbar;
+	TextView textSearch;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		/* requestWindowFeature(Window.FEATURE_NO_TITLE); */
-		setContentView(R.layout.call_name);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.call_name);	
 		// 初始化
 		init();
 	}
@@ -81,6 +86,9 @@ public class CallNameActivity extends Activity {
 	 * 初始化按钮
 	 */
 	private void initBtn() {
+		progressbar = (ProgressBar)findViewById(R.id.progressbar);
+		textSearch = (TextView)findViewById(R.id.search);
+		progressbar.setVisibility(View.GONE);	
 		Button btn = (Button) findViewById(R.id.btn_add);
 		Button back = (Button) findViewById(R.id.btn_call_name);
 		back.setOnClickListener(new OnClickListener() {
@@ -127,8 +135,10 @@ public class CallNameActivity extends Activity {
 			} else if
 			// 接收器_搜索完成时调用
 			(BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)) {
-				setProgressBarIndeterminateVisibility(false);// 停止转圈
-				setTitle("搜索完成");
+				//setProgressBarIndeterminateVisibility(false);// 停止转圈
+				progressbar.setVisibility(View.GONE);
+				textSearch.setText("");
+				/*setTitle("搜索完成");*/
 				getResult();
 			   
 			}
@@ -172,6 +182,7 @@ public class CallNameActivity extends Activity {
 				} 
 		    }
 		}
+		 Toast.makeText(this, "搜索完成", Toast.LENGTH_SHORT).show();
 		 cursor = Student.getAllStudentName(attendhelper, index);
 		 mAdapter.changeCursor(cursor);
 		 mAdapter.notifyDataSetChanged();
@@ -202,8 +213,11 @@ public class CallNameActivity extends Activity {
 	 * 开始搜索
 	 */
 	private void startBluetooth() {
-		setProgressBarIndeterminateVisibility(true);
-		setTitle("正在搜索...");
+		/*setProgressBarIndeterminateVisibility(true);*/
+		progressbar.setVisibility(View.VISIBLE);
+		textSearch.setText("正在搜索");
+		
+		/*setTitle("正在搜索...");*/
 		/* 清空蓝牙设备列表 */
 		for (int i = 0; i < devicesList.size(); i++) {
 			devicesList.remove(i);

@@ -1,10 +1,12 @@
 package com.example.slidingmenu.activity;
 
 
+
 import com.example.slidingmenu.R;
 import com.example.slidingmenu.database.AttendanceHelper;
 import com.example.slidingmenu.database.table.Student;
 import com.example.slidingmenu.entity.MyConstant;
+
 
 //import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 
@@ -73,7 +75,7 @@ public class Addstudents extends Activity {
 				bundle.putString("flag", "1");
 				Log.e("mytag", "Addstudents_class====" + index);
 				intent.putExtras(bundle);
-				startActivity(intent);
+				startActivityForResult(intent, 0);
 
 			}
 		});
@@ -122,7 +124,7 @@ public class Addstudents extends Activity {
 			return true;
 		}
 		
-		private String[] manage = new String[] { "修改", "请假","删除" };
+		private String[] manage = new String[] { "修改", "请假", "删除" };
 
 		private void showManageDialog(final String[] arg, final int id) {
 			new AlertDialog.Builder(Addstudents.this).setTitle("提示")
@@ -144,9 +146,13 @@ public class Addstudents extends Activity {
 								break;
 							case 1://请假
 								int grade = Integer.parseInt(Student.getStudentGrade(attendhelper, index, id)) + 1;
+								Log.e("mytag", "qingjia======"+ grade);
 								Student.updateStudentAttend(attendhelper, index, id, "出勤");
 								Student.updateStudentGrade(attendhelper, index, id, grade + "");
-
+								cursor = Student.getAllStudentName(attendhelper, index);
+								mAdapter.changeCursor(cursor);
+								mAdapter.notifyDataSetChanged();
+								break;
 							case 2:// 删除
 								showDelete(id);
 								break;
@@ -154,15 +160,6 @@ public class Addstudents extends Activity {
 						}
 					}).show();
 		}
-		protected void onActivityResult(int requestCode, int resultCode, Intent data){
-			// TODO Auto-generated method stub
-			/*Bundle bundle = data.getExtras();
-			String message = bundle.getString("message");*/
-			cursor = Student.getAllStudentName(attendhelper, index);
-			mAdapter.changeCursor(cursor);
-			mAdapter.notifyDataSetChanged();
-		}
-		
 
 		// 删除
 		private void showDelete(final int id) {
@@ -212,4 +209,15 @@ public class Addstudents extends Activity {
 			return false;
 		}
 
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		super.onActivityResult(requestCode, resultCode, data);
+		
+		cursor = Student.getAllStudentName(attendhelper, index);
+		mAdapter.changeCursor(cursor);
+		mAdapter.notifyDataSetChanged();
+		Log.e("mytag","AddStudent111---------Addstudent");  
+	}
+	 
 }

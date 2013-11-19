@@ -3,7 +3,6 @@ package com.example.slidingmenu.activity;
 import java.util.ArrayList;
 import java.util.List;
 import com.example.slidingmenu.R;
-import com.example.slidingmenu.activity.CheckClasses.MyAdapter;
 import com.example.slidingmenu.entity.MyConstant;
 import android.app.Activity;
 import android.content.Intent;

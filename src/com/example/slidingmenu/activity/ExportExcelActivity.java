@@ -12,7 +12,7 @@ import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 import com.example.slidingmenu.R;
 import com.example.slidingmenu.database.AttendanceHelper;
-import com.example.slidingmenu.database.table.Mclass;
+import com.example.slidingmenu.database.table.Myclass;
 import com.example.slidingmenu.database.table.Student;
 import com.example.slidingmenu.entity.MyConstant;
 import com.example.slidingmenu.entity.MyStudent;
@@ -148,7 +148,7 @@ public class ExportExcelActivity extends Activity {
 			// 循环遍历
 			if (cursor.moveToFirst()) {
 				do {
-					className = Mclass.getClassName(attendhelper, index);
+					className = Myclass.getClassName(attendhelper, index);
 					id = cursor.getInt(cursor.getColumnIndex("_id"));
 					studentNo = cursor.getString(cursor.getColumnIndex("sno"));
 					studentName = cursor.getString(cursor

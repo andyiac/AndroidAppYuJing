@@ -2,12 +2,9 @@ package com.example.slidingmenu.activity;
 
 import com.example.slidingmenu.R;
 import com.example.slidingmenu.database.AttendanceHelper;
-import com.example.slidingmenu.database.table.Mclass;
-import com.example.slidingmenu.database.table.Student;
+import com.example.slidingmenu.database.table.Myclass;
 import com.example.slidingmenu.entity.MyConstant;
 import com.example.slidingmenu.fragment.pice.fragment.AttendancePiceFragment2;
-import com.hp.hpl.sparta.Document.Index;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -49,7 +46,7 @@ public class DialogClassActivity extends Activity
 		view = (TextView)findViewById(R.id.dialog_change_name);
 		view.setText("修改班级名称");
 		classname = (EditText)findViewById(R.id.classname);
-		String name = Mclass.getClassName(attendHelper, id);
+		String name = Myclass.getClassName(attendHelper, id);
 		classname.setText(name);
 		
 		sureBtn = (Button)findViewById(R.id.sureBtn);
@@ -64,7 +61,9 @@ public class DialogClassActivity extends Activity
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
 			String cname = classname.getText().toString();
-	 		Mclass.updateClass(attendHelper, cname, id);
+	 		Myclass.updateClass(attendHelper, cname, id);
+	 		Intent intent = new Intent(DialogClassActivity.this,AttendancePiceFragment2.class);
+	 		setResult(0, intent);
             DialogClassActivity.this.finish();
 		}
 		

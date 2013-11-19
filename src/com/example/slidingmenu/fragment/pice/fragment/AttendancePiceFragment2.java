@@ -27,6 +27,8 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -37,13 +39,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
-import android.widget.TextView;
 import android.widget.Toast;
 import com.example.slidingmenu.R;
+import com.example.slidingmenu.activity.Addstudents;
 import com.example.slidingmenu.activity.DialogClassActivity;
+import com.example.slidingmenu.activity.ExportExcelActivity;
 import com.example.slidingmenu.activity.ManageActivity;
 import com.example.slidingmenu.database.AttendanceHelper;
-import com.example.slidingmenu.database.table.Mclass;
+import com.example.slidingmenu.database.table.Myclass;
 import com.example.slidingmenu.database.table.Student;
 import com.example.slidingmenu.entity.MyConstant;
 
@@ -85,7 +88,7 @@ public class AttendancePiceFragment2 extends Fragment {
 		editclass = (EditText) view.findViewById(R.id.edtclass);
 		button = (Button) view.findViewById(R.id.button);
 
-		cursor = Mclass.getAllClassName(attendhelper);
+		cursor = Myclass.getAllClassName(attendhelper);
 		Log.e("mytag", cursor.getColumnName(1).toString());
 
 		from = new String[] { "cname" };
@@ -119,10 +122,10 @@ public class AttendancePiceFragment2 extends Fragment {
 			} else {
 				String className = editclass.getText().toString();
 
-				Mclass.insertClass(attendhelper, className);
+				Myclass.insertClass(attendhelper, className);
                 editclass.setText("");
                
-                cursor = Mclass.getAllClassName(attendhelper);
+                cursor = Myclass.getAllClassName(attendhelper);
                 mAdapter.changeCursor(cursor);
                 mAdapter.notifyDataSetChanged();
 			}
@@ -139,7 +142,6 @@ public class AttendancePiceFragment2 extends Fragment {
 			Intent intenta = new Intent(getActivity(), ManageActivity.class);
 			Bundle bundlea = new Bundle();
 		    int cid = (int)id;
-			/*TextView tview = (TextView) arg1.findViewById(R.id.classname);*/
 			bundlea.putInt(MyConstant.KEY_1, cid);
 			Log.v("mytag", "cid=====" + cid);
 			intenta.putExtras(bundlea);
@@ -155,8 +157,6 @@ public class AttendancePiceFragment2 extends Fragment {
 				int position, long id) {
 			// TODO Auto-generated method stub
 			int idt = (int) id;
-		/*	TextView tview = (TextView) arg1.findViewById(R.id.classname);
-			classname = tview.getText().toString();*/
 			Log.e("mytag", "idt====="+ idt);
 			showManageDialog(manage, idt);
 			return true;
@@ -179,7 +179,7 @@ public class AttendancePiceFragment2 extends Fragment {
 							Bundle bundle = new Bundle();
 							bundle.putInt(MyConstant.KEY_1, idt);
 							intent2.putExtras(bundle);
-							startActivity(intent2);
+							startActivityForResult(intent2, 0);
 							break;
 
 						case 1:// 删除
@@ -199,9 +199,9 @@ public class AttendancePiceFragment2 extends Fragment {
 				.setPositiveButton("确定", new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int whichButton) {
 						// Log.v("",""+_id);
-						Mclass.deleteClass(attendhelper, id);
+						Myclass.deleteClass(attendhelper, id);
 						Student.deleteAllStudent(attendhelper, id);
-						cursor = Mclass.getAllClassName(attendhelper);
+						cursor = Myclass.getAllClassName(attendhelper);
 						mAdapter.changeCursor(cursor);
 					    mAdapter.notifyDataSetChanged();
 					}
@@ -211,5 +211,14 @@ public class AttendancePiceFragment2 extends Fragment {
 					}
 				}).show();
 	}
+
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		super.onActivityResult(requestCode, resultCode, data);
+		cursor = Myclass.getAllClassName(attendhelper);
+		mAdapter.changeCursor(cursor);
+	    mAdapter.notifyDataSetChanged();
+	}	
 
 }

@@ -1,11 +1,9 @@
 package com.example.slidingmenu.database;
 
-import com.example.slidingmenu.database.table.Mclass;
+import com.example.slidingmenu.database.table.Myclass;
 import com.example.slidingmenu.database.table.Student;
-
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 
 
@@ -43,14 +41,14 @@ public class AttendanceHelper extends SQLiteOpenHelper{
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 	  
-		Mclass.getInstance().onCreate(db);
+		Myclass.getInstance().onCreate(db);
 		Student.getInstance().onCreate(db);
 	}
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		
-		Mclass.getInstance().onUpgrade(db, oldVersion, newVersion);
+		Myclass.getInstance().onUpgrade(db, oldVersion, newVersion);
 		Student.getInstance().onUpgrade(db, oldVersion, newVersion);
 	}
 

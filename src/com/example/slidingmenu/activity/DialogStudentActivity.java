@@ -149,11 +149,8 @@ public class DialogStudentActivity extends Activity implements OnClickListener {
                   
 				  Intent intent = new Intent(DialogStudentActivity.this,
 				  Addstudents.class);
-				 /* Bundle bundle = new Bundle();
-				  bundle.putInt(MyConstant.KEY_1, index);
-				  intent.putExtras(bundle);*/
 				  setResult(0, intent);
-				  Log.e("mytag","DialogStudent111---------Addstudent");  
+				  Log.e("mytag","DialogStudent111----success-----Addstudent");  
 				  this.finish();
 			}
 
@@ -164,12 +161,10 @@ public class DialogStudentActivity extends Activity implements OnClickListener {
 			edt2.setText("");
 			edt3.setText("");
 			edt4.setText("");
-			/*Intent intent = new Intent(DialogStudentActivity.this,
+			Intent intent = new Intent(DialogStudentActivity.this,
 					Addstudents.class);
-			Bundle bundle = new Bundle();
-			bundle.putInt(MyConstant.KEY_1, index);
-			intent.putExtras(bundle);
-			startActivity(intent);*/
+			setResult(0, intent);
+			Log.e("mytag","DialogStudent111----filed-----Addstudent");
 		    this.finish(); 
 
 		}
@@ -184,17 +179,18 @@ public class DialogStudentActivity extends Activity implements OnClickListener {
 			Student.updateStudent(attendhelper, index, studentnum, sno, name, num,
 					grade);
 
-			/*Intent intent = new Intent(DialogStudentActivity.this,
+			Intent intent = new Intent(DialogStudentActivity.this,
 					Addstudents.class);
-			Bundle bundle = new Bundle();
-			bundle.putInt(MyConstant.KEY_1, index);
-			intent.putExtras(bundle);
-			startActivity(intent);*/
+			setResult(0, intent);
+			Log.e("mytag","DialogStudent222-----success----Addstudent");
 			this.finish();
 		}
 		case 3: {
-
-			this.finish();
+			Intent intent = new Intent(DialogStudentActivity.this,
+					Addstudents.class);
+			setResult(0, intent);
+			Log.e("mytag","DialogStudent222-----filed----Addstudent");
+            this.finish();
 
 		}
 
