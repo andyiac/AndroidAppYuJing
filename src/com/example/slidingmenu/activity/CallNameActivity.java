@@ -8,25 +8,30 @@ import com.example.slidingmenu.database.table.Student;
 import com.example.slidingmenu.entity.MyConstant;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.AdapterView.OnItemLongClickListener;
 
 public class CallNameActivity extends Activity {
 
@@ -80,6 +85,7 @@ public class CallNameActivity extends Activity {
 
 		list.setAdapter(mAdapter);
 		mAdapter.notifyDataSetChanged();
+		list.setOnItemLongClickListener(new ItemLongClickListener());
 	}
 
 	/**
@@ -109,10 +115,6 @@ public class CallNameActivity extends Activity {
 		});
 	}
 
-	/*
-	 * @Override protected void onDestroy() //不用的时候关闭蓝牙 { // TODO Auto-generated
-	 * method stub super.onDestroy(); closeBluetooth(); }
-	 */
 	// ---------------------------------蓝牙---------------------------------//
 
 	/* 蓝牙适配器 */
@@ -238,5 +240,54 @@ public class CallNameActivity extends Activity {
 		}
 		unregisterReceiver(mReceiver);
 	}
+	
+	 class ItemLongClickListener implements OnItemLongClickListener {
 
+			@Override
+			public boolean onItemLongClick(AdapterView<?> arg0, View view,
+					int position, long id) {
+				// TODO Auto-generated method stub
+				/*TextView tview = (TextView)view.findViewById( R.id.stuname); 
+				no = tview.getText().toString();*/
+				int idt = (int)id;
+				Log.v("mytag", "student+idt====" + idt);
+				showManageDialog(manage, idt);
+				return true;
+			}
+			
+			private String[] manage = new String[] {"请假", "提醒" };
+
+			private void showManageDialog(final String[] arg, final int id) {
+				new AlertDialog.Builder(CallNameActivity.this).setTitle("提示")
+						.setItems(arg, new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int which) {
+
+								switch (which) {
+								case 0://请假
+									int grade = Integer.parseInt(Student.getStudentGrade(attendhelper, index, id)) + 1;
+									Log.e("mytag", "qingjia======"+ grade);
+									Student.updateStudentAttend(attendhelper, index, id, "出勤");
+									Student.updateStudentGrade(attendhelper, index, id, grade + "");
+									cursor = Student.getAllStudentName(attendhelper, index);
+									mAdapter.changeCursor(cursor);
+									mAdapter.notifyDataSetChanged();
+									break;
+								case 1:// 删除
+									sms(id);
+									break;
+								}
+							}
+						}).show();
+			}
+			private void sms(int position)
+			{   
+				Cursor cur = Student.getStudentName(attendhelper, index, position);
+				String num = cur.getString(cur.getColumnIndex("num"));
+				Uri uri = Uri.parse("smsto:"+num);  
+				Intent intent = new Intent(Intent.ACTION_SENDTO, uri);  
+				intent.putExtra("sms_body", "快点来上课吧！");  
+				startActivity(intent); 
+			}
+
+}
 }

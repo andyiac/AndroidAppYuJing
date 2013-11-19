@@ -95,9 +95,9 @@ public class Addstudents extends Activity {
 	    cursor = Student.getAllStudentName(attendhelper, index);
 
 		from = new String[] { "sno", "sname", "grade" };
-		to = new int[] { R.id.stuname, R.id.stunum, R.id.stuscore };
+		to = new int[] { R.id.name, R.id.text, R.id.score };
 
-		mAdapter = new SimpleCursorAdapter(this, R.layout.item_student, cursor,
+		mAdapter = new SimpleCursorAdapter(this, R.layout.search_name, cursor,
 				from, to, 2);
 
 		listView.setAdapter(mAdapter);

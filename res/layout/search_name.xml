@@ -5,7 +5,7 @@
 
     <TextView
         android:id="@+id/name"
-        android:layout_width="100dp"
+        android:layout_width="105dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -15,7 +15,7 @@
 
     <TextView
         android:id="@+id/text"
-        android:layout_width="100dp"
+        android:layout_width="105dp"
         android:layout_height="40dp"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/name"
@@ -25,21 +25,14 @@
 
     <TextView
         android:id="@+id/score"
-        android:layout_width="50dp"
+        android:layout_width="80dp"
         android:layout_height="40dp"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/text"
         android:gravity="center"
         android:textIsSelectable="true"
-        android:textSize="20sp" />
+        android:textSize="20sp" 
+        />
 
-    <Button
-        android:id="@+id/btn"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_alignBaseline="@+id/score"
-        android:layout_alignBottom="@+id/score"
-        android:layout_alignParentRight="true"
-        android:text="发送" />
 
 </RelativeLayout>
