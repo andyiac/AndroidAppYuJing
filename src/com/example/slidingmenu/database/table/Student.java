@@ -101,7 +101,7 @@ public class Student implements TableCreateInterface{
 	 */
 	public static void deleteAllStudent(AttendanceHelper attendhelper , int id) {
 		SQLiteDatabase db = attendhelper.getWritableDatabase();
-		db.delete(tableName, Student._id + "=?",new String[] { id +"" }  );
+		db.delete(tableName, Student.cid + "=?",new String[] { id +"" }  );
 		db.close();
 	}
 	

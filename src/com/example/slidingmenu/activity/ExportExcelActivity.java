@@ -13,7 +13,6 @@ import jxl.write.WritableWorkbook;
 import com.example.slidingmenu.R;
 import com.example.slidingmenu.database.AttendanceHelper;
 import com.example.slidingmenu.database.table.Myclass;
-import com.example.slidingmenu.database.table.Student;
 import com.example.slidingmenu.entity.MyConstant;
 import com.example.slidingmenu.entity.MyStudent;
 import android.app.Activity;
@@ -60,7 +59,7 @@ public class ExportExcelActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.export);
+		setContentView(R.layout.export_excel);
 
 		Bundle bundle = getIntent().getExtras();
 		index = bundle.getInt(MyConstant.KEY_1);
@@ -97,6 +96,10 @@ public class ExportExcelActivity extends Activity {
 				// TODO Auto-generated method stub
 				map.clear();
 				map_new.clear();
+				if("".equals(fileNameEdit.getText().toString().trim())) {
+					Toast.makeText(getApplicationContext(), "文件不能为空", Toast.LENGTH_SHORT).show();
+				}
+				else { 
 				FILE_NAME = fileNameEdit.getText().toString();
 				FILE_PATH = getSDPath();
 				if (initXls()) {
@@ -111,6 +114,7 @@ public class ExportExcelActivity extends Activity {
 					});
 					t.start();
 				}
+			}
 			}
 		});
 	}
@@ -135,7 +139,7 @@ public class ExportExcelActivity extends Activity {
 				Log.i("file", file + "");
 			}
 			wwb = Workbook.createWorkbook(file);
-			ws = wwb.createSheet("联系人表", 0);
+			ws = wwb.createSheet("学生表", 0);
 
 			SQLiteDatabase db = attendhelper.getReadableDatabase();
 			Cursor cursor = db.query("student", null, "cid = ?",

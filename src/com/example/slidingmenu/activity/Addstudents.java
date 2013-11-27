@@ -194,16 +194,22 @@ public class Addstudents extends Activity {
 		 
 			switch (item.getItemId()) {
 			case 1:
-				
+				Intent intenta = new Intent(Addstudents.this,
+						ImportExcelActivity.class);
+				Bundle bundlea = new Bundle();
+				bundlea.putInt(MyConstant.KEY_1, index);
+				Log.e("mytag", "classname=====" + index);
+				intenta.putExtras(bundlea);
+				startActivityForResult(intenta,0);
 				return true;
 			case 2:
-				Intent intent2 = new Intent(Addstudents.this,
+				Intent intentb = new Intent(Addstudents.this,
 						ExportExcelActivity.class);
-				Bundle bundle = new Bundle();
-				bundle.putInt(MyConstant.KEY_1, index);
+				Bundle bundleb = new Bundle();
+				bundleb.putInt(MyConstant.KEY_1, index);
 				Log.e("mytag", "classname=====" + index);
-				intent2.putExtras(bundle);
-				startActivity(intent2);
+				intentb.putExtras(bundleb);
+				startActivity(intentb);
                 return true;
           }
 			return false;

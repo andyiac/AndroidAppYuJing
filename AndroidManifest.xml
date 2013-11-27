@@ -94,7 +94,9 @@
         <activity android:name=".view.NewsWebView" />
         <activity android:name="com.example.slidingmenu.activity.DialogClassActivity"
                   android:theme="@android:style/Theme.Dialog"></activity>
-        <activity android:name="com.example.slidingmenu.activity.ExportExcelActivity"></activity>  
+        <activity android:name="com.example.slidingmenu.activity.ExportExcelActivity"></activity>
+        <activity android:name="com.example.slidingmenu.activity.ImportExcelActivity"></activity>
+        <activity android:name="com.example.slidingmenu.activity.FileSearchActivity"></activity>
         </application>
 
 </manifest>
