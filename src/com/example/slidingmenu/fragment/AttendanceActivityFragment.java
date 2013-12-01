@@ -29,11 +29,11 @@ import android.widget.TextView;
 
 import com.example.slidingmenu.R;
 import com.example.slidingmenu.activity.AttendanceActivity;
-import com.example.slidingmenu.activity.SlidingActivity;
-import com.example.slidingmenu.fragment.pice.fragment.AttendancePiceFragment1;
 import com.example.slidingmenu.fragment.pice.fragment.AttendancePiceFragment2;
 
 import java.util.ArrayList;
+
+//import com.example.slidingmenu.fragment.pice.fragment.AttendancePiceFragment1;
 
 public class AttendanceActivityFragment extends Fragment {
 

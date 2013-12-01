@@ -1,3 +1,4 @@
+/*
 package com.example.slidingmenu.entity;
 
 import java.io.DataInputStream;
@@ -10,9 +11,11 @@ import android.app.Activity;
 import android.content.Context;
 
 
+*/
 /**
  * 数据管理类
- */
+ *//*
+
 public class DateManager//单例模式 
 {	
 	private static DateManager uniqueInstance = new DateManager();
@@ -31,10 +34,12 @@ public class DateManager//单例模式
 		return uniqueInstance;
 	}
 	
-	/**
+	*/
+/**
 	 * 存储数据
 	 * @param activity 
-	 */
+	 *//*
+
 	public void save(Activity activity) 
 	{
 		try
@@ -62,10 +67,12 @@ public class DateManager//单例模式
 		}
 	}		
 	
-	/**
+	*/
+/**
 	 * 读取数据
 	 * @param activity
-	 */
+	 *//*
+
 	public void load(Activity activity) 
 	{
 		try 
@@ -100,9 +107,11 @@ public class DateManager//单例模式
 		}
 	}
 
-	/**
+	*/
+/**
 	 * 存储链表中数据
-	 */
+	 *//*
+
 	private void saveListDate()
 	{
 		//获取当前班级链表长度
@@ -154,9 +163,11 @@ public class DateManager//单例模式
 		}
 	}
 	
-	/**
+	*/
+/**
 	 * 读取链表中数据
-	 */
+	 *//*
+
 	private void loadListDate()
 	{
 		int classSize = 0;//初始化
@@ -203,3 +214,4 @@ public class DateManager//单例模式
 	}
 	
 }
+*/
