@@ -53,6 +53,7 @@
     <string name="sign_sex">选择性别</string>
     <string name="sign_address">选择地址</string>
 
+
     <string-array name="pick_sex">
         <item>男</item>
         <item>女</item>
@@ -112,10 +113,10 @@
     <string name="menu11">POI搜索</string>
     <string name="menu12">路线查询</string>
 
-    <string name="item_student_hint1">请输入姓名:</string>
+    <string name="item_student_hint1">姓名:</string>
     <string name="item_student_btn_edit">编辑</string>
-    <string name="item_student_hint3">请输入班级:</string>
-    <string name="item_student_hint2">请输入电话:</string>
+    <string name="item_student_hint3">成绩:</string>
+    <string name="item_student_hint2">电话:</string>
     <string name="item_student_btn_send">添加</string>
     <string name="list1">
         <a>您要添加的姓名</a>

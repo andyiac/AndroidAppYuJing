@@ -39,7 +39,7 @@ public class CheckClasses extends Activity implements OnClickListener {
         setContentView(R.layout.check_myclasses);
 
         back = (Button) this.findViewById(R.id.btn_check_myclasses);
-		edtext = (EditText) this.findViewById(R.id.edt);
+		/*edtext = (EditText) this.findViewById(R.id.edt);*/
 		mybutton = (Button) this.findViewById(R.id.button);
         back.setOnClickListener(new OnClickListener() {
             @Override
@@ -128,7 +128,7 @@ public class CheckClasses extends Activity implements OnClickListener {
 			TextView tv = (TextView) convertView.findViewById(R.id.tv);
 			ImageView img = (ImageView) convertView.findViewById(R.id.img);
 
-			img.setImageResource(R.drawable.delete);
+ 			img.setImageResource(R.drawable.delete);
 			tv.setText(listofclass.get(position));
 			img.setOnClickListener(new OnClickListener() {
 				
