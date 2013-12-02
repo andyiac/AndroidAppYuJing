@@ -15,7 +15,10 @@
  */
 package com.example.slidingmenu.fragment;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -40,11 +43,14 @@ public class NewsYuJingFragment extends Fragment {
 	private Button showRight;
 	private MyAdapter mAdapter;
 	private ViewPager mPager;
-	private ArrayList<Fragment> pagerItemList = new ArrayList<Fragment>();
+	
 
+	private ArrayList<Fragment> pagerItemList = new ArrayList<Fragment>();
+	
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View mView = inflater.inflate(R.layout.view_pager, null);
+		
 		showLeft = (Button) mView.findViewById(R.id.showLeft);
 		showRight = (Button) mView.findViewById(R.id.showRight);
 		mPager = (ViewPager) mView.findViewById(R.id.pager);
@@ -52,6 +58,7 @@ public class NewsYuJingFragment extends Fragment {
 		NewsYuJingPiceFragment2 page2 = new NewsYuJingPiceFragment2();
 		pagerItemList.add(page1);
 		pagerItemList.add(page2);
+
 		mAdapter = new MyAdapter(getFragmentManager());
 		mPager.setAdapter(mAdapter);
 		mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -77,7 +84,6 @@ public class NewsYuJingFragment extends Fragment {
 
 			}
 		});
-
 		return mView;
 	}
 
@@ -151,5 +157,6 @@ public class NewsYuJingFragment extends Fragment {
 	public interface MyPageChangeListener {
 		public void onPageSelected(int position);
 	}
+
 
 }

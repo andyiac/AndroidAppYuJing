@@ -26,13 +26,15 @@
                 android:layout_below="@+id/title" >
         </include>
 
-        <ListView
-                android:id="@+id/lv_news_yujing_bfxy_frag1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@+id/line" >
-        </ListView>
-
+       
+		<com.example.slidingmenu.fragment.pice.fragment.PullDownView 
+		    android:id="@+id/lv_news_yujing_bfxy_frag1"
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    android:layout_below="@+id/line" 
+		    android:background="@android:color/white">
+		
+		</com.example.slidingmenu.fragment.pice.fragment.PullDownView>
     </RelativeLayout>
 
 </RelativeLayout>

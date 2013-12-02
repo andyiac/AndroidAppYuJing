@@ -14,3 +14,7 @@ public class MyApplication  extends Application{
 //        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
     }
 }
+
+
+
+//---------------test
