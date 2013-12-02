@@ -74,8 +74,8 @@
         <activity android:name=".map.RapidPositioning" />
         <activity android:name="com.example.slidingmenu.map.wmap.MapMainActivity" >
         </activity>
-        <activity android:name="com.example.slidingmenu.activity.CheckClasses" >
-        </activity>
+      <!--  <activity android:name="com.example.slidingmenu.activity.CheckClasses" >
+        </activity>-->
         <activity android:name="com.example.slidingmenu.activity.Addstudents" >
         </activity>
         <activity

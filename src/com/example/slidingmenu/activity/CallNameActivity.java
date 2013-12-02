@@ -1,11 +1,5 @@
 package com.example.slidingmenu.activity;
 
-import java.util.ArrayList;
-import java.util.List;
-import com.example.slidingmenu.R;
-import com.example.slidingmenu.database.AttendanceHelper;
-import com.example.slidingmenu.database.table.Student;
-import com.example.slidingmenu.entity.MyConstant;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -25,13 +19,21 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.AdapterView.OnItemLongClickListener;
+
+import com.example.slidingmenu.R;
+import com.example.slidingmenu.database.AttendanceHelper;
+import com.example.slidingmenu.database.table.Student;
+import com.example.slidingmenu.entity.MyConstant;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CallNameActivity extends Activity {
 
