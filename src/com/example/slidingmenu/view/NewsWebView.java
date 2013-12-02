@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.slidingmenu.R;
 
@@ -25,6 +26,9 @@ import com.example.slidingmenu.R;
 public class NewsWebView extends Activity {
 	private static final String TAG = "NewsWebView";
 	Document doc;
+	TextView newsTitle;
+	TextView newsTime;
+	TextView newsContent;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,10 @@ public class NewsWebView extends Activity {
 	@SuppressWarnings("null")
 	private void init(String newsid) {
 		// mWebView=(WebView) findViewById(R.id.webView);
+		newsTitle = (TextView)findViewById(R.id.news_title);
+		newsTime = (TextView)findViewById(R.id.news_time);
+		newsContent = (TextView)findViewById(R.id.news_content);
+		
 		Button btnBack = (Button) findViewById(R.id.showLeft);
 		btnBack.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -62,6 +70,7 @@ public class NewsWebView extends Activity {
 		for (Element link : links) {
 			Log.i(TAG, "===========");
 			name = link.text().toString().trim();
+			newsTitle.setText(name);
 		}
 		Log.i(TAG, "name=" + name);
 		StringBuilder s = new StringBuilder();
@@ -71,6 +80,7 @@ public class NewsWebView extends Activity {
 		Log.i(TAG, "time=" + temp);
 		int i = temp.length() - 7;
 		String time2 = temp.substring(0, i);
+		newsTime.setText(time2);
 		Log.i(TAG, "time2=" + time2);
 
 		
@@ -80,8 +90,9 @@ public class NewsWebView extends Activity {
 			temp = body.text().toString().trim();
 			Log.i(TAG, "a=" + temp);
 			Log.i(TAG, "----------");
-			s.append(temp).append("\n");
+			s.append(temp).append("\n"+ "\n");
 		}
+		newsContent.setText(s);
 		Log.i(TAG, "s=" + s);
 
 	}

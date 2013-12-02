@@ -63,10 +63,10 @@ public class NewsYuJingPiceFragment1 extends Fragment implements
 	protected static final String TAG = "NewsYuJingPiceFragment1";
 
 	private SimpleAdapter mAdapter;
-	private List<String> mStrings = new ArrayList<String>();
+//	private List<String> mStrings = new ArrayList<String>();
 	View view;
 
-	List<Map<String, String>> list;
+	List<Map<String, String>> list = new ArrayList<Map<String, String>>();;
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -88,7 +88,7 @@ public class NewsYuJingPiceFragment1 extends Fragment implements
 						android.R.id.text2 });
 		mListView.setAdapter(mAdapter);
 		// 加载数据 本类使用
-		loadData();
+//		loadData();
 
 		// 设置可以自动获取更多 滑到最后一个自动获取 改成false将禁用自动获取更多
 		mPullDownView.enableAutoFetchMore(true, 1);
@@ -128,7 +128,7 @@ public class NewsYuJingPiceFragment1 extends Fragment implements
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		list = new ArrayList<Map<String, String>>();
+		
 		Elements es = doc.select("span.newslist a");
 		// html body div#wrapper div#boxout div#center div#proDownload ul li a
 		// span.newslist a
@@ -191,8 +191,43 @@ public class NewsYuJingPiceFragment1 extends Fragment implements
 			@Override
 			public void run() {
 				
-
+			//	Toast.makeText(NewsYuJingPiceFragment1.this.getActivity(), "加载更多", Toast.LENGTH_SHORT).show();
+				Log.i(TAG, "+++++++++++=======");
+				Elements mores = doc.select("DIV.jt");
+				String id;
+				for (Element more : mores) {
+					id =  "http://www.hebeinu.edu.cn/"+ more.getElementsByTag("a").get(1).attr("href");
+					Log.i(TAG, "id="+id);
+				}
+			
+				try {
+					Log.i(TAG, "1111111111111");
+					Document next = Jsoup.connect("id").get();
+					Log.i(TAG, "222222222222222");
+					Elements es = next.select("span.newslist a");
+					// html body div#wrapper div#boxout div#center div#proDownload ul li a
+					// span.newslist a
+					Log.i(TAG, "33333333333333");
+					for (Element e : es) {
+						Map<String, String> map = new HashMap<String, String>();
+						String a = e.getElementsByTag("a").text();
+						Log.i(TAG, "a="+a);
+						map.put("title", e.getElementsByTag("a").text());
+						// 不显示链接地址
+						map.put("href",
+								"http://www.hebeinu.edu.cn/"
+										+ e.getElementsByTag("a").attr("href"));
+						list.add(map);
+					}
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+					
+			
+				
 				// 告诉它获取更多完毕 这个事线程安全的 可看源代码
+				
 				mPullDownView.notifyDidMore();
 				Message msg = mUIHandler.obtainMessage(WHAT_DID_MORE);
 				// msg.obj = "After more " + System.currentTimeMillis();
@@ -207,13 +242,13 @@ public class NewsYuJingPiceFragment1 extends Fragment implements
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
 			case WHAT_DID_LOAD_DATA: {
-				if (msg.obj != null) {
-					List<String> strings = (List<String>) msg.obj;
-					if (!strings.isEmpty()) {
-						mStrings.addAll(strings);
-						mAdapter.notifyDataSetChanged();
-					}
-				}
+//				if (msg.obj != null) {
+//					List<String> strings = (List<String>) msg.obj;
+//					if (!strings.isEmpty()) {
+//					//	mStrings.addAll(strings);
+//						mAdapter.notifyDataSetChanged();
+//					}
+//				}
 				Toast.makeText(NewsYuJingPiceFragment1.this.getActivity(),
 						"" + mListView.getAdapter().getCount(),
 						Toast.LENGTH_LONG).show();
@@ -233,15 +268,13 @@ public class NewsYuJingPiceFragment1 extends Fragment implements
 			case WHAT_DID_MORE: {
 //				String body = (String) msg.obj;
 //				mStrings.add(body);
-				Toast.makeText(NewsYuJingPiceFragment1.this.getActivity(), "加载更多", Toast.LENGTH_SHORT).show();
-				
-				Log.i(TAG, "=====================");
-				Elements mores = doc.select("DIV.jt");
-				for (Element more : mores) {
-					
-					String id =  "http://www.hebeinu.edu.cn/"+ more.getElementsByTag("a").attr("href");
-					Log.i(TAG, "id="+id);
-				}
+//				Toast.makeText(NewsYuJingPiceFragment1.this.getActivity(), "加载更多", Toast.LENGTH_SHORT).show();
+//				Log.i(TAG, "=====================");
+//				Elements mores = doc.select("DIV.jt");
+//				for (Element more : mores) {
+//					String id =  "http://www.hebeinu.edu.cn/"+ more.getElementsByTag("a").attr("href");
+//					Log.i(TAG, "id="+id);
+//				}
 				mAdapter.notifyDataSetChanged();
 
 				break;
@@ -252,32 +285,4 @@ public class NewsYuJingPiceFragment1 extends Fragment implements
 
 	};
 
-	// 模拟数据
-	private String[] mStringArray = { "Abbaye de Belloc",
-			"Abbaye du Mont des Cats", "Abertam", "Abondance", "Ackawi",
-			"Acorn", "Adelost", "Affidelice au Chablis", "Afuega'l Pitu",
-			"Airag", "Airedale", "Aisy Cendre", "Allgauer Emmentaler",
-			"Alverca", "Ambert", "American Cheese" };
-
-	private void loadData() {
-		new Thread(new Runnable() {
-
-			@Override
-			public void run() {
-				try {	 
-					Thread.sleep(0000);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				List<String> strings = new ArrayList<String>();
-				for (String body : mStringArray) {
-					strings.add(body);
-				}
-				Message msg = mUIHandler.obtainMessage(WHAT_DID_LOAD_DATA);
-				msg.obj = strings;
-				msg.sendToTarget();
-			}
-		}).start();
-		// mPullDownView.onRefreshComplete();
-	}
 }
