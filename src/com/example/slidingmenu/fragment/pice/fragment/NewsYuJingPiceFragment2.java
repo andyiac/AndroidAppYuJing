@@ -85,8 +85,6 @@ public class NewsYuJingPiceFragment2 extends Fragment {
         }
         List<Map<String, String>> list = new ArrayList<Map<String, String>>();
         Elements es = doc.select("html body div#wrapper div#boxout div#center div#proDownload ul li a");
-        //html body div#wrapper div#boxout div#center  div#proDownload ul li a
-        //span.newslist a
         for (Element e : es) {
             Map<String, String> map = new HashMap<String, String>();
             String a = e.getElementsByTag("a").text();
