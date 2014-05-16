@@ -186,7 +186,7 @@ public class PullDownView extends LinearLayout implements OnScrollOverListener {
 
 			case WHAT_DID_MORE: {
 				mIsFetchMoreing = false;
-				mFooterTextView.setText("更多邮件");
+				mFooterTextView.setText("加载更多");
 				mFooterLoadingView.setVisibility(View.GONE);
 			}
 			}
