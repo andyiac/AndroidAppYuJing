@@ -110,7 +110,7 @@ public class PullDownView extends LinearLayout implements OnScrollOverListener {
 			mListView.setBottomPosition(index);
 			mFooterLoadingView.setVisibility(View.VISIBLE);
 		} else {
-			mFooterTextView.setText("邮件不自动收取");
+			mFooterTextView.setText("加载更多");
 			mFooterLoadingView.setVisibility(View.GONE);
 		}
 		mEnableAutoFetchMore = enable;
