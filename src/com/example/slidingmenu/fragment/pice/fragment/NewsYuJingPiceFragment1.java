@@ -15,19 +15,6 @@
  */
 package com.example.slidingmenu.fragment.pice.fragment;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -43,32 +30,94 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
-
 import com.example.slidingmenu.R;
 import com.example.slidingmenu.fragment.pice.fragment.PullDownView.OnPullDownListener;
 import com.example.slidingmenu.tool.Util;
 import com.example.slidingmenu.view.NewsWebView;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @SuppressLint("HandlerLeak")
 public class NewsYuJingPiceFragment1 extends Fragment implements
 		OnPullDownListener, OnItemClickListener {
-	private PullDownView mPullDownView;
-	private ListView mListView;
-	Document doc;
-	Document next;
+	protected static final String TAG = "NewsYuJingPiceFragment1";
 	/** Handler What加载数据完毕 **/
 	private static final int WHAT_DID_LOAD_DATA = 0;
 	/** Handler What更新数据完毕 **/
 	private static final int WHAT_DID_REFRESH = 1;
 	/** Handler What更多数据完毕 **/
 	private static final int WHAT_DID_MORE = 2;
-	protected static final String TAG = "NewsYuJingPiceFragment1";
+	Document doc;
+	Document next;
+	@SuppressLint("HandlerLeak")
+	private Handler mUIHandler = new Handler() {
 
+		@Override
+		public void handleMessage(Message msg) {
+			switch (msg.what) {
+			case WHAT_DID_LOAD_DATA: {
+				Toast.makeText(NewsYuJingPiceFragment1.this.getActivity(),
+						"" + mListView.getAdapter().getCount(),
+						Toast.LENGTH_LONG).show();
+				// 诉它数据加载完毕;
+				break;
+			}
+			case WHAT_DID_REFRESH: {
+
+				mAdapter.notifyDataSetChanged();
+				// 告诉它更新完毕
+				break;
+			}
+
+			case WHAT_DID_MORE: {
+				String body = (String) msg.obj;
+				try {
+					Log.i(TAG, "body=" + body);
+					next = Jsoup.parse(new URL(body), 5000);
+					Log.i(TAG, "body2=" + body);
+				} catch (MalformedURLException e1) {
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+
+				Elements es = next.select("span.newslist a");
+
+				for (Element e : es) {
+					Map<String, String> map = new HashMap<String, String>();
+					String a = e.getElementsByTag("a").text();
+					Log.i(TAG, "a=" + a);
+					map.put("title", e.getElementsByTag("a").text());
+					// 不显示链接地址
+					map.put("href", "http://www.hebeinu.edu.cn/"
+							+ e.getElementsByTag("a").attr("href"));
+					list.add(map);
+				}
+				mAdapter.notifyDataSetChanged();
+
+				break;
+			}
+			}
+
+		}
+
+	};
 	int page = 1;
-	private SimpleAdapter mAdapter;
 	View view;
-
-	List<Map<String, String>> list = new ArrayList<Map<String, String>>();;
+    List<Map<String, String>> list = new ArrayList<Map<String, String>>();
+	private PullDownView mPullDownView;
+	private ListView mListView;;
+	private SimpleAdapter mAdapter;
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -91,9 +140,7 @@ public class NewsYuJingPiceFragment1 extends Fragment implements
 		mListView.setOnItemClickListener(this);
 		mAdapter = new SimpleAdapter(
 				NewsYuJingPiceFragment1.this.getActivity(), list,
-				android.R.layout.simple_list_item_2, new String[] { "title",
-						"href" }, new int[] { android.R.id.text1,
-						android.R.id.text2 });
+				android.R.layout.simple_list_item_2, new String[] { "title" }, new int[] { android.R.id.text1});
 		mListView.setAdapter(mAdapter);
 
 		// 设置可以自动获取更多 滑到最后一个自动获取 改成false将禁用自动获取更多
@@ -237,83 +284,5 @@ public class NewsYuJingPiceFragment1 extends Fragment implements
 			}
 		}).start();
 	}
-
-	@SuppressLint("HandlerLeak")
-	private Handler mUIHandler = new Handler() {
-
-		@Override
-		public void handleMessage(Message msg) {
-			switch (msg.what) {
-			case WHAT_DID_LOAD_DATA: {
-				// if (msg.obj != null) {
-				// List<String> strings = (List<String>) msg.obj;
-				// if (!strings.isEmpty()) {
-				// // mStrings.addAll(strings);
-				// mAdapter.notifyDataSetChanged();
-				// }
-				// }
-				Toast.makeText(NewsYuJingPiceFragment1.this.getActivity(),
-						"" + mListView.getAdapter().getCount(),
-						Toast.LENGTH_LONG).show();
-				// 诉它数据加载完毕;
-				break;
-			}
-			case WHAT_DID_REFRESH: {
-				// String body = (String) msg.obj;
-				// mStrings.add(0, body);
-				// mAdapter.notifyDataSetChanged();
-
-				mAdapter.notifyDataSetChanged();
-				// 告诉它更新完毕
-				break;
-			}
-
-			case WHAT_DID_MORE: {
-				// String body = (String) msg.obj;
-				// mStrings.add(body);
-				// Toast.makeText(NewsYuJingPiceFragment1.this.getActivity(),
-				// "加载更多", Toast.LENGTH_SHORT).show();
-				// Log.i(TAG, "=====================");
-				// Elements mores = doc.select("DIV.jt");
-				// for (Element more : mores) {
-				// String id = "http://www.hebeinu.edu.cn/"+
-				// more.getElementsByTag("a").attr("href");
-				// Log.i(TAG, "id="+id);
-				// }
-				String body = (String) msg.obj;
-				// mStrings.add(body);
-
-				try {
-					Log.i(TAG, "body=" + body);
-					next = Jsoup.parse(new URL(body), 5000);
-					Log.i(TAG, "body2=" + body);
-				} catch (MalformedURLException e1) {
-					e1.printStackTrace();
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				}
-				Log.i(TAG, "222222222222222");
-				Elements es = next.select("span.newslist a");
-
-				Log.i(TAG, "33333333333333");
-				for (Element e : es) {
-					Map<String, String> map = new HashMap<String, String>();
-					String a = e.getElementsByTag("a").text();
-					Log.i(TAG, "a=" + a);
-					map.put("title", e.getElementsByTag("a").text());
-					// 不显示链接地址
-					map.put("href", "http://www.hebeinu.edu.cn/"
-							+ e.getElementsByTag("a").attr("href"));
-					list.add(map);
-				}
-				mAdapter.notifyDataSetChanged();
-
-				break;
-			}
-			}
-
-		}
-
-	};
 
 }
