@@ -97,6 +97,7 @@
         <activity android:name="com.example.slidingmenu.activity.ExportExcelActivity"></activity>
         <activity android:name="com.example.slidingmenu.activity.ImportExcelActivity"></activity>
         <activity android:name="com.example.slidingmenu.activity.FileSearchActivity"></activity>
+        <activity android:name=".activity.LoginActivity"/>
         </application>
 
 </manifest>

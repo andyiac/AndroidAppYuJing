@@ -2,14 +2,10 @@ package com.example.slidingmenu.welcome;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.Window;
-import android.view.WindowManager;
-
 import com.example.slidingmenu.R;
-import com.example.slidingmenu.activity.NewsYuJingActivity;
-import com.example.slidingmenu.activity.SlidingActivity;
+import com.example.slidingmenu.activity.LoginActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -27,7 +23,7 @@ public class WelcomeActivity extends Activity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         //Remove notification bar
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         //set screenOrientation landscape
 //        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
@@ -39,7 +35,7 @@ public class WelcomeActivity extends Activity {
 //        TextView textView = (TextView)findViewById(R.id.fullscreen_content);
 //        textView.setTextColor(CLOCL_COLOR);
 
-        final Intent it = new Intent(this, NewsYuJingActivity.class);
+        final Intent it = new Intent(this, LoginActivity.class);
         Timer timer = new Timer();
         TimerTask task = new TimerTask() {
             public void run() {

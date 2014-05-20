@@ -11,6 +11,7 @@
     <color name="black_half">#50000000</color>
 
 
+
     <color name="tab_unselected">#ff000000</color>
     <color name="tab_selected">#ff383838</color>
     <color name="tab_focus">#ffff8000</color>
@@ -35,6 +36,7 @@
     <color name="transparent">#00000000</color>
 
 
+    <color name="devide_line">#CBCED2</color>
 
 
 </resources>
