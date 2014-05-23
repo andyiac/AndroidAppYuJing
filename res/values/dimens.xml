@@ -5,8 +5,11 @@
     <dimen name="text_height">50px</dimen>
     <dimen name="btn_width">30mm</dimen>
     <dimen name="btn_height">10mm</dimen>
-       <dimen name="top_length">13mm</dimen>
-          <dimen name="top_lengthlast">13mm</dimen>
-            <dimen name="top_length3">10mm</dimen>
+    <dimen name="top_length">13mm</dimen>
+    <dimen name="top_lengthlast">13mm</dimen>
+    <dimen name="top_length3">10mm</dimen>
 
+
+    <dimen name="tv_news_list_item_size">15sp</dimen>
+    <dimen name="tv_news_list_item_marging">15px</dimen>
 </resources>

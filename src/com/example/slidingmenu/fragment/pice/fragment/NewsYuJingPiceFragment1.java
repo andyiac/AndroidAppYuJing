@@ -57,7 +57,8 @@ public class NewsYuJingPiceFragment1 extends Fragment implements
 	private static final int WHAT_DID_REFRESH = 1;
 	/** Handler What更多数据完毕 **/
 	private static final int WHAT_DID_MORE = 2;
-	Document doc;
+    private static final boolean D = false;
+    Document doc;
 	Document next;
 	@SuppressLint("HandlerLeak")
 	private Handler mUIHandler = new Handler() {
@@ -140,7 +141,8 @@ public class NewsYuJingPiceFragment1 extends Fragment implements
 		mListView.setOnItemClickListener(this);
 		mAdapter = new SimpleAdapter(
 				NewsYuJingPiceFragment1.this.getActivity(), list,
-				android.R.layout.simple_list_item_2, new String[] { "title" }, new int[] { android.R.id.text1});
+				R.layout.news_list_item, new String[] { "title" }, new int[] { android.R.id.text1});
+
 		mListView.setAdapter(mAdapter);
 
 		// 设置可以自动获取更多 滑到最后一个自动获取 改成false将禁用自动获取更多
@@ -205,7 +207,7 @@ public class NewsYuJingPiceFragment1 extends Fragment implements
 				NewsWebView.class);
 		intent.putExtra("newsid", map.get("href").toString());
 		startActivity(intent);
-		Toast.makeText(this.getActivity(), "啊，你点中我了 " + position,
+		if(D) Toast.makeText(this.getActivity(), "啊，你点中我了 " + position,
 				Toast.LENGTH_SHORT).show();
 	}
 
