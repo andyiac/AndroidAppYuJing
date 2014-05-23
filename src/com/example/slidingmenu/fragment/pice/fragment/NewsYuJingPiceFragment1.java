@@ -93,7 +93,8 @@ public class NewsYuJingPiceFragment1 extends Fragment implements
 				}
 
 				Elements es = next.select("span.newslist a");
-
+                if(es == null)
+                    return;
 				for (Element e : es) {
 					Map<String, String> map = new HashMap<String, String>();
 					String a = e.getElementsByTag("a").text();
@@ -184,6 +185,8 @@ public class NewsYuJingPiceFragment1 extends Fragment implements
 		}
 
 		Elements es = doc.select("span.newslist a");
+        if(es ==null)
+            return;
 		for (Element e : es) {
 			Map<String, String> map = new HashMap<String, String>();
 			String a = e.getElementsByTag("a").text();
