@@ -15,10 +15,7 @@
  */
 package com.example.slidingmenu.fragment;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -28,10 +25,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
-
 import com.example.slidingmenu.R;
 import com.example.slidingmenu.activity.NewsYuJingActivity;
-import com.example.slidingmenu.activity.SlidingActivity;
 import com.example.slidingmenu.fragment.pice.fragment.NewsYuJingPiceFragment1;
 import com.example.slidingmenu.fragment.pice.fragment.NewsYuJingPiceFragment2;
 

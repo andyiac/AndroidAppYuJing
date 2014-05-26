@@ -23,13 +23,10 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.Window;
-
 import com.example.slidingmenu.R;
-import com.example.slidingmenu.fragment.EmergencyMainFragment;
 import com.example.slidingmenu.fragment.LeftFragment;
 import com.example.slidingmenu.fragment.NewsYuJingFragment;
 import com.example.slidingmenu.fragment.RightFragment;
-import com.example.slidingmenu.fragment.NewsYuJingFragment.MyAdapter;
 import com.example.slidingmenu.view.SlidingMenu;
 
 public class NewsYuJingActivity extends FragmentActivity implements Runnable{

@@ -57,6 +57,9 @@ public class NewsYuJingPiceFragment1 extends Fragment implements
 	private static final int WHAT_DID_REFRESH = 1;
 	/** Handler What更多数据完毕 **/
 	private static final int WHAT_DID_MORE = 2;
+
+    /** Handler What 新闻列表数据加载完成 **/
+    private static final int WHAT_NEWS_LIST_O = 3;
     private static final boolean D = false;
     Document doc;
 	Document next;
@@ -101,19 +104,36 @@ public class NewsYuJingPiceFragment1 extends Fragment implements
 					Log.i(TAG, "a=" + a);
 					map.put("title", e.getElementsByTag("a").text());
 					// 不显示链接地址
-					map.put("href", "http://www.hebeinu.edu.cn/"
-							+ e.getElementsByTag("a").attr("href"));
+					map.put("href", "http://www.hebeinu.edu.cn/" + e.getElementsByTag("a").attr("href"));
 					list.add(map);
 				}
 				mAdapter.notifyDataSetChanged();
 
 				break;
 			}
+
+                case WHAT_NEWS_LIST_O: {
+                    doc = (Document) msg.obj;
+
+                    Elements es = doc.select("span.newslist a");
+                    if (es == null)
+                        return;
+                    for (Element e : es) {
+                        Map<String, String> map = new HashMap<String, String>();
+                        String a = e.getElementsByTag("a").text();
+                        map.put("title", a);
+                        // 不显示链接地址
+                        map.put("href", "http://www.hebeinu.edu.cn/" + e.getElementsByTag("a").attr("href"));
+                        list.add(map);
+                    }
+                }
+
 			}
 
 		}
 
 	};
+
 	int page = 1;
 	View view;
     List<Map<String, String>> list = new ArrayList<Map<String, String>>();
@@ -173,32 +193,26 @@ public class NewsYuJingPiceFragment1 extends Fragment implements
 		super.onActivityCreated(savedInstanceState);
 	}
 
-	protected void load() {
+    protected void load() {
 
-		try {
-			doc = Jsoup.parse(new URL("http://www.hebeinu.edu.cn/xxxw.asp"),
-					5000);
-		} catch (MalformedURLException e1) {
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Document docu = Jsoup.parse(new URL("http://www.hebeinu.edu.cn/xxxw.asp"), 5000);
+                    Message msg = mUIHandler.obtainMessage(WHAT_NEWS_LIST_O);
+                    msg.obj = docu;
+                    msg.sendToTarget();
+                } catch (MalformedURLException e1) {
+                    e1.printStackTrace();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+            }
+        }).start();
 
-		Elements es = doc.select("span.newslist a");
-        if(es ==null)
-            return;
-		for (Element e : es) {
-			Map<String, String> map = new HashMap<String, String>();
-			String a = e.getElementsByTag("a").text();
-			map.put("title", a);
-			// 不显示链接地址
-			map.put("href",
-					"http://www.hebeinu.edu.cn/"
-							+ e.getElementsByTag("a").attr("href"));
-			list.add(map);
-		}
 
-	}
+    }
 
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
@@ -262,26 +276,9 @@ public class NewsYuJingPiceFragment1 extends Fragment implements
 
 			@Override
 			public void run() {
-
-				// Toast.makeText(NewsYuJingPiceFragment1.this.getActivity(),
-				// "加载更多", Toast.LENGTH_SHORT).show();
-				// Log.i(TAG, "+++++++++++=======");
-				// Elements mores = doc.select("DIV.jt");
 				String id = null;
-				// for (Element more : mores) {
-				// id = "http://www.hebeinu.edu.cn/"
-				// + more.getElementsByTag("a").get(1).attr("href");
-				// Log.i(TAG, "id=" + id);
-				// }
 				page++;
 				id = "http://www.hebeinu.edu.cn/xxxw.asp?page=" + page;
-				// http://www.hebeinu.edu.cn/xxxw.asp?page=2
-				Log.i(TAG, "1111111111111");
-				Log.i(TAG, "id=" + id);
-				// Document next = null;
-
-				// 告诉它获取更多完毕 这个事线程安全的 可看源代码
-
 				mPullDownView.notifyDidMore();
 				Message msg = mUIHandler.obtainMessage(WHAT_DID_MORE);
 				msg.obj = id;
