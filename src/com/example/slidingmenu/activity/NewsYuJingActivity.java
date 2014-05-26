@@ -15,13 +15,9 @@
  */
 package com.example.slidingmenu.activity;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.Window;
 import com.example.slidingmenu.R;
 import com.example.slidingmenu.fragment.LeftFragment;
@@ -29,41 +25,34 @@ import com.example.slidingmenu.fragment.NewsYuJingFragment;
 import com.example.slidingmenu.fragment.RightFragment;
 import com.example.slidingmenu.view.SlidingMenu;
 
-public class NewsYuJingActivity extends FragmentActivity implements Runnable{
+public class NewsYuJingActivity extends FragmentActivity {
 	SlidingMenu mSlidingMenu;
 	LeftFragment leftFragment;
 	RightFragment rightFragment;
     NewsYuJingFragment newsYuJingFragment;
 
     
- 	private ProgressDialog pd;
-	private Handler mHandler = new Handler(){
-
-		@Override
-		public void handleMessage(Message msg) {
-			super.handleMessage(msg);
-			Log.i("TAG", "Thread execution end");
-			pd.dismiss();
-			initListener();
-		}
-		
-	};
-	@Override
+    @Override
 	protected void onCreate(Bundle arg0) {
 		super.onCreate(arg0);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main);
-        String waiting = this.getResources().getString(R.string.waiting);
-        String wait_link = this.getResources().getString(R.string.wait_link);
-        pd = ProgressDialog.show(this,waiting,wait_link, true, false);
-		Thread t = new Thread(this);
-		t.start();
-		//init();
-		
-		
+        init();
+        initListener();
 	}
 
-	private void init() {
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    private void init() {
 		mSlidingMenu = (SlidingMenu) findViewById(R.id.slidingMenu);
 		mSlidingMenu.setLeftView(getLayoutInflater().inflate(
 				R.layout.left_frame, null));
@@ -109,12 +98,5 @@ public class NewsYuJingActivity extends FragmentActivity implements Runnable{
 		mSlidingMenu.showRightView();
 	}
 
-	@Override
-	public void run() {
-		Log.i("TAG", "Thread execution start");
-		init();
-		
-		mHandler.sendEmptyMessage(0);
-	}
 
 }

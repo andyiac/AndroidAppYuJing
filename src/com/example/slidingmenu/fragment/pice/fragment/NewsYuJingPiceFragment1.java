@@ -70,10 +70,6 @@ public class NewsYuJingPiceFragment1 extends Fragment implements
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
 			case WHAT_DID_LOAD_DATA: {
-				Toast.makeText(NewsYuJingPiceFragment1.this.getActivity(),
-						"" + mListView.getAdapter().getCount(),
-						Toast.LENGTH_LONG).show();
-				// 诉它数据加载完毕;
 				break;
 			}
 			case WHAT_DID_REFRESH: {
@@ -95,7 +91,10 @@ public class NewsYuJingPiceFragment1 extends Fragment implements
 					e1.printStackTrace();
 				}
 
+                if(next == null)
+                    return;
 				Elements es = next.select("span.newslist a");
+
                 if(es == null)
                     return;
 				for (Element e : es) {
@@ -144,16 +143,24 @@ public class NewsYuJingPiceFragment1 extends Fragment implements
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		view = inflater.inflate(R.layout.news_yujing_pice_frag_1, null);
-		init();
-		getMyView();
-
+        getMyView();
+        init();
 		return view;
 	}
 
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+    }
+
 	private void getMyView() {
 
-		mPullDownView = (PullDownView) view
-				.findViewById(R.id.lv_news_yujing_bfxy_frag1);
+		mPullDownView = (PullDownView) view.findViewById(R.id.lv_news_yujing_bfxy_frag1);
 
 		mPullDownView.setOnPullDownListener(this);
 
@@ -224,8 +231,6 @@ public class NewsYuJingPiceFragment1 extends Fragment implements
 				NewsWebView.class);
 		intent.putExtra("newsid", map.get("href").toString());
 		startActivity(intent);
-		if(D) Toast.makeText(this.getActivity(), "啊，你点中我了 " + position,
-				Toast.LENGTH_SHORT).show();
 	}
 
 	/** 刷新事件接口 这里要注意的是获取更多完 要关闭 刷新的进度条RefreshComplete() **/
