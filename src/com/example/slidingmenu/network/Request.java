@@ -17,6 +17,9 @@ public class Request {
 	
 	private static final int READTIMEOUT = 10000;
 
+    private static final boolean D =true;
+
+    private static final String  TAG = "Request.java";
 	/**
 	 * 访问服务器<br/>
 	 * 没有做是否联网的判断。但是可以用于wifi、wap、net
@@ -26,6 +29,7 @@ public class Request {
 	public static String request( String json ) {
 		//判断是否为json字符串
 		try {
+            if(D) Log.i(TAG,"===========request json ====>>"+json);
 			new JSONObject( json );
 		} catch ( JSONException e ) {
 			Log.e( "Request", "不是json数据", e );
@@ -56,6 +60,7 @@ public class Request {
 		
 		try {
 			String res = new String( response, "utf-8" );
+            if(D) Log.i(TAG,"=====response===res==>>>"+res);
 			return res.trim();
 		} catch ( Exception e ) {
 			Log.e( "Request", "访问失败", e );

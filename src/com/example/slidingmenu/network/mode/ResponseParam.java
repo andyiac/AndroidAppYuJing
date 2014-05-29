@@ -1,5 +1,6 @@
 package com.example.slidingmenu.network.mode;
 
+import android.util.Log;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -49,14 +50,19 @@ public class ResponseParam {
 	 * 服务器错误
 	 */
 	public static final int RESULT_SERVER_ERROR = 3;
-	
-	
-	protected JSONObject jsonObject;
+
+    private static final String TAG = "ResponseParam";
+
+    private static final boolean D = true;
+
+
+    protected JSONObject jsonObject;
 		
 	
 	public ResponseParam( String responseJson ) throws JSONException {
 		
 		try {
+            if(D) Log.i(TAG, "============responseJson====>>>" + responseJson);
 			this.jsonObject = new JSONObject( responseJson );
 		} catch ( JSONException e ) {
 			throw e;

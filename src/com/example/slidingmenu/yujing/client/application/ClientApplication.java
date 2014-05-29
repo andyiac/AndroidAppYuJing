@@ -18,16 +18,18 @@ public class ClientApplication extends Application{
 	
 	/**
 	 * 服务器地址
+     * 60.8.194.163
 	 */
-	public static final String IP_ADDRESS = "60.8.194.163";
+	public static final String IP_ADDRESS = "192.242.0.115";
 	
 	/**
 	 * 服务器端口
 	 */
-	public static final int PORT = 8084;
+	public static final int PORT = 8080;
 	
 	/**
 	 * 请求的文件
+     * /book/Book
 	 */
 	public static final String FILE = "/book/Book";
 	

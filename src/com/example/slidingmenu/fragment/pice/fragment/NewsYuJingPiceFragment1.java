@@ -60,7 +60,7 @@ public class NewsYuJingPiceFragment1 extends Fragment implements
 
     /** Handler What 新闻列表数据加载完成 **/
     private static final int WHAT_NEWS_LIST_O = 3;
-    private static final boolean D = false;
+    private static final boolean D = true;
     Document doc;
 	Document next;
 	@SuppressLint("HandlerLeak")
@@ -126,6 +126,8 @@ public class NewsYuJingPiceFragment1 extends Fragment implements
                         list.add(map);
                     }
                 }
+                mAdapter.notifyDataSetChanged();
+                break;
 
 			}
 

@@ -44,6 +44,7 @@ public class LoginActivity extends Activity {
 		super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_login);
+        this.myApplication = (MyApplication) getApplication();
 		mContext=this;
 		findView();
 		init();
@@ -71,9 +72,9 @@ public class LoginActivity extends Activity {
 		
 		@Override
 		public void onClick(View v) {
-			Intent intent=new Intent(mContext,NewsYuJingActivity.class);
+/*			Intent intent=new Intent(mContext,NewsYuJingActivity.class);
 			startActivity(intent);
-			finish();
+			finish();*/
 
 
 		if(TextUtils.isEmpty(etAccount.getText().toString())) {
@@ -128,15 +129,14 @@ public class LoginActivity extends Activity {
 		protected Boolean doInBackground(RequestParam... param) {
 
 			if(!HttpClient.isConnect(LoginActivity.this)) {
-			if(D) Log.i(TAG, "------1---------");
 			return false;
 			}
 
 			RequestParam requestParam = param[0];
 			String res = Request.request(requestParam.getJSON());
+            if(D) Log.i(TAG,"===========requestParam get json===>>"+res);
 			//如果请求结果为空字符串，则请求失败
 			if ("".equals(res)) {
-			if(D)	Log.i(TAG,"------2---------");
 				return false;
 			}
 			try {
@@ -157,7 +157,6 @@ public class LoginActivity extends Activity {
 				editor.putString(RequestParam.PHOTO, response.getPersonPhoto());
 				editor.putInt(RequestParam.STATUS, RequestParam.ONLINE);
 				editor.commit();
-				Log.i(TAG,"------4---------");
 
 				return true;
 			} catch (JSONException e) {

@@ -28,6 +28,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/application_name"
+        android:name=".welcome.MyApplication"
         android:theme="@style/AppTheme" >
         <meta-data
             android:name="com.amap.api.v2.apikey"
@@ -62,13 +63,6 @@
         <activity android:name="com.example.slidingmenu.activity.ManageActivity"></activity>
         <activity android:name="com.example.slidingmenu.activity.NewsYuJingActivity" >
 
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            -->
 
         </activity>
         <activity android:name=".map.RapidPositioning" />
