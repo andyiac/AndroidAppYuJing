@@ -9,7 +9,6 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/head_layout"
-            android:padding="5dip"
             android:background="@color/tab_focus">
 
         <Button
@@ -26,11 +25,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:padding="12sp"
                 android:textSize="15sp"
-                android:layout_centerHorizontal="true"
                 android:layout_gravity="center_horizontal"
-                android:text="班级管理"/>
+                android:text="班级管理"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"/>
 
        
 

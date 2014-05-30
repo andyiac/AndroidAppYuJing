@@ -22,16 +22,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import com.example.slidingmenu.R;
-import com.example.slidingmenu.activity.AttendanceActivity;
-import com.example.slidingmenu.activity.ConfigActivity;
-import com.example.slidingmenu.activity.ContactActivity;
-import com.example.slidingmenu.activity.EmergencyActivity;
-import com.example.slidingmenu.activity.MyMsgActivity;
-import com.example.slidingmenu.activity.NewsYuJingActivity;
-import com.example.slidingmenu.activity.PersonalCenterActivity;
-import com.example.slidingmenu.activity.SlidingActivity;
+import com.example.slidingmenu.activity.*;
 
 public class LeftFragment extends Fragment {
 
@@ -89,7 +81,7 @@ public class LeftFragment extends Fragment {
                 case R.id.tv_left_tu_fa:
                     intent.setClass(getActivity(), EmergencyActivity.class);
                     startActivity(intent);
-                    getActivity().finish();
+//                    getActivity().finish();
 
                     break;
                 case R.id.tv_left_kao_qin:

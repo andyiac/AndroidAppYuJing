@@ -86,6 +86,7 @@ public class NewsYuJingFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				((NewsYuJingActivity) getActivity()).showLeft();
+//                ((NewsYuJingActivity) getActivity()).onBackPressed();
 			}
 		});
 

@@ -27,11 +27,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:padding="12sp"
             android:textSize="15sp"
-            android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
-            android:text="添加学生"/>
+            android:text="添加学生"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
     <include

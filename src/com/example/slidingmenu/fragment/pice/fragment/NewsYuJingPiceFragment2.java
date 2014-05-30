@@ -22,17 +22,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
-import android.widget.TextView;
-import android.widget.Toast;
-
+import android.widget.*;
 import com.example.slidingmenu.R;
 import com.example.slidingmenu.tool.Util;
 import com.example.slidingmenu.view.NewsWebView;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -59,7 +52,7 @@ public class NewsYuJingPiceFragment2 extends Fragment {
 
         if (Util.isNetworkAvailable(NewsYuJingPiceFragment2.this.getActivity())) {
             try {
-                load(view);
+//                load(view);
             } catch (Exception e) {
                 e.printStackTrace();
             }
